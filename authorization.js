@@ -98,7 +98,7 @@ function handleFormSubmission(event) {
 async function handleLogin(lastName, password) {
     if (!lastName || !password) {
         errorButton()
-        MessageText(messages.fieldsEmpty);
+        console.log(messages.fieldsEmpty);
         setButtonState(false);
         return;
     }
@@ -115,13 +115,13 @@ async function handleLogin(lastName, password) {
             newPasswordField.disabled = false;
             confirmNewPasswordField.disabled = false;
             newPasswordField.focus();
-            MessageText(messages.newPassword);
+            console.log(messages.newPassword);
         } else {
             saveSessionData(data);
             window.location.href = "home.html";
         }
     } catch (error) {
-        MessageText(messages.loginError);
+        console.log(messages.loginError);
     } finally {
         setButtonState(false);
     }
@@ -132,7 +132,7 @@ async function handlePasswordUpdate(lastName) {
     const confirmNewPassword = confirmNewPasswordField.value.trim();
 
     if (!newPassword || newPassword !== confirmNewPassword) {
-        MessageText(messages.passwordMismatch);
+        console.log(messages.passwordMismatch);
         setButtonState(false);
         return;
     }
@@ -151,9 +151,9 @@ async function handlePasswordUpdate(lastName) {
             newPasswordField.value = '';
             confirmNewPasswordField.value = '';
             passwordField.value = '';
-            MessageText(messages.passwordUpdateSuccess);
+            console.log(messages.passwordUpdateSuccess);
         } else {
-            MessageText(messages.passwordUpdateError);
+            console.log(messages.passwordUpdateError);
         }
     } catch (error) {
         console.log("Помилка: " + error.message);
