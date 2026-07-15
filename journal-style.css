@@ -46,8 +46,23 @@ body {
   display: flex;
 }
 #bookmarks {
-  
+  flex-direction: column;
 }
+#bookmarks label {
+  height: 7rem;
+  width: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-right: 0.5rem;
+}
+#bookmarks label p {
+  margin: 0;
+  transform: rotate(-90deg);
+  transform-origin: center;
+  height: 1.5rem;
+}
+
 #Subject {
   z-index: 5;
 }
