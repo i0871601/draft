@@ -68,12 +68,19 @@ body {
   transform: rotate(-90deg);
   transform-origin: center;
   height: 1.5rem;
+  min-width: 2.091rem;
+  width: auto;
+  max-width: 7rem;
+  text-align: center;
   background-color: var(--fon-color-2);
   padding: 0.5rem 1rem;
   border-radius: 0.7rem 0.7rem 0 0;
-  color: var(--text-color);
   border: 0.07rem solid transparent;
   box-shadow: 0 0 0.3rem var(--color-shadow);
+  color: var(--text-color);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
   transition: color 0.5s ease-in-out;
 }
 
@@ -96,7 +103,7 @@ body {
 }
 
 #Subject {
-  z-index: 5;
+  z-index: 4;
 }
 #Class {
   z-index: 4;
@@ -178,6 +185,7 @@ body {
 #subject:checked ~ #Subject,
 #class:checked ~ #Class {
   width: 35%;
+  z-index: 5;
   transition: width 0.5s linear 0s;
 }
 #subject:checked ~ #Subject .shadow .content,
