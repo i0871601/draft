@@ -1,6 +1,5 @@
 // Авторське право (c) серпень 2025 рік Сікан Іван Валерійович.
 import { API_URL_AUTHORIZATION, messages } from './config.js';
-import { MessageText } from '../messageBox.js';
 
 //Всі html об'єкти для скрипта
 const button = document.getElementById('loginButton');
