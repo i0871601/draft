@@ -102,11 +102,17 @@ body {
   background-color: var(--fon-color-2);
 }
 
+/*При наведення*/
+#Subject label:first-child:hover ~ #Subject label:first-child p,
+#Class label:first-child:hover ~ #Class label:first-child p{
+  color:var(--text-current);
+}
 
 /*Взаємодія з інпут*/
 #reset:checked ~ #Journal #Subject .shadow .content,
 #reset:checked ~ #Journal #Class .shadow .content{
   opacity: 0;
+  pointer-events: none;
   transition: opacity 0.5s linear 0s;
 }
 
