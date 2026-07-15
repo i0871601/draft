@@ -85,6 +85,16 @@ body {
 
 
 /*Взаємодія з інпут*/
+#reset:checked ~ #Journal #Subject .shadow,
+#reset:checked ~ #Journal #Class .shadow {
+  width: 0;
+  visibility: hidden;
+}
+#reset:checked ~ #Journal #Subject .shadow .content,
+#reset:checked ~ #Journal #Class .shadow .content{
+  opacity: 0;
+}
+
 #on-Subject:checked ~ #Journal #Subject,
 #on-Class:checked ~ #Journal #Class {
   display: none;
@@ -92,6 +102,17 @@ body {
 #on-Subject:checked ~ #Journal #Class label:first-child {
   margin-top: 4rem;
 }
+
+#subject:checked ~ #Subject .shadow,
+#class:checked ~ #Class .shadow {
+  width: 30%;
+  visibility: visible;
+}
+#subject:checked ~ #Subject .shadow .content,
+#class:checked ~ #Class .shadow .content {
+  opacity: 1;
+}
+
 
 @keyframes fadeUp {
   0% { opacity: 0; }
