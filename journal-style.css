@@ -59,8 +59,11 @@ body {
   justify-content: center;
   cursor: pointer;
   pointer-events: auto;
-  position: relative;
   margin-left: 0.3rem;
+  border: 0.07rem solid transparent;
+  box-shadow: 0 0 0.3rem var(--color-shadow);
+  border-radius: 0.7rem 0.7rem 0 0;
+  writing-mode: sideways-lr;
 }
 
 #Subject .marks {
@@ -70,13 +73,15 @@ body {
 #Class .marks {
   margin-top: 11rem;
 }
+.bookmarks .marks:first-child {
+  background-color: var(--fon-color-2);
+  color: var(--text-color);
+  transition: color 0.5s ease-in-out;
+}
 
 .bookmarks .marks:not(:first-child) {
   position: absolute;
-  width: 100%;
-  height: 100%;
-  padding: 0.65rem 0;
-  border-radius: 0.7rem 0.7rem 0 0;
+  color: transparent;
   pointer-events: none;
   cursor: pointer;
 }
