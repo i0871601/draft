@@ -50,7 +50,7 @@ body {
 }
 
 .bookmarks label:first-child {
-  width: 1.5rem;
+  width: 2.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -64,6 +64,16 @@ body {
   transform-origin: center;
   height: 1.5rem;
   background-color: var(--fon-color-2);
+  padding: 0.5rem 1rem;
+  border-radius: 0.7rem 0.7rem 0 0;
+}
+
+#Subject label:first-child {
+  margin-top: 4rem;
+}
+
+#Class label:first-child {
+  margin-top: 11rem;
 }
 
 #Subject {
