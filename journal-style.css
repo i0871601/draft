@@ -103,8 +103,7 @@ body {
 }
 
 /*При наведення*/
-#Subject label:first-child:hover ~ #Subject label:first-child p,
-#Class label:first-child:hover ~ #Class label:first-child p{
+.bookmarks label:first-child:hover p{
   color:var(--text-current);
 }
 
