@@ -83,10 +83,14 @@ body {
   z-index: 4;
 }
 
+
 /*Взаємодія з інпут*/
 #on-Subject:checked ~ #Journal #Subject,
 #on-Class:checked ~ #Journal #Class {
   display: none;
+}
+#on-Subject:checked ~ #Journal #Class label:first-child {
+  margin-top: 4rem;
 }
 
 @keyframes fadeUp {
