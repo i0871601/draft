@@ -49,7 +49,7 @@ body {
   display: flex;
   align-items: flex-start;
   pointer-events: none;
-  transition: width 0.5s ease-in-out;
+  transition: width 0.5s linear 0s;
 }
 
 .bookmarks label:first-child {
@@ -101,15 +101,13 @@ body {
   height: 100%;
   background-color: var(--fon-color-2);
 }
-.content {
-  transition: opacity 0.5s linear 0.5s;
-}
 
 
 /*Взаємодія з інпут*/
 #reset:checked ~ #Journal #Subject .shadow .content,
 #reset:checked ~ #Journal #Class .shadow .content{
   opacity: 0;
+  transition: opacity 0.5s linear 0.5s;
 }
 
 #on-Subject:checked ~ #Journal #Subject,
@@ -123,7 +121,7 @@ body {
 #subject:checked ~ #Subject,
 #class:checked ~ #Class {
   width: 35%;
-
+  transition: width 0.5s linear 0.5s;
 }
 #subject:checked ~ #Subject .shadow .content,
 #class:checked ~ #Class .shadow .content {
