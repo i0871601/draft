@@ -39,16 +39,14 @@ body {
   animation: fadeUp 0.7s ease-in-out forwards;
 }
 
-.marks {
+.bookmarks {
   position: absolute;
   top: 0;
   right: 0;
   display: flex;
 }
-#bookmarks {
-  flex-direction: column;
-}
-#bookmarks label {
+
+.bookmarks label:first-child {
   height: 7rem;
   width: 1.5rem;
   display: flex;
@@ -56,7 +54,7 @@ body {
   justify-content: center;
   padding-right: 0.5rem;
 }
-#bookmarks label p {
+.bookmarks label:first-child p {
   margin: 0;
   transform: rotate(-90deg);
   transform-origin: center;
