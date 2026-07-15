@@ -1,4 +1,4 @@
-// Авторське право (c) травень 2026 рік Сікан Іван Валерійович.
+// Авторське право (c) липень 2026 рік Сікан Іван Валерійович.
 import { request, getUserData } from './config.js';
 import { renderLog } from './script-journal.js';
 
@@ -9,48 +9,85 @@ window.addEventListener('pageshow', (event) => {
     if (event.persisted) {
         sessionStorage.clear();
         const form = document.getElementById('loginForm');
-        form.reset();
+        if (form) form.reset();
     }
 });
 
-const offSubjectOn = document.getElementById('off-on-subject');
-const offClassOn = document.getElementById('off-on-class');
+// Чекбокси видимості закладок (на заміну старим off-on)
+const onSubject = document.getElementById('on-Subject');
+const onClass = document.getElementById('on-Class');
 
-const divSubject = document.querySelector('#Subject .content-select');
-const divClass = document.querySelector('#Class .content-select');
+// Блоки вмісту закладок
+const divSubjectContent = document.querySelector('#Subject .content');
+const divClassContent = document.querySelector('#Class .content');
 
-const textSelectSubject = document.getElementById('select-text-subject');
-const textSelectClass = document.getElementById('select-text-class');
-
+// Тригер для згортання закладок
 const inputReset = document.getElementById('reset');
 
 let electSubject = null;
 let electClass = null;
 let teacherLastName = null;
 
+// Функція генерації унікального ID без пробілів та спецсимволів
+const generateId = (prefix, name) => {
+    return `${prefix}-${name.replace(/[^a-zA-Z0-9а-яА-ЯіІїЇєЄґҐ]/g, '_')}`;
+};
+
+// 1. Рендеринг списку предметів
 export const selectSubject = (map) => {
-    console.log("Ось масив:", map);
-    map.forEach(el => {
-        const liElement = document.createElement('li');
-        liElement.textContent = el.Subject;
-        divSubject.appendChild(liElement);
+    divSubjectContent.innerHTML = ''; // Очищуємо контейнер
+    console.log("Ось масив предметів:", map);
+    
+    map.forEach((el, index) => {
+        const uniqueId = generateId('el-subject', el.Subject);
+
+        const inputEl = document.createElement('input');
+        inputEl.type = 'radio';
+        inputEl.name = 'el-subject';
+        inputEl.id = uniqueId;
+        inputEl.className = 'input';
+        inputEl.value = el.Subject;
+
+        const labelEl = document.createElement('label');
+        labelEl.htmlFor = uniqueId;
+        labelEl.textContent = el.Subject;
+
+        divSubjectContent.appendChild(inputEl);
+        divSubjectContent.appendChild(labelEl);
     });
 };
 
+// 2. Рендеринг класів для обраного предмету
 export const handSubjectClick = (subjectValue, test) => {
-    textSelectSubject.textContent = subjectValue;
-    divClass.innerHTML = '';
+    divClassContent.innerHTML = ''; // Повне очищення
 
     const currentRecord = test.find(el => el.Subject === subjectValue);
     if (currentRecord && currentRecord.Class) {
         const classesArray = currentRecord.Class.split(',').map(c => c.trim());
-        classesArray.forEach(className => {
-            const liElement = document.createElement('li');
-            liElement.textContent = className;
-            divClass.appendChild(liElement);
+        
+        classesArray.forEach((className) => {
+            const uniqueId = generateId('el-class', className);
+
+            const inputEl = document.createElement('input');
+            inputEl.type = 'radio';
+            inputEl.name = 'el-class';
+            inputEl.id = uniqueId;
+            inputEl.className = 'input';
+            inputEl.value = className;
+
+            const labelEl = document.createElement('label');
+            labelEl.htmlFor = uniqueId;
+            labelEl.textContent = className;
+
+            divClassContent.appendChild(inputEl);
+            divClassContent.appendChild(labelEl);
         });
     }
+};
 
+// Встановлення заглушки "Виберіть спочатку предмет"
+const setDefaultClassPlaceholder = () => {
+    divClassContent.innerHTML = '<span class="placeholder-text">Виберіть спочатку предмет</span>';
 };
 
 export const handClass = (electSubject, userData, map) => {
@@ -61,7 +98,7 @@ export const handClass = (electSubject, userData, map) => {
         electClass = subjectClasses.find(className => studentClasses.includes(className));
         teacherLastName = currentRecord.Teacher_LastName;
     }
-}
+};
 
 async function formationRequests(role, subject, teacherLastName, classes) {
     const payload = {
@@ -70,57 +107,60 @@ async function formationRequests(role, subject, teacherLastName, classes) {
         teacherLastName: teacherLastName,
         className: classes
     };
-                    
+                        
     const response = await request(payload);
-    console.log(response);
+    console.log("Дані журналу завантажено:", response);
     renderLog(role, subject, classes, teacherLastName, response);
-};
+}
 
 document.addEventListener('DOMContentLoaded', () => {
     const userData = getUserData();
-
     let test = [];
     let buttonVisibility = null;
 
+    // Встановлюємо дефолтне значення для закладок класів при старті
+    setDefaultClassPlaceholder();
+
     if (userData && userData.data.classes) {
         test = userData.data.classes;
-
         const record = test.length;
 
         if (userData.role === 'teacher' && record > 1) {
-            buttonVisibility = [offSubjectOn, offClassOn];
+            buttonVisibility = [onSubject, onClass];
             selectSubject(test);
         }
         else if (userData.role === 'teacher' && record === 1) {
-            buttonVisibility = [offClassOn];
+            buttonVisibility = [onClass];
             electSubject = userData.classOrsubject;
-            console.log(electSubject);
             handSubjectClick(electSubject, test);
         }
         else if (userData.role === 'student' && record > 1) {
-            buttonVisibility = [offSubjectOn];
+            buttonVisibility = [onSubject];
             selectSubject(test);
         }
-        
     }
-    if(buttonVisibility) {
+
+    // Якщо закладки мають бути видимі, знімаємо "checked" з керуючих чекбоксів
+    if (buttonVisibility) {
         buttonVisibility.forEach(el => {
-            el.checked = false;
+            el.checked = false; 
         });
     }
 
-    if (!offSubjectOn.checked){
-        console.log("Слухач на предмети");
-        divSubject.addEventListener('click', (event) => { 
-            const clickedLi = event.target.closest('li');
-            
-            if (clickedLi) {
-                electSubject = clickedLi.textContent;
-                textSelectClass.textContent = 'Клас';
+    // Обробка вибору в закладці "Предмети"
+    if (!onSubject.checked) {
+        divSubjectContent.addEventListener('change', (event) => {
+            const target = event.target;
+            if (target.name === 'el-subject') {
+                electSubject = target.value;
+                
+                // Згортаємо відкриту закладку
                 inputReset.checked = true;
-                if (userData.role === 'teacher') handSubjectClick(electSubject, test);
+
+                if (userData.role === 'teacher') {
+                    handSubjectClick(electSubject, test);
+                }
                 if (userData.role === 'student') {
-                    textSelectSubject.textContent = electSubject;
                     handClass(electSubject, userData, test);
                     formationRequests(userData.role, electSubject, teacherLastName, electClass);                    
                 }
@@ -128,17 +168,18 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    if (!offClassOn.checked) {
-        divClass.addEventListener('click', (event) => {
-            const clickedLi = event.target.closest('li');
-
-            if(clickedLi) {
-                electClass = clickedLi.textContent;
-                textSelectClass.textContent = electClass;
+    // Обробка вибору в закладці "Класи"
+    if (!onClass.checked) {
+        divClassContent.addEventListener('change', (event) => {
+            const target = event.target;
+            if (target.name === 'el-class') {
+                electClass = target.value;
+                
+                // Згортаємо відкриту закладку
                 inputReset.checked = true;
+                
                 formationRequests(userData.role, electSubject, userData.lastName, electClass);
             }
         });
     }
-    
 });
