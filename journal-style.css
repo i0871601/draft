@@ -52,7 +52,7 @@ body {
   transition: width 0.5s linear 0.3s;
 }
 
-.bookmarks label:first-child {
+.bookmarks .marks {
   width: 2.5rem;
   display: flex;
   align-items: center;
@@ -63,36 +63,15 @@ body {
   margin-left: 0.3rem;
 }
 
-.bookmarks label:first-child p {
-  margin: 0;
-  transform: rotate(-90deg);
-  transform-origin: center;
-  height: 1.5rem;
-  min-width: 2.091rem;
-  width: auto;
-  max-width: 7rem;
-  text-align: center;
-  background-color: var(--fon-color-2);
-  padding: 0.5rem 1rem;
-  border-radius: 0.7rem 0.7rem 0 0;
-  border: 0.07rem solid transparent;
-  box-shadow: 0 0 0.3rem var(--color-shadow);
-  color: var(--text-color);
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  transition: color 0.5s ease-in-out;
-}
-
-#Subject label:first-child {
+#Subject .marks {
   margin-top: 4rem;
 }
 
-#Class label:first-child {
+#Class .marks {
   margin-top: 11rem;
 }
 
-.bookmarks label:first-child label{
+.bookmarks .marks:not(:first-child) {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -158,7 +137,7 @@ body {
 
 
 /*При наведення*/
-.bookmarks label:first-child:hover p{
+.bookmarks .marks:first-child:hover {
   color:var(--text-current);
 }
 .content label:hover {
@@ -178,7 +157,7 @@ body {
 #on-Class:checked ~ #Journal #Class {
   display: none;
 }
-#on-Subject:checked ~ #Journal #Class label:first-child {
+#on-Subject:checked ~ #Journal #Class .marks {
   margin-top: 4rem;
 }
 
@@ -193,8 +172,8 @@ body {
   opacity: 1;
   transition: opacity 0.5s linear 0.5s;
 }
-#subject:checked ~ #Subject label:first-child label,
-#class:checked ~ #Class label:first-child label {
+#subject:checked ~ #Subject .marks:not(:first-child),
+#class:checked ~ #Class .marks:not(:first-child) {
   pointer-events: auto;
 }
 .content input:checked + label {
