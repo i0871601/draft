@@ -71,11 +71,11 @@ body {
 }
 
 #Subject .marks {
-  margin-top: 4rem;
+  margin-top: 2rem;
 }
 
 #Class .marks {
-  margin-top: 11rem;
+  margin-top: 10rem;
 }
 .bookmarks .marks:first-child {
   background-color: var(--fon-color-2);
@@ -167,7 +167,7 @@ body {
   display: none;
 }
 #on-Subject:checked ~ #Journal #Class .marks {
-  margin-top: 4rem;
+  margin-top: 2rem;
 }
 
 #subject:checked ~ #Subject,
