@@ -41,12 +41,16 @@ body {
 
 .bookmarks {
   position: absolute;
+  overflow: hidden;
   top: 0;
   right: 0;
-  display: flex;
+  width: 2.5rem;
   height: 100%;
+  display: flex;
   align-items: flex-start;
+  justify-content: flex-end;
   pointer-events: none;
+  transition: width 0.5s ease-in-out;
 }
 
 .bookmarks label:first-child {
@@ -95,7 +99,6 @@ body {
 }
 .shadow {
   height: 100%;
-  transition: visibility 0.5s ease-in-out, width 0.5s ease-in-out;
 }
 .content {
   transition: opacity 0.5s linear 0.5s;
@@ -103,11 +106,6 @@ body {
 
 
 /*Взаємодія з інпут*/
-#reset:checked ~ #Journal #Subject .shadow,
-#reset:checked ~ #Journal #Class .shadow {
-  width: 0;
-  visibility: hidden;
-}
 #reset:checked ~ #Journal #Subject .shadow .content,
 #reset:checked ~ #Journal #Class .shadow .content{
   opacity: 0;
@@ -121,10 +119,10 @@ body {
   margin-top: 4rem;
 }
 
-#subject:checked ~ #Subject .shadow,
-#class:checked ~ #Class .shadow {
+#subject:checked ~ #Subject,
+#class:checked ~ #Class {
   width: 30%;
-  visibility: visible;
+
 }
 #subject:checked ~ #Subject .shadow .content,
 #class:checked ~ #Class .shadow .content {
