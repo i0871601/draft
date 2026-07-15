@@ -18,8 +18,8 @@ const onSubject = document.getElementById('on-Subject');
 const onClass = document.getElementById('on-Class');
 
 // Блоки вмісту закладок
-const divSubjectContent = document.querySelector('#Subject .content');
-const divClassContent = document.querySelector('#Class .content');
+const divSubjectContent = document.querySelector('#Subject .shadow .content');
+const divClassContent = document.querySelector('#Class .shadow .content');
 
 // Тригер для згортання закладок
 const inputReset = document.getElementById('reset');
