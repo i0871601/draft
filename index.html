@@ -1,0 +1,35 @@
+<!--Авторське право (c) серпень 2025 рік Сікан Іван Валерійович.!-->
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8" />
+    <title>Draft-J</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <h1>Draft-J</h1>
+    <form class="loginForm" id="loginForm">
+        <input type="text" id="lastName" name="lastName" placeholder="Прізвище" />
+        <input type="password" id="password" name="password" placeholder="Пароль" />
+        
+        <div id="newPasswordFields" class="hidden">
+            <input type="password" id="newPassword" name="newPassword" placeholder="Новий пароль"  disabled />
+            <input type="password" id="confirmNewPassword" name="confirmNewPassword" placeholder="Підтвердіть пароль"  disabled />
+        </div>
+        
+        <button type="submit" id="loginButton">
+            <span class="default-text">Увійти</span>
+            <span class="dots hidden">
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </span>
+        </button>
+    </form>
+    <footer>
+        <p>&copy; 2025, Сікан І.В.</p>
+    </footer>
+    <script>sessionStorage.removeItem('userBase');console.clear();</script>
+    <script src="./authorization.js" type="module"></script>
+</body>
+</html>
