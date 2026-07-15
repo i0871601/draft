@@ -14,9 +14,32 @@
         <input type="checkbox" id="on-Subject" class="input" checked>
         <input type="checkbox" id="on-Class" class="input" checked>
 
+        <input type="radio" name="trigger" id="reset" class="input" checked>
+
         <main id="Journal">
-            <div id="Subject"></div>
-            <div id="Class"></div>
+            <input type="radio" name="trigger" id="subject" class="input">
+            <input type="radio" name="trigger" id="class" class="input">
+
+            <div id="Subject" class="bookmarks">
+                <label for="subject"></label>
+                <div class="content">
+                    <!--створюється 
+                    <input type="radio" name="el-subject" id="el-subject1" class="input">
+                    <label for="el-subject1">Прредмет1</label>-->
+                </div>
+            </div>
+            <div id="Class" class="bookmarks">
+                <label for="class"></label>
+                <div class="content">
+                    <!--створюється 
+                    <input type="radio" name="el-class" id="el-class1" class="input">
+                    <label for="el-class1">Клас1</label>-->
+                </div>
+            </div>
+            <div id="table">
+                <!--<input type="checkbox" id="off-on-journal" class="input">
+                <table id="content-journal"></table>!-->
+            </div>
         </main>
         <!--<script src="./script-journal.js" type="module"></script>!-->
     </body>
