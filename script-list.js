@@ -23,7 +23,9 @@ const divClassContent = document.querySelector('#Class .shadow .content');
 
 //Текст підставка
 const textSubject = document.getElementById('text-subject');
+const shadowTextSubject = document.getElementById('shadow-text-subject');
 const textClass = document.getElementById('text-class');
+const shadowTextClass = document.getElementById('shadow-text-class');
 
 // Тригер для згортання закладок
 const inputReset = document.getElementById('reset');
@@ -158,7 +160,9 @@ document.addEventListener('DOMContentLoaded', () => {
             if (target.name === 'el-subject') {
                 electSubject = target.value;
                 textSubject.textContent = electSubject;
+                shadowTextSubject.textContent = electSubject;
                 textClass.textContent = 'Клас';
+                shadowTextClass.textContent = 'Клас';
                 
                 // Згортаємо відкриту закладку
                 inputReset.checked = true;
@@ -181,6 +185,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (target.name === 'el-class') {
                 electClass = target.value;
                 textClass.textContent = electClass;
+                shadowTextClass.textContent = electClass;
                 
                 // Згортаємо відкриту закладку
                 inputReset.checked = true;
