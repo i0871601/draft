@@ -118,18 +118,17 @@ body {
 }
 
 .content::-webkit-scrollbar{
-    width: 0.5rem;
-    height: 0.5rem;
-    background-color: transparent;
+  width: 0.5rem;
+  height: 0.5rem;
+  background-color: transparent;
 }
 
 .content::-webkit-scrollbar-thumb{
-    background-color: var(--color-accent);
-    border-radius: 25px;
+  background-color: var(--color-accent);
+  border-radius: 25px;
 }
 .content::-webkit-scrollbar-track {
-    background: transparent;
-    margin-top: 2.71rem;
+  background: transparent;
 }
 .content::-webkit-scrollbar-corner {
   background: transparent;
