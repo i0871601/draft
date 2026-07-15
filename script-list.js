@@ -142,9 +142,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Якщо закладки мають бути видимі, знімаємо "checked" з керуючих чекбоксів
     if (buttonVisibility) {
-        console.log("П")
         buttonVisibility.forEach(el => {
-            console.log("G")
             el.checked = false; 
         });
     }
