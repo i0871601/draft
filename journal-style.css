@@ -44,21 +44,26 @@ body {
   top: 0;
   right: 0;
   display: flex;
+  height: 100%;
+  align-items: flex-start;
+  pointer-events: none;
 }
 
 .bookmarks label:first-child {
-  height: 7rem;
   width: 1.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-right: 0.5rem;
+  cursor: pointer;
+  pointer-events: auto;
 }
+
 .bookmarks label:first-child p {
   margin: 0;
   transform: rotate(-90deg);
   transform-origin: center;
   height: 1.5rem;
+  background-color: var(--fon-color-2);
 }
 
 #Subject {
