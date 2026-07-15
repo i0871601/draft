@@ -44,7 +44,7 @@ body {
   overflow: hidden;
   top: 0;
   right: 0;
-  width: 2.5rem;
+  width: 2.8rem;
   height: 100%;
   display: flex;
   align-items: flex-start;
@@ -60,6 +60,7 @@ body {
   cursor: pointer;
   pointer-events: auto;
   position: relative;
+  margin-left: 0.3rem;
 }
 
 .bookmarks label:first-child p {
@@ -72,7 +73,7 @@ body {
   border-radius: 0.7rem 0.7rem 0 0;
   color: var(--text-color);
   border: 0.07rem solid transparent;
-  box-shadow: 0 0 0.3rem transparent;
+  box-shadow: 0 0 0.3rem var(--color-shadow);
   transition: color 0.5s ease-in-out;
 }
 
@@ -106,9 +107,36 @@ body {
   background-color: var(--fon-color-2);
 }
 
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: calc(100% - 3.2rem);
+  margin-top: 3.2rem;
+}
+.content label {
+  width: 70%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--text-color);
+  border: 0.03rem solid var(--text-color);
+  border-radius: 0.7rem;
+  padding: 0.3rem 0;
+  cursor: pointer;
+  pointer-events: auto;
+  margin-bottom: 0.9rem;
+  transition: border 0.5s ease-in-out, color 0.5s ease-in-out;
+}
+
+
 /*При наведення*/
 .bookmarks label:first-child:hover p{
   color:var(--text-current);
+}
+.content label:hover {
+  color: var(--color-accent);
+  border-color: var(--color-accent);
 }
 
 /*Взаємодія з інпут*/
@@ -140,6 +168,10 @@ body {
 #subject:checked ~ #Subject label:first-child label,
 #class:checked ~ #Class label:first-child label {
   pointer-events: auto;
+}
+.content input:checked + label {
+  border-color: var(--color-passed);
+  color: var(--color-passed);
 }
 
 
