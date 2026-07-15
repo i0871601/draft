@@ -83,6 +83,11 @@ body {
   z-index: 4;
 }
 
+/*Взаємодія з інпут*/
+#on-Subject:checked ~ #Journal #Subject,
+#on-Class:checked ~ #Journal #Class {
+  display: none;
+}
 
 @keyframes fadeUp {
   0% { opacity: 0; }
