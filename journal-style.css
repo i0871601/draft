@@ -54,6 +54,9 @@ body {
 
 .bookmarks .marks {
   width: 2.5rem;
+  min-height: 2rem;
+  height: auto;
+  max-height: 5rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -88,7 +91,7 @@ body {
 }
 
 #Subject {
-  z-index: 4;
+  z-index: 3;
 }
 #Class {
   z-index: 4;
