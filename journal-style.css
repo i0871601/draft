@@ -1,0 +1,25 @@
+ /*Авторське право (c) липень 2026 рік Сікан Іван Валерійович.*/
+:root {
+  --fon-color: #151419;
+  --fon-color-1: #262626;
+  --fon-color-2: #1b1b1e;
+  --color-shadow: #1b1b1b;
+  --color-accent: #f56e0f;
+  --text-current: #f56e0f;
+  --color-passed: #559153;
+  --text-color: #B1B1B1;
+}
+
+body {
+    height: 100dvh;
+    margin: 0;
+    padding: 0;
+    background-color: var(--fon-color);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    user-select: none;
+    font-family: 'SourceSans3';
+}
