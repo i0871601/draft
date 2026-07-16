@@ -61,7 +61,8 @@ body {
   pointer-events: auto;
   cursor: pointer;
   position: relative;
-  transition: color 0.5s ease-in-out, transform 0.5s ease-in-out;
+  transform: translateX(0);
+  transition: color 0.5s ease-in-out, transform 0.5s ease-in-out 0.5s;
 }
 
 #bookmarks .shadow-marks {
@@ -85,7 +86,7 @@ body {
   right: 0;
   background-color: var(--fon-color-2);
   max-width: 0vw;
-  transition: max-width 0.5s ease-in-out;
+  transition: max-width 0.5s ease-in-out 0.5s;
 }
 
 .content {
@@ -97,7 +98,7 @@ body {
   margin: 2rem 0 2rem 0;
   overflow-y: auto;
   opacity: 0;
-  transition: opacity 0.5s linear 0.5s;
+  transition: opacity 0.5s linear 0s;
 }
 
 .content::-webkit-scrollbar{
@@ -131,6 +132,9 @@ body {
   margin-bottom: 0.9rem;
   transition: border 0.5s ease-in-out, color 0.5s ease-in-out;
 }
+.content .placeholder-text {
+  color: var(--text-color);
+}
 
 
 /*При наведення*/
@@ -147,18 +151,24 @@ body {
 #reset:checked ~ #Journal #Class {
   max-width: 0vw;
   pointer-events: none;
+  transition: max-width 0.5s ease-in-out 0.5s;
 }
+#reset:checked ~ #bookmarks .marks {
+  transform: translateX(0);
+  transition: transform 0.5s ease-in-out 0.5s;
+}
+
 #subject:checked ~ #Subject,
 #class:checked ~ #Class {
   max-width: 30vw;
   pointer-events: auto;
-  transition: max-width 0.5s linear 0.5s;
+  transition: max-width 0.5s ease-in-out 0s;
 }
 
 #subject:checked ~ #bookmarks #subject-marks,
 #class:checked ~ #bookmarks #class-marks {
   transform: translateX(-30vw);
-  transition: transform 0.5s linear 0.5s;
+  transition: transform 0.5s ease-in-out 0s;
 }
 
 #subject:checked ~ #bookmarks #subject-marks label,
@@ -170,7 +180,7 @@ body {
 #subject:checked ~ #Subject .content,
 #class:checked ~ #Class .content {
   opacity: 1;
-  transition: opacity 0.5s linear 0s;
+  transition: opacity 0.5s linear 0.5s;
 }
 
 .content input:checked + label {
