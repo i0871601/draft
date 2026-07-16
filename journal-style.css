@@ -144,10 +144,12 @@ body {
 #reset:checked ~ #Journal #Subject,
 #reset:checked ~ #Journal #Class {
   max-width: 0vw;
+  pointer-events: none;
 }
 #subject:checked ~ #Subject,
 #class:checked ~ #Class {
   max-width: 30vw;
+  pointer-events: auto;
 }
 
 #subject:checked ~ #bookmarks #subject-marks,
@@ -160,43 +162,7 @@ body {
   pointer-events: auto;
   cursor: pointer;
 }
-/*#reset:checked ~ #Journal #Subject,
-#reset:checked ~ #Journal #Class {
-  z-index: 3;
-}
-#reset:checked ~ #Journal #Subject .shadow .content,
-#reset:checked ~ #Journal #Class .shadow .content{
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.5s linear 0s;
-}
 
-#on-Subject:checked ~ #Journal #Subject,
-#on-Class:checked ~ #Journal #Class {
-  display: none;
-}
-#on-Subject:checked ~ #Journal #Class .marks {
-  margin-top: 2rem;
-}
-#subject:checked ~ #Subject,
-#class:checked ~ #Class{
-  z-index: 5;
-}
-
-#subject:checked ~ #Subject .shadow,
-#class:checked ~ #Class .shadow{
-  width: 35%;
-  transition: width 0.5s linear 0s;
-}
-#subject:checked ~ #Subject .shadow .content,
-#class:checked ~ #Class .shadow .content {
-  opacity: 1;
-  transition: opacity 0.5s linear 0.5s;
-}
-#subject:checked ~ #Subject .marks:not(:first-child),
-#class:checked ~ #Class .marks:not(:first-child) {
-  pointer-events: auto;
-}*/
 .content input:checked + label {
   border-color: var(--color-passed);
   color: var(--color-passed);
