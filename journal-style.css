@@ -94,8 +94,10 @@ body {
   align-items: center;
   max-height: calc(100% - 5.4rem);
   min-height: auto;
-  margin: 3.2rem 0 2.2rem 0;
+  margin: 2rem 0 2rem 0;
   overflow-y: auto;
+  opacity: 0;
+  transition: opacity 0.5s linear 0.5s;
 }
 
 .content::-webkit-scrollbar{
@@ -150,17 +152,25 @@ body {
 #class:checked ~ #Class {
   max-width: 30vw;
   pointer-events: auto;
+  transition: max-width 0.5s linear 0.5s;
 }
 
 #subject:checked ~ #bookmarks #subject-marks,
 #class:checked ~ #bookmarks #class-marks {
   transform: translateX(-30vw);
+  transition: transform 0.5s linear 0.5s;
 }
 
 #subject:checked ~ #bookmarks #subject-marks label,
 #class:checked ~ #bookmarks #class-marks label{
   pointer-events: auto;
   cursor: pointer;
+}
+
+#subject:checked ~ #Subject .content,
+#class:checked ~ #Class .content {
+  opacity: 1;
+  transition: opacity 0.5s linear 0s;
 }
 
 .content input:checked + label {
