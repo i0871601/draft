@@ -53,49 +53,6 @@ body {
   transition: width 0.5s linear 0.3s;
 }
 
-.bookmarks .marks {
-  width: 2.5rem;
-  min-height: 2rem;
-  height: auto;
-  max-height: 5.8rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  pointer-events: auto;
-  margin-left: 0.15rem;
-  padding: 0.5rem 0;
-  border: 0.07rem solid transparent;
-  box-shadow: 0 0 0.15rem var(--color-shadow);
-  border-radius: 0.7rem 0 0 0.7rem;
-  writing-mode: sideways-lr;
-}
-
-#Subject .marks {
-  margin-top: 2rem;
-}
-
-#Class .marks {
-  margin-top: 10rem;
-}
-.bookmarks .marks:first-child {
-  background-color: var(--fon-color-2);
-  color: var(--text-color);
-  transition: color 0.5s ease-in-out;
-}
-
-.bookmarks .marks:not(:first-child) {
-  position: absolute;
-  color: transparent;
-  pointer-events: none;
-  cursor: pointer;
-}
-
-.shadow {
-  width: 0%;
-  height: 100%;
-  background-color: var(--fon-color-2);
-}
 
 .content {
   display: flex;
@@ -141,16 +98,14 @@ body {
 
 
 /*При наведення*/
-.bookmarks .marks:hover {
-  color:var(--text-current);
-}
+
 .content label:hover {
   color: var(--color-accent);
   border-color: var(--color-accent);
 }
 
 /*Взаємодія з інпут*/
-#reset:checked ~ #Journal #Subject,
+/*#reset:checked ~ #Journal #Subject,
 #reset:checked ~ #Journal #Class {
   z-index: 3;
 }
@@ -186,7 +141,7 @@ body {
 #subject:checked ~ #Subject .marks:not(:first-child),
 #class:checked ~ #Class .marks:not(:first-child) {
   pointer-events: auto;
-}
+}*/
 .content input:checked + label {
   border-color: var(--color-passed);
   color: var(--color-passed);
