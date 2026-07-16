@@ -20,20 +20,24 @@
             <input type="radio" name="trigger" id="subject" class="input">
             <input type="radio" name="trigger" id="class" class="input">
 
-            <div id="Subject" class="bookmarks">
-                <label for="subject" id="text-subject" class="marks">Предмет</label>
-                <label for="reset" id="shadow-text-subject" class="marks">Предмет</label>
-                <div class="shadow">
-                    <div class="content">
-                    </div>
+            <div id="bookmarks">
+                <label for="subject" class="marks">
+                    <p id="text-subject">Предмет</p>
+                    <label for="reset" class="marks"></label>
+                </label>
+
+                <label for="class" class="marks">
+                    <p id="text-class">Клас</p>
+                    <label for="reset" class="marks"></label>
+                </label>
+            </div>
+
+            <div id="Subject" class="view">
+                <div class="content">
                 </div>
             </div>
-            <div id="Class" class="bookmarks">
-                <label for="class" id="text-class" class="marks">Клас</label>
-                <label for="reset" id="shadow-text-class" class="marks">Клас</label>
-                <div class="shadow">
-                    <div class="content">
-                    </div>
+            <div id="Class" class="view">
+                <div class="content">
                 </div>
             </div>
             <div id="table">
@@ -41,7 +45,7 @@
                 <table id="content-journal"></table>!-->
             </div>
         </main>
-        <script src="./script-list.js" type="module"></script>
+        <!--<script src="./script-list.js" type="module"></script>!-->
         <!--<script src="./script-journal.js" type="module"></script>!-->
     </body>
 </html>
