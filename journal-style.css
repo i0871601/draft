@@ -149,6 +149,11 @@ body {
 #class:checked ~ #Class {
   max-width: 30vw;
 }
+
+#subject:checked ~ #bookmarks #subject-marks,
+#class:checked ~ #bookmarks #class-marks {
+  transform: translateX(-30vw);
+}
 /*#reset:checked ~ #Journal #Subject,
 #reset:checked ~ #Journal #Class {
   z-index: 3;
