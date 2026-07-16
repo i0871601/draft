@@ -1,4 +1,4 @@
-import { request } from './js/config.js';
+import { request } from './config.js';
 
 const divJournal = document.getElementById('content-journal');
 const checkedContentJournal = document.getElementById('off-on-journal');
