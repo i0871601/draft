@@ -61,7 +61,7 @@ body {
   pointer-events: auto;
   cursor: pointer;
   position: relative;
-  transition: color 0.5s ease-in-out;
+  transition: color 0.5s ease-in-out, transform 0.5s ease-in-out;
 }
 
 #bookmarks .shadow-marks {
@@ -153,6 +153,12 @@ body {
 #subject:checked ~ #bookmarks #subject-marks,
 #class:checked ~ #bookmarks #class-marks {
   transform: translateX(-30vw);
+}
+
+#subject:checked ~ #bookmarks #subject-marks label,
+#class:checked ~ #bookmarks #class-marks label{
+  pointer-events: auto;
+  cursor: pointer;
 }
 /*#reset:checked ~ #Journal #Subject,
 #reset:checked ~ #Journal #Class {
