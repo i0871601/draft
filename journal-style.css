@@ -44,7 +44,8 @@ body {
   overflow: hidden;
   top: 0;
   right: 0;
-  width: 2.77rem;
+  min-width: 2.5rem;
+  width: auto;
   height: 100%;
   display: flex;
   align-items: flex-start;
@@ -91,7 +92,7 @@ body {
 }
 
 .shadow {
-  width: 100%;
+  width: 0%;
   height: 100%;
   background-color: var(--fon-color-2);
 }
@@ -167,11 +168,14 @@ body {
 #on-Subject:checked ~ #Journal #Class .marks {
   margin-top: 2rem;
 }
-
 #subject:checked ~ #Subject,
-#class:checked ~ #Class {
-  width: 35%;
+#class:checked ~ #Class{
   z-index: 5;
+}
+
+#subject:checked ~ #Subject .shadow,
+#class:checked ~ #Class .shadow{
+  width: 35%;
   transition: width 0.5s linear 0s;
 }
 #subject:checked ~ #Subject .shadow .content,
