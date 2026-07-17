@@ -78,6 +78,12 @@ body {
   cursor: pointer;
   transition: color 0.5s ease-in-out;
 }
+#subject-marks {
+  min-height: 3.8rem;
+}
+#class-marks {
+  min-height: 2.09rem;
+}
 
 .marks p {
   writing-mode: sideways-lr;
@@ -85,13 +91,8 @@ body {
 }
 
 .view {
-  position: absolute;
   width: 30vw;
-  height: 100%;
-  top: 0;
-  right: 0;
   background-color: var(--fon-color-2);
-  max-width: 0vw;
   transition: max-width 0.5s ease-in-out 0.5s;
 }
 
@@ -103,7 +104,6 @@ body {
   min-height: auto;
   margin: 2rem 0 2rem 0;
   overflow-y: auto;
-  opacity: 0;
   transition: opacity 0.5s linear 0s;
 }
 
