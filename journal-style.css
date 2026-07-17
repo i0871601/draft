@@ -47,6 +47,7 @@ body {
   background-color: var(--fon-color);
   border-radius: 0 0 0 1.2rem;
   padding: 0 0 0.5rem 0.5rem;
+  z-index: 5;
   transition: right 0.5s ease-in-out;
 }
 
@@ -106,6 +107,7 @@ body {
   width: calc(30vw - 0.5rem);
   padding: 0 0 0 0.5rem;
   background-color: var(--fon-color);
+  z-index: 5;
   transition: right 0.5s ease-in-out;
 }
 #content::after {
@@ -128,12 +130,13 @@ body {
   justify-content: center;
   visibility: visible;
   opacity: 1;
-  transition: opacity 0.5s ease-in-out;
 }
 
 .content {
   margin-top: 2rem;
   width: 70%;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
 }
 
 .content::-webkit-scrollbar{
@@ -205,6 +208,10 @@ body {
 #class:checked ~ #content #Subject {
   opacity: 0;
   visibility: hidden;
+}
+#subject:checked ~ #content #Subject .content,
+#class:checked ~ #content #Class .content {
+  opacity: 1;
 }
 
 #subject:checked ~ #table,
