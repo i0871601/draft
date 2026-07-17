@@ -45,28 +45,24 @@ body {
   flex-direction: column;
   gap: 1.3rem;
   background-color: var(--fon-color);
-  border-radius: 0.7rem;
-  outline: 0.5rem solid var(--fon-color);
+  border-radius: 0 0 0 0.2rem;
+  padding: 0 0 0.5rem 0.5rem;
 }
 
 #bookmarks::after, #bookmarks::before {
   position: absolute;
   content: '';
-  height: 1.5rem;
+  height: 0.7rem;
   aspect-ratio: 1 / 1;
+  background: radial-gradient(circle at bottom left, var(--fon-color-1) 70%, var(--fon-color) 70%);
 }
 #bookmarks::after {
   right: 0;
-  bottom: -1.5rem;
-  width: 1rem;
-  background: radial-gradient(circle at bottom left, var(--fon-color-1) 54%, var(--fon-color) 55%);
+  bottom: calc(-1 * 0.7rem);
 }
 #bookmarks::before {
-  left: -1.5rem;
   top: 0;
-  width: 1.5rem;
-  height: 1rem;
-  background: radial-gradient(circle at bottom left, var(--fon-color-1) 54%, var(--fon-color) 55%);
+  left: calc(-1 * 0.7rem);
 }
 
 #bookmarks .marks {
