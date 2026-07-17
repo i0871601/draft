@@ -155,6 +155,11 @@ body {
   background-color: var(--color-accent);
   color: var(--fon-color);
 }
+#subject:checked ~ #bookmarks #subject-marks .off,
+#class:checked ~ #bookmarks #class-marks .off {
+  pointer-events: auto;
+  cursor: pointer;
+}
 #reset:checked ~ #Journal #Subject,
 #reset:checked ~ #Journal #Class {
   
