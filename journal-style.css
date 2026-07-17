@@ -2,7 +2,7 @@
 :root {
   --fon-color: #151419;
   --fon-color-1: #262626;
-  --fon-color-2: #020202;
+  --fon-color-2: #1b1b1e;
   --color-accent: #f56e0f;
   --color-passed: #559153;
   --text-color: #B1B1B1;
@@ -59,8 +59,9 @@ body {
   pointer-events: auto;
   cursor: pointer;
   position: relative;
-  transform: translateX(0);
-  transition: color 0.5s ease-in-out, transform 0.5s ease-in-out 0.5s;
+  translate: 0 0;
+  scale: 1;
+  transition: color 0.5s ease-in-out, translate 0.5s ease-in-out 0.5s, scale 0.5s ease-in-out;
 }
 
 #bookmarks .shadow-marks {
@@ -138,7 +139,7 @@ body {
 /*При наведення*/
 #bookmarks .marks:hover {
   color: var(--color-accent);
-  transform: scale(1.1);
+  scale: 1.1;
 }
 .content label:hover {
   color: var(--color-accent);
@@ -153,8 +154,8 @@ body {
   transition: max-width 0.5s ease-in-out 0.5s;
 }
 #reset:checked ~ #bookmarks .marks {
-  transform: translateX(0);
-  transition: transform 0.5s ease-in-out 0.5s;
+  translate: 0 0;
+  transition: translate 0.5s ease-in-out 0.5s;
 }
 
 #subject:checked ~ #Subject,
@@ -166,8 +167,8 @@ body {
 
 #subject:checked ~ #bookmarks #subject-marks,
 #class:checked ~ #bookmarks #class-marks {
-  transform: translateX(-30vw);
-  transition: transform 0.5s ease-in-out 0s;
+  translate: -30vw 0;
+  transition: translate 0.5s ease-in-out 0s;
 }
 
 #subject:checked ~ #bookmarks #subject-marks label,
