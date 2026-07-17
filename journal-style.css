@@ -49,6 +49,17 @@ body {
   outline: 0.5rem solid var(--fon-color);
 }
 
+#bookmarks::after, #bookmarks::before {
+  position: absolute;
+  content: '';
+}
+#bookmarks::after {
+
+}
+#bookmarks::before {
+  
+}
+
 #bookmarks .marks {
   position: relative;
   display: flex;
