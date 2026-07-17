@@ -155,7 +155,8 @@ body {
 }
 #reset:checked ~ #bookmarks .marks {
   translate: 0 0;
-  transition: translate 0.5s ease-in-out 0.5s;
+  scale: 1;
+  transition: translate 0.5s ease-in-out 0.5s, slace 0.5s ease-in-out;
 }
 
 #subject:checked ~ #Subject,
@@ -168,7 +169,7 @@ body {
 #subject:checked ~ #bookmarks #subject-marks,
 #class:checked ~ #bookmarks #class-marks {
   translate: -30vw 0;
-  transition: translate 0.5s ease-in-out 0s;
+  transition: translate 0.5s ease-in-out 0s, slace 0.5s ease-in-out;
 }
 
 #subject:checked ~ #bookmarks #subject-marks label,
