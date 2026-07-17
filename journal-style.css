@@ -103,7 +103,8 @@ body {
   top: 0;
   right: -30vw;
   height: 100%;
-  width: 30vw;
+  width: calc(30vw - 0.5rem);
+  padding: 0 0 0 0.5rem;
   background-color: var(--fon-color);
   transition: right 0.5s ease-in-out;
 }
@@ -187,6 +188,13 @@ body {
 #subject:checked ~ #content,
 #class:checked ~ #content {
   right: 0;
+}
+
+#subject:checked ~ #table,
+#class:checked ~ #table {
+  opacity: 0.7;
+  pointer-events: none;
+  filter: blur(0.05rem);
 }
 
 #reset:checked ~ #Journal #Subject,
