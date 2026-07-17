@@ -126,7 +126,8 @@ body {
   display: flex;
   justify-content: center;
   visibility: visible;
-  transition: visible 0.5s ease-in-out;
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out 0s, max-height 0.5s ease-in-out 0s;
 }
 
 .content {
@@ -210,6 +211,8 @@ body {
 #class:checked ~ #content #Subject {
   max-height: 0;
   visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out 0.5s, max-height 0.5s ease-in-out 0.5s;
 }
 
 #reset:checked ~ #Journal #Subject,
