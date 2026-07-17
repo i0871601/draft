@@ -54,7 +54,7 @@ body {
   content: '';
   height: 0.7rem;
   aspect-ratio: 1 / 1;
-  background: radial-gradient(circle at bottom left, var(--fon-color-1) 70%, var(--fon-color) 70%);
+  background: radial-gradient(circle at bottom left, transparent 70%, var(--fon-color) 70%);
 }
 #bookmarks::after {
   right: 0;
@@ -95,6 +95,19 @@ body {
   height: 100%;
   border-radius: 0.7rem;
   pointer-events: none;
+}
+
+#content {
+  position: absolute;
+  top: 0;
+  right: -30vw;
+  background-color: var(--fon-color-1);
+}
+#content::after {
+  position: absolute;
+  content: '';
+  width: 0.7rem;
+  aspect-ratio: 1/1;
 }
 
 .view {
