@@ -3,12 +3,12 @@ import { request } from './config.js';
 const divJournal = document.getElementById('content-journal');
 const checkedContentJournal = document.getElementById('off-on-journal');
 
-const checkedInfoDiv = document.getElementById('info-div');
-const checkedAddLesson = document.getElementById('off-on-add-lesson');
+//const checkedInfoDiv = document.getElementById('info-div');
+//const checkedAddLesson = document.getElementById('off-on-add-lesson');
 
-const dataText = document.querySelector('#infoData .text-info');
-const topicText = document.querySelector('#infoTopic .text-info');
-const homeworkText = document.querySelector('#infoHomework .text-info');
+//const dataText = document.querySelector('#infoData .text-info');
+//const topicText = document.querySelector('#infoTopic .text-info');
+//const homeworkText = document.querySelector('#infoHomework .text-info');
 
 function renderTable(mapLessons, mapStudents, mapRecords, role) {
     if (checkedContentJournal.checked) {
@@ -70,7 +70,7 @@ function renderTable(mapLessons, mapStudents, mapRecords, role) {
     });
 
     checkedContentJournal.checked = true;
-    if (role === 'teacher') checkedAddLesson.checked = true;
+    //if (role === 'teacher') checkedAddLesson.checked = true;
 };
 
 export function renderLog(role, subject, classes, teacherLastName, map) {
@@ -97,24 +97,24 @@ export function renderLog(role, subject, classes, teacherLastName, map) {
             const index = Number(target.dataset.lessonIndex);
             const lessonInfo = map.lessons[index];
 
-            if (checkedInfoDiv.checked) checkedInfoDiv.checked = false;
-            checkedInfoDiv.disable = true;
+            //if (checkedInfoDiv.checked) checkedInfoDiv.checked = false;
+            // checkedInfoDiv.disable = true;
 
             setTimeout(() => {
-                dataText.textContent = '';
-                topicText.textContent = '';
-                homeworkText.textContent = '';
+                //dataText.textContent = '';
+                //topicText.textContent = '';
+                //homeworkText.textContent = '';
                 
                 console.log(lessonInfo.Date);
                 console.log(lessonInfo.Topic);
                 console.log(lessonInfo.homeWork);
 
-                dataText.textContent = lessonInfo.Date;
-                topicText.textContent = lessonInfo.Topic;
-                homeworkText.textContent = lessonInfo.homeWork;
+                //dataText.textContent = lessonInfo.Date;
+                //topicText.textContent = lessonInfo.Topic;
+                //homeworkText.textContent = lessonInfo.homeWork;
 
-                checkedInfoDiv.checked = true;
-                checkedInfoDiv.disable = false;
+                //checkedInfoDiv.checked = true;
+                //checkedInfoDiv.disable = false;
             }, 500);
         }
     });
