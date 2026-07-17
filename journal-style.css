@@ -45,7 +45,7 @@ body {
   flex-direction: column;
   gap: 1.3rem;
   background-color: var(--fon-color);
-  border-radius: 0 0 0 0.2rem;
+  border-radius: 0 0 0 1.2rem;
   padding: 0 0 0.5rem 0.5rem;
 }
 
