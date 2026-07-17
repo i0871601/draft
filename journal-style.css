@@ -2,10 +2,8 @@
 :root {
   --fon-color: #151419;
   --fon-color-1: #262626;
-  --fon-color-2: #1b1b1e;
-  --color-shadow: #1b1b1b;
+  --fon-color-2: #020202;
   --color-accent: #f56e0f;
-  --text-current: #f56e0f;
   --color-passed: #559153;
   --text-color: #B1B1B1;
 }
@@ -55,7 +53,7 @@ body {
   align-items: center;
   justify-content: center;
   background-color: var(--fon-color-2);
-  color: var(--text-color);
+  color: var(--color-accent);
   border-radius: 0.7rem 0 0 0.7rem;
   box-shadow: 0 0 0.15rem var(--color-shadow);
   pointer-events: auto;
@@ -140,6 +138,7 @@ body {
 /*При наведення*/
 #bookmarks .marks:hover {
   color: var(--color-accent);
+  transform: scale(1.1);
 }
 .content label:hover {
   color: var(--color-accent);
