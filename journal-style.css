@@ -59,14 +59,14 @@ body {
   right: 0;
   bottom: -1.5rem;
   width: 1rem;
-  background: radial-gradient(circle at bottom left, var(--fon-color-1) 55%, var(--fon-color) 55%);
+  background: radial-gradient(circle at bottom left, var(--fon-color-1) 54%, var(--fon-color) 55%);
 }
 #bookmarks::before {
   left: -1.5rem;
   top: 0;
   width: 1.5rem;
   height: 1rem;
-  background: radial-gradient(circle at bottom left, var(--fon-color-1) 55%, var(--fon-color) 55%);
+  background: radial-gradient(circle at bottom left, var(--fon-color-1) 54%, var(--fon-color) 55%);
 }
 
 #bookmarks .marks {
