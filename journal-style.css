@@ -125,6 +125,8 @@ body {
   border-radius: 0.7rem 0 0 0.7rem;
   display: flex;
   justify-content: center;
+  visibility: visible;
+  transition: visible 0.5s ease-in-out;
 }
 
 .content {
@@ -207,6 +209,7 @@ body {
 #subject:checked ~ #content #Class,
 #class:checked ~ #content #Subject {
   max-height: 0;
+  visibility: hidden;
 }
 
 #reset:checked ~ #Journal #Subject,
