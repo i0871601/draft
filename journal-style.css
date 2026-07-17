@@ -44,23 +44,23 @@ body {
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  background-color: var(--fon-color);
+  border-radius: 0.7rem;
+  outline: 0.5rem solid var(--fon-color);
 }
 
 #bookmarks .marks {
+  position: relative;
   display: flex;
-  padding: 0.5rem 0.3rem;
   align-items: center;
   justify-content: center;
-  background-color: var(--fon-color-2);
+  background-color: var(--fon-color-1);
   color: var(--color-accent);
-  border-radius: 0.7rem 0 0 0.7rem;
-  box-shadow: 0 0 0.15rem var(--color-shadow);
+  padding: 1.25rem 0.5rem;
+  border-radius: 0.7rem;
   pointer-events: auto;
   cursor: pointer;
-  position: relative;
-  translate: 0 0;
-  scale: 1;
-  transition: color 0.5s ease-in-out, translate 0.5s ease-in-out 0.5s, scale 0.5s ease-in-out;
+  transition: color 0.5s ease-in-out;
 }
 
 .marks p {
@@ -130,7 +130,6 @@ body {
 /*При наведення*/
 #bookmarks .marks:hover {
   color: var(--color-accent);
-  scale: 1.1;
 }
 .content label:hover {
   color: var(--color-accent);
@@ -143,7 +142,7 @@ body {
   max-width: 0vw;
   pointer-events: none;
   transition: max-width 0.5s ease-in-out 0.5s;
-
+}
 
 .content input:checked + label {
   border-color: var(--color-passed);
