@@ -43,7 +43,7 @@ body {
   right: 0;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1.3rem;
   background-color: var(--fon-color);
   border-radius: 0.7rem;
   outline: 0.5rem solid var(--fon-color);
@@ -52,12 +52,21 @@ body {
 #bookmarks::after, #bookmarks::before {
   position: absolute;
   content: '';
+  height: 1.5rem;
+  aspect-ratio: 1 / 1;
 }
 #bookmarks::after {
-
+  right: 0;
+  bottom: -1.5rem;
+  width: 1rem;
+  background: radial-gradient(circle at bottom left, var(--fon-color-1) 55%, var(--fon-color) 55%);
 }
 #bookmarks::before {
-  
+  left: -1.5rem;
+  top: 0;
+  width: 1.5rem;
+  height: 1rem;
+  background: radial-gradient(circle at bottom left, var(--fon-color-1) 55%, var(--fon-color) 55%);
 }
 
 #bookmarks .marks {
