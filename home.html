@@ -23,29 +23,36 @@
             <div id="bookmarks">
                 <label for="subject" id="subject-marks" class="marks">
                     <p id="text-subject">Предмет</p>
-                    <label for="reset" class="shadow-marks"></label>
                 </label>
 
                 <label for="class" id="class-marks" class="marks">
                     <p id="text-class">Клас</p>
-                    <label for="reset" class="shadow-marks"></label>
                 </label>
             </div>
 
-            <div id="Subject" class="view">
-                <div class="content">
+            <div id="content">
+                <label for="reset" id="off"></label>
+
+                <div id="Subject" class="view">
+                    <div class="content"></div>
+                </div>
+                
+                <div id="Class" class="view">
+                    <div class="content"></div>
                 </div>
             </div>
-            <div id="Class" class="view">
-                <div class="content">
-                </div>
-            </div>
+
             <div id="table">
                 <input type="checkbox" id="off-on-journal" class="input">
                 <table id="content-journal"></table>
             </div>
+
         </main>
+
+
         <script src="./script-list.js" type="module"></script>
         <script src="./script-journal.js" type="module"></script>
+
+
     </body>
 </html>

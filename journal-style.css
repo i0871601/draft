@@ -41,7 +41,6 @@ body {
   position: absolute;
   top: 0;
   right: 0;
-  margin-top: 2rem;
   display: flex;
   flex-direction: column;
   gap: 2rem;
@@ -62,14 +61,6 @@ body {
   translate: 0 0;
   scale: 1;
   transition: color 0.5s ease-in-out, translate 0.5s ease-in-out 0.5s, scale 0.5s ease-in-out;
-}
-
-#bookmarks .shadow-marks {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  border-radius: 0.7rem 0 0 0.7rem;
-  pointer-events: none;
 }
 
 .marks p {
@@ -152,37 +143,7 @@ body {
   max-width: 0vw;
   pointer-events: none;
   transition: max-width 0.5s ease-in-out 0.5s;
-}
-#reset:checked ~ #bookmarks .marks {
-  translate: 0 0;
-  scale: 1;
-  transition: translate 0.5s ease-in-out 0.5s, slace 0.5s ease-in-out;
-}
 
-#subject:checked ~ #Subject,
-#class:checked ~ #Class {
-  max-width: 30vw;
-  pointer-events: auto;
-  transition: max-width 0.5s ease-in-out 0s;
-}
-
-#subject:checked ~ #bookmarks #subject-marks,
-#class:checked ~ #bookmarks #class-marks {
-  translate: -30vw 0;
-  transition: translate 0.5s ease-in-out 0s, slace 0.5s ease-in-out;
-}
-
-#subject:checked ~ #bookmarks #subject-marks label,
-#class:checked ~ #bookmarks #class-marks label{
-  pointer-events: auto;
-  cursor: pointer;
-}
-
-#subject:checked ~ #Subject .content,
-#class:checked ~ #Class .content {
-  opacity: 1;
-  transition: opacity 0.5s linear 0.5s;
-}
 
 .content input:checked + label {
   border-color: var(--color-passed);
