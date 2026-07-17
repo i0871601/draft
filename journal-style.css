@@ -71,12 +71,12 @@ body {
   align-items: center;
   justify-content: center;
   background-color: var(--fon-color-1);
-  color: var(--color-accent);
+  color: var(--text-color);
   padding: 1.25rem 0.5rem;
   border-radius: 0.7rem;
   pointer-events: auto;
   cursor: pointer;
-  transition: color 0.5s ease-in-out;
+  transition: color 0.5s ease-in-out, background-color 0.5s ease-in-out;
 }
 #subject-marks {
   min-height: 3.8rem;
@@ -91,20 +91,10 @@ body {
 }
 
 .view {
-  width: 30vw;
-  background-color: var(--fon-color-2);
-  transition: max-width 0.5s ease-in-out 0.5s;
 }
 
 .content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  max-height: calc(100% - 5.4rem);
-  min-height: auto;
-  margin: 2rem 0 2rem 0;
-  overflow-y: auto;
-  transition: opacity 0.5s linear 0s;
+  
 }
 
 .content::-webkit-scrollbar{
@@ -153,11 +143,14 @@ body {
 }
 
 /*Взаємодія з інпут*/
+#subject:checked ~ #bookmarks #subject-marks,
+#class:checked ~ #bookmarks #class-marks {
+  background-color: var(--color-accent);
+  color: var(--fon-color);
+}
 #reset:checked ~ #Journal #Subject,
 #reset:checked ~ #Journal #Class {
-  max-width: 0vw;
-  pointer-events: none;
-  transition: max-width 0.5s ease-in-out 0.5s;
+  
 }
 
 .content input:checked + label {
