@@ -47,6 +47,7 @@ body {
   background-color: var(--fon-color);
   border-radius: 0 0 0 1.2rem;
   padding: 0 0 0.5rem 0.5rem;
+  transition: right 0.5s ease-in-out;
 }
 
 #bookmarks::after, #bookmarks::before {
@@ -101,13 +102,19 @@ body {
   position: absolute;
   top: 0;
   right: -30vw;
-  background-color: var(--fon-color-1);
+  height: 100%;
+  width: 30vw;
+  background-color: var(--fon-color);
+  transition: right 0.5s ease-in-out;
 }
 #content::after {
   position: absolute;
   content: '';
+  bottom: 0;
+  left: -0.7rem;
   width: 0.7rem;
-  aspect-ratio: 1/1;
+  aspect-ratio: 1 / 1;
+  background: radial-gradient(circle at top left, transparent 70%, var(--fon-color) 70%);
 }
 
 .view {
@@ -173,6 +180,15 @@ body {
   pointer-events: auto;
   cursor: pointer;
 }
+#subject:checked ~ #bookmarks,
+#class:checked ~ #bookmarks {
+  right: 30vw;
+}
+#subject:checked ~ #content,
+#class:checked ~ #content {
+  right: 0;
+}
+
 #reset:checked ~ #Journal #Subject,
 #reset:checked ~ #Journal #Class {
   
