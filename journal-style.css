@@ -89,6 +89,13 @@ body {
   writing-mode: sideways-lr;
   margin: 0;
 }
+.marks .off {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 0.7rem;
+  pointer-events: none;
+}
 
 .view {
 }
