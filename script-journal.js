@@ -79,7 +79,7 @@ export function renderLog(role, subject, classes, teacherLastName, map) {
     if(map.students.length === 0 || (role === 'student' && map.lessons.length === 0)) { 
         console.log("Не має учнів/уроків"); 
         divJournal.innerHTML = '';
-        checkedAddLesson.checked = false;
+        //checkedAddLesson.checked = false;
         checkedContentJournal.checked = false;
 
         return
