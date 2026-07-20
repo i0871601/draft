@@ -67,7 +67,7 @@ body {
   left: calc(-1 * 0.7rem);
 }
 
-#bookmarks label {
+#bookmarks #class-marks {
   position: relative;
   display: flex;
   align-items: center;
