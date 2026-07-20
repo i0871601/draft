@@ -165,7 +165,6 @@ body {
   height: 100%;
   border-radius: 0.7rem;
   color: var(--shadow-color);
-  border: 0.1rem solid var(--text-color);
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -175,7 +174,7 @@ body {
   margin: 0;
 }
 #button-subject span {
-  height: 50%;
+  height: 35%;
   aspect-ratio: 1 / 1;
   display: flex;
   align-items: center;
@@ -188,12 +187,10 @@ body {
   width: 100%;
   height: 0.1rem;
   background-color: var(--shadow-color);
-}
-.select-arrow::after {
-
+  transition: all 0.5s ease-in-out;
 }
 .select-arrow::before {
-
+  transform: rotate(90deg);
 }
 
 .content-select {
@@ -234,10 +231,9 @@ body {
 }
 #button-subject:hover {
   color: var(--color-accent);
-  border-color: var(--color-accent);
 }
-#button-subject:hover ~ .select-arrow::after, 
-#button-subject:hover ~ .select-arrow::before {
+#button-subject:hover + .select-arrow::after, 
+#button-subject:hover + .select-arrow::before {
   background-color: var(--color-accent);
 }
 
@@ -250,6 +246,9 @@ body {
   transition: opacity 0.7s ease-in-out;
 }
 
+#select-subject:checked ~ #button-subject .select-arrow::before {
+  transform: rotate(0deg);
+}
 
 #subject:checked ~ #table,
 #class:checked ~ #table {
