@@ -14,30 +14,24 @@
         <input type="checkbox" id="on-Subject" class="input" checked>
         <input type="checkbox" id="on-Class" class="input" checked>
 
-        <input type="radio" name="trigger" id="reset" class="input" checked>
-
         <main id="Journal">
-            <input type="radio" name="trigger" id="subject" class="input">
-            <input type="radio" name="trigger" id="class" class="input">
+            <input type="checkbox" id="select" class="input">
 
             <div id="bookmarks">
-
-                <label for="class" id="class-marks" class="marks">
-                    <p id="text-class">Клас</p>
-                    <label for="reset" class="off"></label>
+                <label for="select" id="marks">
+                    <p id="text">Вибір</p>
                 </label>
             </div>
 
             <div id="content">
                 <div id="select-div">
-                    <label for="subject" id="select-subject">
+                    <input type="checkbox" id="select-subject" class="input">
+                    <label for="select-subject" id="button-subject">
                         <p id="text-subject">Предмет</p>
                         <span class="select-arrow"></span>
                     </label>
-                    <label for="reset" class="off"></label>
                     <ul class="content-select"></ul>
                 </div>
-                
                 <div id="Class" class="view">
                     
                 </div>
