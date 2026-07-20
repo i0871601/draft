@@ -13,20 +13,20 @@ window.addEventListener('pageshow', (event) => {
     }
 });
 
-// Чекбокси видимості закладок (на заміну старим off-on)
-const onSubject = document.getElementById('on-Subject');
-const onClass = document.getElementById('on-Class');
+// видимості закладок
+const onSelect = document.getElementById('select-div');
 
 // Блоки вмісту закладок
-const divSubjectContent = document.querySelector('#Subject .content');
-const divClassContent = document.querySelector('#Class .content');
+const selectContent = document.querySelector('#select-div .content-select');
+const divContent = document.getElementById('#view-choice');
 
 //Текст підставка
-const textSubject = document.getElementById('text-subject');
-const textClass = document.getElementById('text-class');
+const textMarks = document.getElementById('text');
+const textSelect = document.getElementById('text-subject');
 
 // Тригер для згортання закладок
-const inputReset = document.getElementById('reset');
+const resetSelect = document.getElementById('select');
+const resetSelectSubject = document.getElementById('select-subject');
 
 let electSubject = null;
 let electClass = null;
@@ -39,59 +39,33 @@ const generateId = (prefix, name) => {
 
 // 1. Рендеринг списку предметів
 export const selectSubject = (map) => {
-    divSubjectContent.innerHTML = ''; // Очищуємо контейнер
+    selectContent = ''; // Очищуємо контейнер
     console.log("Ось масив предметів:", map);
     
-    map.forEach((el, index) => {
-        const uniqueId = generateId('el-subject', el.Subject);
-
-        const inputEl = document.createElement('input');
-        inputEl.type = 'radio';
-        inputEl.name = 'el-subject';
-        inputEl.id = uniqueId;
-        inputEl.className = 'input';
-        inputEl.value = el.Subject;
-
-        const labelEl = document.createElement('label');
-        labelEl.htmlFor = uniqueId;
-        labelEl.textContent = el.Subject;
-
-        divSubjectContent.appendChild(inputEl);
-        divSubjectContent.appendChild(labelEl);
+     map.forEach(el => {
+        const liElement = document.createElement('li');
+        liElement.textContent = el.Subject;
+        selectContent.appendChild(liElement);
     });
 };
 
-// 2. Рендеринг класів для обраного предмету
-export const handSubjectClick = (subjectValue, test) => {
-    divClassContent.innerHTML = ''; // Повне очищення
+// 2. Рендеринг вибору журналу
+export const viewChoice = (role, subjectValue, test) => {
+    divContent.innerHTML = ''; // Повне очищення
 
+    if(role === 'student') {
+        console.log("Ось масив предметів:", test);
+    }
+    
+    //const uniqueId = generateId('el-subject', el.Subject);
     const currentRecord = test.find(el => el.Subject === subjectValue);
     if (currentRecord && currentRecord.Class) {
         const classesArray = currentRecord.Class.split(',').map(c => c.trim());
         
         classesArray.forEach((className) => {
-            const uniqueId = generateId('el-class', className);
-
-            const inputEl = document.createElement('input');
-            inputEl.type = 'radio';
-            inputEl.name = 'el-class';
-            inputEl.id = uniqueId;
-            inputEl.className = 'input';
-            inputEl.value = className;
-
-            const labelEl = document.createElement('label');
-            labelEl.htmlFor = uniqueId;
-            labelEl.textContent = className;
-
-            divClassContent.appendChild(inputEl);
-            divClassContent.appendChild(labelEl);
+            
         });
     }
-};
-
-// Встановлення заглушки "Виберіть спочатку предмет"
-const setDefaultClassPlaceholder = () => {
-    divClassContent.innerHTML = '<span class="placeholder-text">Виберіть спочатку предмет</span>';
 };
 
 export const handClass = (electSubject, userData, map) => {
@@ -122,70 +96,54 @@ document.addEventListener('DOMContentLoaded', () => {
     let test = [];
     let buttonVisibility = null;
 
-    // Встановлюємо дефолтне значення для закладок класів при старті
-    setDefaultClassPlaceholder();
-
     if (userData && userData.data.classes) {
         test = userData.data.classes;
         const record = test.length;
 
         if (userData.role === 'teacher' && record > 1) {
-            buttonVisibility = [onSubject, onClass];
+            onSelect.style.display = 'flex';
             selectSubject(test);
         }
         else if (userData.role === 'teacher' && record === 1) {
-            buttonVisibility = [onClass];
             electSubject = userData.classOrsubject;
-            handSubjectClick(electSubject, test);
+            viewChoice(userData.role, electSubject, test);
         }
         else if (userData.role === 'student' && record > 1) {
-            buttonVisibility = [onSubject];
-            selectSubject(test);
+            viewChoice(userData.role, null, test);
         }
     }
-
-    // Якщо закладки мають бути видимі, знімаємо "checked" з керуючих чекбоксів
-    if (buttonVisibility) {
-        buttonVisibility.forEach(el => {
-            el.checked = false; 
-        });
-    }
-
     // Обробка вибору в закладці "Предмети"
-    if (!onSubject.checked) {
-        divSubjectContent.addEventListener('change', (event) => {
-            const target = event.target;
-            if (target.name === 'el-subject') {
-                electSubject = target.value;
-                textSubject.textContent = electSubject;
-                textClass.textContent = 'Клас';
+    if (select.checked) {
+        selectContent.addEventListener('click', (event) => {
+            const clickedLi = event.target.closest('li');
+            if (clickedLi) {
+                electSubject = clickedLi.textContent;
+                textSelect.textContent = electSubject;
+                textMarks.textContent = 'Вибір';
                 
                 // Згортаємо відкриту закладку
-                inputReset.checked = true;
-
-                if (userData.role === 'teacher') {
-                    handSubjectClick(electSubject, test);
-                }
-                if (userData.role === 'student') {
-                    handClass(electSubject, userData, test);
-                    formationRequests(userData.role, electSubject, teacherLastName, electClass);                    
-                }
+                resetSelectSubject.checked = false;
+                if (userData.role === 'teacher') viewChoice(userData.role, electSubject, test);
             }
         });
     }
 
     // Обробка вибору в закладці "Класи"
-    if (!onClass.checked) {
-        divClassContent.addEventListener('change', (event) => {
-            const target = event.target;
-            if (target.name === 'el-class') {
-                electClass = target.value;
-                textClass.textContent = electClass;
+    if (select.checked) {
+        divContent.addEventListener('click', (event) => {
+            const clickedLi = event.target.closest('li');
+            if (clickedLi) {
+                electClass = clickedLi.textContent;
+                textMarks.textContent = electClass;
                 
                 // Згортаємо відкриту закладку
-                inputReset.checked = true;
-                
-                formationRequests(userData.role, electSubject, userData.lastName, electClass);
+                resetSelect.checked = false;
+                if (userData.role === 'student') {
+                    handClass(electSubject, userData, test);
+                    formationRequests(userData.role, electSubject, teacherLastName, electClass);                    
+                }
+
+                if (userData.role === 'teacher') formationRequests(userData.role, electSubject, userData.lastName, electClass);
             }
         });
     }
