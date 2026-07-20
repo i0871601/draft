@@ -58,6 +58,7 @@ export const viewChoice = (role, subjectValue, test) => {
     }
     
     //const uniqueId = generateId('el-subject', el.Subject);
+    console.log("Ось масив предметів:", test);
     const currentRecord = test.find(el => el.Subject === subjectValue);
     if (currentRecord && currentRecord.Class) {
         const classesArray = currentRecord.Class.split(',').map(c => c.trim());
@@ -113,7 +114,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
     // Обробка вибору в закладці "Предмети"
-    if (select.checked) {
+    if (resetSelect.checked) {
         selectContent.addEventListener('click', (event) => {
             const clickedLi = event.target.closest('li');
             if (clickedLi) {
@@ -129,7 +130,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Обробка вибору в закладці "Класи"
-    if (select.checked) {
+    if (resetSelect.checked) {
         divContent.addEventListener('click', (event) => {
             const clickedLi = event.target.closest('li');
             if (clickedLi) {
