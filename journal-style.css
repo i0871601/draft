@@ -232,8 +232,8 @@ body {
 #button-subject:hover {
   color: var(--color-accent);
 }
-#button-subject:hover + .select-arrow::after, 
-#button-subject:hover + .select-arrow::before {
+#button-subject:hover .select-arrow::after, 
+#button-subject:hover .select-arrow::before {
   background-color: var(--color-accent);
 }
 
