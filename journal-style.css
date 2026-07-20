@@ -118,21 +118,21 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
 }
 #off::after, #off::before {
   content: '';
   position: absolute;
   width: 55%;
   height: 0.13rem;
-  background-color: var(--text-color);
-  opacity: 0.3;
+  background-color: rgba(177, 177, 177, 0.6);
   border-radius: 0.3rem;
 }
 #off::after {
-  
+  transform: rotate(-45deg);
 }
 #off::before {
-
+  transform: rotate(45deg);
 }
 
 #choice {
@@ -236,6 +236,7 @@ body {
 #select:checked ~ #content {
   visibility: visible;
   opacity: 1;
+  pointer-events: auto;
 }
 
 
