@@ -67,7 +67,7 @@ body {
   left: calc(-1 * 0.7rem);
 }
 
-#bookmarks #class-marks {
+#bookmarks #marks {
   position: relative;
   display: flex;
   align-items: center;
@@ -80,20 +80,13 @@ body {
   cursor: pointer;
   transition: color 0.5s ease-in-out, background-color 0.5s ease-in-out;
 }
-#class-marks {
+#marks {
   min-height: 2.09rem;
 }
 
-#class-marks p {
+#marks p {
   writing-mode: sideways-lr;
   margin: 0;
-}
-#class-marks .off {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  border-radius: 0.7rem;
-  pointer-events: none;
 }
 
 #content {
@@ -166,7 +159,7 @@ body {
 
 
 /*При наведення*/
-#bookmarks #class-marks:hover {
+#bookmarks #marks:hover {
   color: var(--color-accent);
 }
 .content label:hover {
@@ -175,14 +168,11 @@ body {
 }
 
 /*Взаємодія з інпут*/
-#class:checked ~ #bookmarks #class-marks {
+#select:checked ~ #bookmarks #marks {
   background-color: var(--color-accent);
   color: var(--fon-color);
 }
-#class:checked ~ #bookmarks #class-marks .off {
-  pointer-events: auto;
-  cursor: pointer;
-}
+
 
 #subject:checked ~ #table,
 #class:checked ~ #table {
