@@ -105,6 +105,8 @@ body {
   padding: 0 0 0 0.5rem;
   background-color: var(--fon-color);
   z-index: 5;
+  visibility: hidden;
+  opacity: 0;
 }
 
 .view {
@@ -163,7 +165,7 @@ body {
 
 
 /*При наведення*/
-#bookmarks .marks:hover {
+#bookmarks #class-marks:hover {
   color: var(--color-accent);
 }
 .content label:hover {
