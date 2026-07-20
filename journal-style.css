@@ -139,33 +139,33 @@ body {
   content: '';
 }
 .content-select {
-      position: absolute;
+  position: absolute;
 }
-.view {
+#view-choice {
   height: 70%;
-    width: 100%;
-    margin: 1rem 0 0 0;
+  width: 100%;
+  margin: 1rem 0 0 0;
 }
 
 
-.view::-webkit-scrollbar{
+#view-choice::-webkit-scrollbar{
   width: 0.5rem;
   height: 0.5rem;
   background-color: transparent;
 }
 
-.view::-webkit-scrollbar-thumb{
+#view-choice::-webkit-scrollbar-thumb{
   background-color: var(--color-accent);
   border-radius: 25px;
 }
-.view::-webkit-scrollbar-track {
+#view-choice::-webkit-scrollbar-track {
   background: transparent;
 }
-.view::-webkit-scrollbar-corner {
+#view-choice::-webkit-scrollbar-corner {
   background: transparent;
 }
 
-.view label {
+#view-choice label {
   width: 100%;
   display: flex;
   justify-content: center;
@@ -179,7 +179,7 @@ body {
   margin-bottom: 0.9rem;
   transition: color 0.5s ease-in-out;
 }
-.view .placeholder-text {
+#view-choice .placeholder-text {
   color: var(--text-color);
 }
 
@@ -188,7 +188,7 @@ body {
 #bookmarks #marks:hover {
   color: var(--color-accent);
 }
-.view label:hover {
+#view-choice label:hover {
   color: var(--color-accent);
   border-color: var(--color-accent);
 }
