@@ -21,10 +21,6 @@
             <input type="radio" name="trigger" id="class" class="input">
 
             <div id="bookmarks">
-                <label for="subject" id="subject-marks" class="marks">
-                    <p id="text-subject">Предмет</p>
-                    <label for="reset" class="off"></label>
-                </label>
 
                 <label for="class" id="class-marks" class="marks">
                     <p id="text-class">Клас</p>
@@ -33,13 +29,17 @@
             </div>
 
             <div id="content">
-
-                <div id="Subject" class="view">
-                    <div class="content"></div>
+                <div id="select-div">
+                    <label for="subject" id="select-subject">
+                        <p id="text-subject">Предмет</p>
+                        <span class="select-arrow"></span>
+                    </label>
+                    <label for="reset" class="off"></label>
+                    <ul class="content-select"></ul>
                 </div>
                 
                 <div id="Class" class="view">
-                    <div class="content"></div>
+                    
                 </div>
             </div>
 
