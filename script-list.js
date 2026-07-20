@@ -115,9 +115,12 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     // Обробка вибору в закладці "Предмети"
     if (resetSelect.checked) {
+        console.log('3');
         selectContent.addEventListener('click', (event) => {
             const clickedLi = event.target.closest('li');
+            console.log('2');
             if (clickedLi) {
+                console.log('1');
                 electSubject = clickedLi.textContent;
                 textSelect.textContent = electSubject;
                 textMarks.textContent = 'Вибір';
