@@ -105,6 +105,14 @@ body {
   align-items: center;
   visibility: hidden;
   opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+.view {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 #select-div {
@@ -197,6 +205,10 @@ body {
 #select:checked ~ #bookmarks #marks {
   background-color: var(--color-accent);
   color: var(--fon-color);
+}
+#select:checked ~ #content {
+  visibility: visible;
+  opacity: 1;
 }
 
 
