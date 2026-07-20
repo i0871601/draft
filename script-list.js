@@ -39,7 +39,7 @@ const generateId = (prefix, name) => {
 
 // 1. Рендеринг списку предметів
 export const selectSubject = (map) => {
-    selectContent = ''; // Очищуємо контейнер
+    selectContent.innerHTML = ''; // Очищуємо контейнер
     console.log("Ось масив предметів:", map);
     
      map.forEach(el => {
