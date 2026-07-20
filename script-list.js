@@ -18,7 +18,7 @@ const onSelect = document.getElementById('select-div');
 
 // Блоки вмісту закладок
 const selectContent = document.querySelector('#select-div .content-select');
-const divContent = document.getElementById('#view-choice');
+const divContent = document.getElementById('view-choice');
 
 //Текст підставка
 const textMarks = document.getElementById('text');
@@ -114,41 +114,34 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
     // Обробка вибору в закладці "Предмети"
-    if (resetSelect.checked) {
-        console.log('3');
-        selectContent.addEventListener('click', (event) => {
-            const clickedLi = event.target.closest('li');
-            console.log('2');
-            if (clickedLi) {
-                console.log('1');
-                electSubject = clickedLi.textContent;
-                textSelect.textContent = electSubject;
-                textMarks.textContent = 'Вибір';
+    selectContent.addEventListener('click', (event) => {
+        const clickedLi = event.target.closest('li');
+        if (clickedLi) {
+            electSubject = clickedLi.textContent;
+            textSelect.textContent = electSubject;
+            textMarks.textContent = 'Вибір';
                 
-                // Згортаємо відкриту закладку
-                resetSelectSubject.checked = false;
-                if (userData.role === 'teacher') viewChoice(userData.role, electSubject, test);
-            }
-        });
-    }
+            // Згортаємо відкриту закладку
+            resetSelectSubject.checked = false;
+            if (userData.role === 'teacher') viewChoice(userData.role, electSubject, test);
+        }
+    });
 
     // Обробка вибору в закладці "Класи"
-    if (resetSelect.checked) {
-        divContent.addEventListener('click', (event) => {
-            const clickedLi = event.target.closest('li');
-            if (clickedLi) {
-                electClass = clickedLi.textContent;
-                textMarks.textContent = electClass;
+    divContent.addEventListener('click', (event) => {
+        const clickedLi = event.target.closest('li');
+        if (clickedLi) {
+            electClass = clickedLi.textContent;
+            textMarks.textContent = electClass;
                 
-                // Згортаємо відкриту закладку
-                resetSelect.checked = false;
-                if (userData.role === 'student') {
-                    handClass(electSubject, userData, test);
-                    formationRequests(userData.role, electSubject, teacherLastName, electClass);                    
-                }
-
-                if (userData.role === 'teacher') formationRequests(userData.role, electSubject, userData.lastName, electClass);
+            // Згортаємо відкриту закладку
+            resetSelect.checked = false;
+            if (userData.role === 'student') {
+                handClass(electSubject, userData, test);
+                formationRequests(userData.role, electSubject, teacherLastName, electClass);                    
             }
-        });
-    }
+
+            if (userData.role === 'teacher') formationRequests(userData.role, electSubject, userData.lastName, electClass);
+        }
+    });
 });
