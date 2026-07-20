@@ -228,10 +228,12 @@ body {
 #bookmarks #marks:hover {
   color: var(--color-accent);
 }
-#off:hover ~ #off::after,
-#off:hover ~ #off::before {
+
+#off:hover::after,
+#off:hover::before {
   background-color: var(--color-accent);
 }
+
 #view-choice label:hover {
   color: var(--color-accent);
   border-color: var(--color-accent);
