@@ -59,12 +59,14 @@ export const viewChoice = (role, subjectValue, test) => {
     
     //const uniqueId = generateId('el-subject', el.Subject);
     console.log("Ось масив предметів:", test);
+
     const currentRecord = test.find(el => el.Subject === subjectValue);
     if (currentRecord && currentRecord.Class) {
         const classesArray = currentRecord.Class.split(',').map(c => c.trim());
-        
-        classesArray.forEach((className) => {
-            
+        classesArray.forEach(className => {
+            const liElement = document.createElement('li');
+            liElement.textContent = className;
+            divContent.appendChild(liElement);
         });
     }
 };
