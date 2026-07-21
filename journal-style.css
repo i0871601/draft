@@ -259,7 +259,7 @@ body {
 #button-subject:hover .select-arrow::before {
   background-color: var(--color-accent);
 }
-.content-select li {
+.content-select li:hover {
   color: var(--fon-color);
   background-color: var(--color-accent);
 }
