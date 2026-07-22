@@ -109,6 +109,13 @@ body {
   opacity: 0;
   transition: opacity 0.5s ease-in-out 0.5s, visibility 0.5s ease-in-out 0.5s;
 }
+#wrapper {
+  width: 300%;
+  height: 100%;
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  align-items: center;
+}
 
 #off {
   position: absolute;
@@ -279,6 +286,10 @@ body {
   opacity: 1;
   pointer-events: auto;
   transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+}
+#select:checked ~ #content #wrapper {
+  transform: translateX(0%);
+  transition: transform 0.5s ease-in-out 0.7s;
 }
 #select:checked ~ #content .view {
   opacity: 1;
