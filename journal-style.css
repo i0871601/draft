@@ -225,7 +225,8 @@ body {
   padding: 1rem 15% 1rem 15%;
   gap: 1rem;
   display: grid;
-  grid-template-columns: repeat(2, minmax(6.3rem, 7rem));
+  grid-template-columns: repeat(2, minmax(6.3rem, 8rem));
+  justify-content: space-between;
   list-style: none;
   overflow-y: auto;
   overflow-y: overlay;
@@ -254,7 +255,7 @@ body {
   background-color: var(--fon-color);
   height: auto;
   min-height: 5rem;
-  max-height: 5.7rem;
+  max-height: 6.7rem;
   border-radius: 0.7rem;
   box-sizing: border-box;
   cursor: pointer;
