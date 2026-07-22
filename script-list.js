@@ -33,8 +33,8 @@ let electClass = null;
 let teacherLastName = null;
 
 // Функція генерації унікального ID без пробілів та спецсимволів
-const generateId = (prefix, name) => {
-    return `${prefix}-${name.replace(/[^a-zA-Z0-9а-яА-ЯіІїЇєЄґҐ]/g, '_')}`;
+const generateId = (name) => {
+    return `${name.replace(/[^a-zA-Z0-9а-яА-ЯіІїЇєЄґҐ]/g, '_')}`;
 };
 
 // 1. Рендеринг списку предметів
@@ -56,13 +56,14 @@ export const viewChoice = (role, subjectValue, test) => {
     if(role === 'student') {
         console.log("Ось масив предметів:", test);
         test.forEach(el => {
-            const liElement = document.createElement('li');
-            liElement.dataset.value = el.Subject;
-            liElement.innerHTML = `
-            <span>${className}</span>
-            <span class="icon"></span>
+            const inputId = generateId(el.Subject);
+            divContent.innerHTML += `
+                <input type="radio" name="group" id="${inputId}" class="input" data-value="${el.Subject}">
+                <label for="${inputId}">
+                    <span>${el.Subject}</span>
+                    <span class="icon"></span>
+                </label>
             `;
-            divContent.appendChild(liElement);
         });
     }
     
@@ -73,14 +74,14 @@ export const viewChoice = (role, subjectValue, test) => {
     if (currentRecord && currentRecord.Class) {
         const classesArray = currentRecord.Class.split(',').map(c => c.trim());
         classesArray.forEach(className => {
-            const liElement = document.createElement('li');
-            liElement.dataset.value = className;
-            liElement.innerHTML = `
-            <span>${className}</span>
-            <span class="icon"></span>
+            const inputId = generateId(className);
+            divContent.innerHTML += `
+                <input type="radio" name="group" id="${inputId}" class="input" data-value="${className}">
+                <label for="${inputId}">
+                    <span>${className}</span>
+                    <span class="icon"></span>
+                </label>
             `;
-            //liElement.textContent = className;
-            divContent.appendChild(liElement);
         });
     }
 };
