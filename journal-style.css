@@ -121,7 +121,7 @@ body {
   justify-content: center;
   cursor: pointer;
 }
-#off::after, #off::before {
+#off::after {
   content: '';
   position: absolute;
   width: 55%;
@@ -129,12 +129,6 @@ body {
   background-color: var(--shadow-color);
   border-radius: 0.3rem;
   transition: background-color 0.5s ease-in-out;
-}
-#off::after {
-  transform: rotate(-45deg);
-}
-#off::before {
-  transform: rotate(45deg);
 }
 
 #choice {
@@ -270,8 +264,7 @@ body {
 #button-subject:hover {
   color: var(--color-accent);
 }
-#button-subject:hover .select-arrow::after, 
-#button-subject:hover .select-arrow::before {
+#button-subject:hover .select-arrow::after {
   background-color: var(--color-accent);
 }
 .content-select li:hover {
