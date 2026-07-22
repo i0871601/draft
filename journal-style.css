@@ -248,7 +248,7 @@ body {
 #view-choice::-webkit-scrollbar-corner {
   background: transparent;
 }
-#view-choice li {
+#view-choice label {
   position: relative;
   color: var(--shadow-color);
   background-color: var(--fon-color);
@@ -260,12 +260,12 @@ body {
   cursor: pointer;
   transition: transform 0.5s ease-in-out;
 }
-#view-choice li span:first-child {
+#view-choice label span:first-child {
   position: absolute;
   bottom: 0.3rem;
   left: 0.5rem;
 }
-.icon {
+.file {
   position: absolute;
   width: 50%;
   height: 1rem;
@@ -277,18 +277,18 @@ body {
   outline-offset: -0.25rem;
   transition: background-color 0.5s ease-in-out;
 }
-.icon::after, .icon::before {
+.file::after, .file::before {
   content: '';
   position: absolute;
   height: 0.7rem;
   aspect-ratio: 1 / 1;
   background: radial-gradient(circle at bottom left, transparent 70%, var(--fon-color-2) 70%);
 }
-.icon::after {
+.file::after {
   bottom: -0.7rem;
   right: 0;
 }
-.icon::before {
+.file::before {
   top: 0;
   left: -0.7rem;
 }
@@ -312,10 +312,10 @@ body {
   color: var(--fon-color);
   background-color: var(--color-accent);
 }
-#view-choice li:hover {
+#view-choice label:hover {
   transform: scale(1.1);
 }
-#view-choice li:hover .icon {
+#view-choice label:hover .file {
   background-color: var(--shadow-color);
 }
 
@@ -342,6 +342,12 @@ body {
   visibility: visible;
   opacity: 1;
   transition: opacity 0.5s ease-in-out;
+}
+#view-choice .input:checked + label {
+  color: var(--color-accent);
+}
+#view-choice .input:checked + label .file {
+  background-color: var(--color-accent);
 }
 
 #subject:checked ~ #table,
