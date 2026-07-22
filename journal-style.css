@@ -282,7 +282,7 @@ body {
   position: absolute;
   height: 0.7rem;
   aspect-ratio: 1 / 1;
-  background: radial-gradient(circle at bottom left, transparent 70%, var(--fon-color-2) 70%);
+  background: radial-gradient(circle at bottom left, transparent 71%, var(--fon-color-2) 71%);
 }
 .file::after {
   bottom: -0.7rem;
@@ -298,6 +298,7 @@ body {
   height: 0.4rem;
   margin: 0 0 0.3rem 0.3rem;
   border-radius: 0 0.2rem;
+  transition: background-color 0.5s ease-in-out;
 }
 /*При наведення*/
 #bookmarks #marks:hover {
@@ -350,9 +351,9 @@ body {
   transition: opacity 0.5s ease-in-out;
 }
 #select-subject:checked ~ #view-choice {
-  opacity: 0.7;
+  opacity: 0.5;
   pointer-events: none;
-  filter: blur(0.05rem);
+  filter: blur(0.07rem);
 }
 
 
