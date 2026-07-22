@@ -260,7 +260,7 @@ body {
   cursor: pointer;
   transition: transform 0.5s ease-in-out;
 }
-#view-choice label span:first-child {
+#view-choice label .text {
   position: absolute;
   bottom: 0.3rem;
   left: 0.5rem;
