@@ -292,7 +292,11 @@ body {
   top: 0;
   left: -0.7rem;
 }
-
+.file span {
+  background-color: var(--fon-color);
+  width: calc(100% - 1rem);
+  height: 0.7rem;
+}
 /*При наведення*/
 #bookmarks #marks:hover {
   color: var(--color-accent);
@@ -315,7 +319,7 @@ body {
 #view-choice label:hover {
   transform: scale(1.1);
 }
-#view-choice label:hover .file {
+#view-choice label:hover .file span {
   background-color: var(--shadow-color);
 }
 
