@@ -293,11 +293,11 @@ body {
   left: -0.7rem;
 }
 .file span {
-  background-color: var(--fon-color);
-  width: calc(100% - 0.15rem);
+  background-color: var(--fon-color-1);
+  width: calc(100% - 0.3rem);
   height: 0.4rem;
-  margin: 0 0 0.15rem 0.15rem;
-  border-radius: 0 0.35rem;
+  margin: 0 0 0.3rem 0.3rem;
+  border-radius: 0 0.2rem;
 }
 /*При наведення*/
 #bookmarks #marks:hover {
@@ -341,14 +341,21 @@ body {
   opacity: 1;
   transition: opacity 0.5s ease-in-out;
 }
-#select-subject:checked ~ #button-subject .select-arrow::before {
+#select-subject:checked ~ #select-div #button-subject .select-arrow::before {
   transform: rotate(0deg);
 }
-#select-subject:checked ~ .content-select {
+#select-subject:checked ~ #select-div .content-select {
   visibility: visible;
   opacity: 1;
   transition: opacity 0.5s ease-in-out;
 }
+#select-subject:checked ~ #view-choice {
+  opacity: 0.7;
+  pointer-events: none;
+  filter: blur(0.05rem);
+}
+
+
 #view-choice .input:checked + label {
   color: var(--color-accent);
 }
