@@ -257,6 +257,7 @@ body {
   max-height: 5.7rem;
   border-radius: 0.7rem;
   box-sizing: border-box;
+  cursor: pointer;
 }
 #view-choice li span:first-child {
   position: absolute;
@@ -308,6 +309,9 @@ body {
 .content-select li:hover {
   color: var(--fon-color);
   background-color: var(--color-accent);
+}
+#view-choice li:hover {
+  transform: scale(1.1);
 }
 
 
