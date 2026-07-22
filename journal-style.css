@@ -219,7 +219,16 @@ body {
 }
 
 #view-choice {
-  
+  width: 70%;
+  height: 90%;
+  margin: 1rem 0 1rem 15%;
+  padding: 0 15% 0 0;
+  gap: 1rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  list-style: none;
+  overflow-y: auto;
+  overflow-y: overlay;
 }
 #view-choice::-webkit-scrollbar{
   width: 0.5rem;
@@ -237,7 +246,9 @@ body {
   background: transparent;
 }
 #view-choice li {
-  
+  color: var(--shadow-color);
+  aspect-ratio: 1 / 1;
+  position: relative;
 }
 .icon {
   
