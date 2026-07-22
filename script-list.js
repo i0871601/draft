@@ -55,6 +55,15 @@ export const viewChoice = (role, subjectValue, test) => {
 
     if(role === 'student') {
         console.log("Ось масив предметів:", test);
+        test.forEach(el => {
+            const liElement = document.createElement('li');
+            liElement.dataset.value = el.Subject;
+            liElement.innerHTML = `
+            <span>${className}</span>
+            <span class="icon"></span>
+            `;
+            divContent.appendChild(liElement);
+        });
     }
     
     //const uniqueId = generateId('el-subject', el.Subject);
@@ -65,7 +74,12 @@ export const viewChoice = (role, subjectValue, test) => {
         const classesArray = currentRecord.Class.split(',').map(c => c.trim());
         classesArray.forEach(className => {
             const liElement = document.createElement('li');
-            liElement.textContent = className;
+            liElement.dataset.value = className;
+            liElement.innerHTML = `
+            <span>${className}</span>
+            <span class="icon"></span>
+            `;
+            //liElement.textContent = className;
             divContent.appendChild(liElement);
         });
     }
@@ -133,7 +147,7 @@ document.addEventListener('DOMContentLoaded', () => {
     divContent.addEventListener('click', (event) => {
         const clickedLi = event.target.closest('li');
         if (clickedLi) {
-            electClass = clickedLi.textContent;
+            electClass = clickedLi.dataset.value;
             textMarks.textContent = electClass;
                 
             // Згортаємо відкриту закладку
