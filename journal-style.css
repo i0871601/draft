@@ -269,12 +269,12 @@ body {
   position: absolute;
   width: 50%;
   height: 1rem;
-  background-color: var(--fon-color);
+  background-color: var(--fon-color-2);
   top: 0;
   right: 0;
-  border-radius: 0 0.7rem;
-  outline: 0.25rem solid var(--fon-color-2);
-  outline-offset: -0.25rem;
+  border-radius: 0 0.5rem;
+  display: flex;
+  align-items: flex-end;
   transition: background-color 0.5s ease-in-out;
 }
 .file::after, .file::before {
@@ -294,8 +294,10 @@ body {
 }
 .file span {
   background-color: var(--fon-color);
-  width: calc(100% - 1rem);
-  height: 0.7rem;
+  width: calc(100% - 0.15rem);
+  height: 0.4rem;
+  margin: 0 0 0.15rem 0.15rem;
+  border-radius: 0 0.35rem;
 }
 /*При наведення*/
 #bookmarks #marks:hover {
@@ -350,7 +352,7 @@ body {
 #view-choice .input:checked + label {
   color: var(--color-accent);
 }
-#view-choice .input:checked + label .file {
+#view-choice .input:checked + label .file span {
   background-color: var(--color-accent);
 }
 
