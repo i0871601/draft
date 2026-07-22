@@ -251,7 +251,7 @@ body {
   justify-content: flex-end;
   gap: 1rem;
 }
-#view-choice li span {
+.icon {
   height: 100%;
   aspect-ratio: 1 / 1;
   border-radius: 0.7rem;
