@@ -209,6 +209,7 @@ body {
   overflow: hidden;
   visibility: hidden;
   opacity: 0;
+  z-index: 11;
   transition: opacity 0.5s ease-in-out;
 }
 .content-select li {
@@ -266,19 +267,27 @@ body {
   position: absolute;
   width: 50%;
   height: 1rem;
-  background-color: var(--fon-color-2);
+  background-color: var(--fon-color);
   top: 0;
   right: 0;
-  border-radius: 0 0 0 0.45rem;
+  border-radius: 0 0.7rem;
+  outline: 0.25rem solid var(--fon-color-2);
+  outline-offset: -0.25rem;
 }
 .icon::after, .icon::before {
   content: '';
+  position: absolute;
+  height: 0.7rem;
+  aspect-ratio: 1 / 1;
+  background: radial-gradient(circle at bottom left, transparent 70%, var(--fon-color-2) 70%);
 }
 .icon::after {
-
+  bottom: -0.7rem;
+  right: 0;
 }
 .icon::before {
-  
+  top: 0;
+  left: -0.7rem;
 }
 
 /*При наведення*/
