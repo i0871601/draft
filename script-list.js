@@ -61,7 +61,7 @@ export const viewChoice = (role, subjectValue, test) => {
                 <input type="radio" name="group" id="${inputId}" class="input" data-value="${el.Subject}">
                 <label for="${inputId}">
                     <span>${el.Subject}</span>
-                    <span class="icon"></span>
+                    <span class="file"></span>
                 </label>
             `;
         });
@@ -145,10 +145,10 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Обробка вибору в закладці "Класи"
-    divContent.addEventListener('click', (event) => {
-        const clickedLi = event.target.closest('li');
-        if (clickedLi) {
-            electClass = clickedLi.dataset.value;
+    divContent.addEventListener('change', (event) => {
+        const targetInput = event.target.closest('input[type="radio"]');
+        if (targetInput) {
+            electClass = targetInput.dataset.value;
             textMarks.textContent = electClass;
                 
             // Згортаємо відкриту закладку
