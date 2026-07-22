@@ -257,7 +257,7 @@ body {
   border-radius: 0.7rem;
   box-sizing: border-box;
 }
-.icon {
+#view-choice li span:first-child {
   position: absolute;
   bottom: 0.3rem;
   left: 0.5rem;
