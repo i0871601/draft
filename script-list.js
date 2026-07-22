@@ -79,7 +79,7 @@ export const viewChoice = (role, subjectValue, test) => {
                 <input type="radio" name="group" id="${inputId}" class="input" data-value="${className}">
                 <label for="${inputId}">
                     <span>${className}</span>
-                    <span class="icon"></span>
+                    <span class="file"></span>
                 </label>
             `;
         });
