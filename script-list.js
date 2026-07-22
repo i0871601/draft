@@ -61,7 +61,9 @@ export const viewChoice = (role, subjectValue, test) => {
                 <input type="radio" name="group" id="${inputId}" class="input" data-value="${el.Subject}">
                 <label for="${inputId}">
                     <span>${el.Subject}</span>
-                    <span class="file"></span>
+                    <div class="file">
+                        <span></span
+                    </div>
                 </label>
             `;
         });
@@ -79,7 +81,9 @@ export const viewChoice = (role, subjectValue, test) => {
                 <input type="radio" name="group" id="${inputId}" class="input" data-value="${className}">
                 <label for="${inputId}">
                     <span>${className}</span>
-                    <span class="file"></span>
+                    <div class="file">
+                        <span></span
+                    </div>
                 </label>
             `;
         });
