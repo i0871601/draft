@@ -222,7 +222,7 @@ body {
 #view-choice {
   width: 100%;
   margin: 1rem 0;
-  padding: 0 15%;
+  padding: 1rem 15% 1rem 15%;
   gap: 1rem;
   display: grid;
   grid-template-columns: repeat(2, minmax(6.3rem, 7rem));
@@ -258,6 +258,7 @@ body {
   border-radius: 0.7rem;
   box-sizing: border-box;
   cursor: pointer;
+  transition: transform 0.5s ease-in-out;
 }
 #view-choice li span:first-child {
   position: absolute;
@@ -274,6 +275,7 @@ body {
   border-radius: 0 0.7rem;
   outline: 0.25rem solid var(--fon-color-2);
   outline-offset: -0.25rem;
+  transition: background-color 0.5s ease-in-out;
 }
 .icon::after, .icon::before {
   content: '';
@@ -312,6 +314,9 @@ body {
 }
 #view-choice li:hover {
   transform: scale(1.1);
+}
+#view-choice li:hover .icon {
+  background-color: var(--shadow-color);
 }
 
 
