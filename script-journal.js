@@ -10,29 +10,23 @@ function renderTable(mapLessons, mapStudents, mapRecords, role) {
     }
 
     const totalLessons = mapLessons.length;
-    // Динамічно задаємо CSS grid-template-columns залежно від кількості уроків
     divJournal.style.setProperty('--colums', mapLessons.length);
 
-    // --- 1. ВЕРХНІЙ РЯДОК (ШАПКА) ---
-    // Лівий верхній куток (Перетин "Прізвище" та дат)
-    const studentHeader = document.createElement('p');
-    studentHeader.className = 'journal-cell header-cell sticky-top sticky-left corner-cell';
-    studentHeader.textContent = "Прізвище";
-    divJournal.appendChild(studentHeader);
+    //Верхній ряд
+    divJournal.insertAdjacentHTML('beforeend', `
+        <p class="journal-cell header-cell sticky-top sticky-left corner-cell">Прізвище</p>
+    `);
 
-    // Колонки дат
+    //Колонки дат
     mapLessons.forEach((lesson, index) => {
-        const th = document.createElement('p');
-        th.className = 'journal-cell header-cell sticky-top';
-        
         const shortDate = lesson.Date ? lesson.Date.slice(0, 5) : '??.??';
-        th.textContent = shortDate;
-        th.dataset.lessonIndex = index;
-        
-        divJournal.appendChild(th);
+
+        divJournal.insertAdjacentHTML('beforeend', `
+            <p class="journal-cell header-cell sticky-top" data-lesson-index="${index}">${shortDate}</p>
+        `);
     });
 
-    // --- 2. РЯДКИ З УЧНЯМИ ТА ОЦІНКАМИ ---
+    //Рядки учня з оцінками
     mapStudents.forEach((student, rowIndex) => {
         // Комірка з ім'ям (зафіксована зліва)
         const nameCell = document.createElement('p');
