@@ -1,0 +1,62 @@
+<!--Авторське право (c) травень 2026 рік Сікан Іван Валерійович!-->
+<!DOCTYPE html>
+<html lang="uk">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Home</title>
+        <link rel="stylesheet" href="./journal-style.css">
+        <!--<link rel="stylesheet" href="./info-style.css">
+        <link rel="stylesheet" href="./add-style.css">!-->
+    </head>
+
+    <body>
+        <input type="checkbox" id="on-Subject" class="input" checked>
+        <input type="checkbox" id="on-Class" class="input" checked>
+        
+
+        <main id="Journal">
+            <input type="radio" name="trigger" id="trigger" class="input">
+
+            <div id="main-bar">
+                <div id="left">
+                    <div id="subject" class="button-select">
+                        <input type="radio" name="trigger" id="select-subject" class="input">
+
+                        <label for="select-subject" class="marks">
+                            <p class="text">Предмет</p>
+                            <span class="select-arrow"></span>
+                        </label>
+                        <label for="trigger" class="marks-off"></label>
+                        <ul class="content-select"></ul>
+                    </div>
+                    <div id="class" class="button-select">
+                        <input type="radio" name="trigger" id="select-class" class="input">
+
+                        <label for="select-class" class="marks">
+                            <p class="text">Клас</p>
+                            <span class="select-arrow"></span>
+                        </label>
+                        <label for="trigger" class="marks-off"></label>
+                        <ul class="content-select"></ul>
+                    </div>
+                </div>
+                <div id="right">
+                    <div id="add-form">
+                    </div>
+                </div>
+            </div>
+
+            <div id="table">
+                <input type="checkbox" id="off-on-journal" class="input">
+                <div id="content-journal"></div>
+            </div>
+        </main>
+
+
+        <script src="./script-list.js" type="module"></script>
+        <script src="./script-journal.js" type="module"></script>
+
+
+    </body>
+</html>
