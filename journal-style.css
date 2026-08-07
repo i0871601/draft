@@ -222,7 +222,7 @@ body {
 
 .name-cell {
   justify-content: flex-start;
-  padding-left: 1rem;
+  padding-left: 1.5rem;
 }
 
 .header-cell {
@@ -246,7 +246,7 @@ body {
 
 .corner-cell {
   z-index: 3;
-  padding: 0 1rem;
+  padding: 0 1.5rem;
 }
 
 
