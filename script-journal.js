@@ -58,9 +58,9 @@ function renderTable(mapLessons, mapStudents, mapRecords, role) {
             }
         });
     });
-
     checkedContentJournal.checked = true;
 }
+
 
 export function renderLog(role, subject, classes, teacherLastName, map) {
     const mapRecords = {};
