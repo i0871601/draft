@@ -28,36 +28,34 @@ function renderTable(mapLessons, mapStudents, mapRecords, role) {
 
     //Рядки учня з оцінками
     mapStudents.forEach((student, rowIndex) => {
-        // Комірка з ім'ям (зафіксована зліва)
-        const nameCell = document.createElement('p');
-        nameCell.className = 'journal-cell name-cell sticky-left';
-        nameCell.textContent = `${student.lastName}`;
-        nameCell.dataset.rowIndex = rowIndex;
-        nameCell.dataset.colIndex = 0;
-        divJournal.appendChild(nameCell);
+        // Комірка з ім'ям
+        divJournal.insertAdjacentHTML('beforeend', `
+            <p class="journal-cell name-cell sticky-left" data-row-index="${rowIndex}" data-col-index="0">${student.lastName}</p>
+        `);
 
         // Комірки з оцінками
         mapLessons.forEach((lesson, colIndex) => {
-            const scoreCell = document.createElement('p');
-            scoreCell.className = 'journal-cell score-cell';
-
             const studentGrades = mapRecords[student.lastName];
-            const score = studentGrades ? studentGrades[lesson.lessonNumber] : '';
-            scoreCell.textContent = score !== undefined ? score : '';
+            let score = studentGrades ? studentGrades[lesson.lessonNumber] : '';
 
-            // Індекси для зручної навігації стрілочками в Grid
-            scoreCell.dataset.rowIndex = rowIndex;
-            scoreCell.dataset.colIndex = colIndex + 1; // +1 бо 0 - це ім'я
-
-            if (role === 'teacher') {
-                scoreCell.contentEditable = true;
-                scoreCell.dataset.student = student.lastName;
-                scoreCell.dataset.lesson = lesson.lessonNumber;
+            if (score !== undefined) {
+                score = score;
             } else {
-                scoreCell.contentEditable = false;
+                score = '';
             }
 
-            divJournal.appendChild(scoreCell);
+            if (role === 'teacher') {
+                divJournal.insertAdjacentHTML('beforeend', `
+                    <p class="journal-cell score-cell" data-row-index="${rowIndex}" data-col-index="${colIndex+1}"
+                    contenteditable="true" data-student="${student.lastName}" data-lesson="${lesson.lessonNumber}">${score}</p>
+                `);
+            } else {
+                divJournal.insertAdjacentHTML('beforeend', `
+                    <p class="journal-cell score-cell" data-row-index="${rowIndex}" data-col-index="${colIndex+1}"
+                    contenteditable="false">${score}</p>
+                `);
+
+            }
         });
     });
 
