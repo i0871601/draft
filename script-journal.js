@@ -11,7 +11,7 @@ function renderTable(mapLessons, mapStudents, mapRecords, role) {
 
     const totalLessons = mapLessons.length;
     // Динамічно задаємо CSS grid-template-columns залежно від кількості уроків
-    divJournal.style.setProperty('--columns', mapLessons.length);
+    divJournal.style.setProperty('--colums', mapLessons.length);
 
     // --- 1. ВЕРХНІЙ РЯДОК (ШАПКА) ---
     // Лівий верхній куток (Перетин "Прізвище" та дат)
@@ -76,7 +76,7 @@ export function renderLog(role, subject, classes, teacherLastName, map) {
     if (map.students.length === 0 || (role === 'student' && map.lessons.length === 0)) {
         console.log("Не має учнів/уроків");
         divJournal.innerHTML = '';
-        divJournal.style.setProperty('--columns', 'none');
+        divJournal.style.setProperty('--colums', 'none');
         checkedContentJournal.checked = false;
         return;
     }
