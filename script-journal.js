@@ -9,7 +9,7 @@ function renderTable(mapLessons, mapStudents, mapRecords, role) {
         checkedContentJournal.checked = false;
     }
 
-    divJournal.style.setProperty('--colums', mapLessons.length + 1);
+    divJournal.style.setProperty('--colums', mapLessons.length);
 
     //Верхній ряд
     divJournal.insertAdjacentHTML('beforeend', `
@@ -24,11 +24,6 @@ function renderTable(mapLessons, mapStudents, mapRecords, role) {
             <p class="journal-cell header-cell sticky-top" data-lesson-index="${index}">${shortDate}</p>
         `);
     });
-
-    divJournal.insertAdjacentHTML('beforeend', `
-        <p class="journal-cell header-cell sticky-top add-form" data-lesson-index="${mapLessons.length + 1}"></p>
-    `);
-
 
     //Рядки учня з оцінками
     mapStudents.forEach((student, rowIndex) => {
