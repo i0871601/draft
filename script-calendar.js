@@ -20,24 +20,10 @@ const fullWeekDays = [
   'Четвер', 'П\'ятниця', 'Субота'
 ];
 
-// Відстежуємо стан чекбокса
-if (checkboxEl) {
-  checkboxEl.addEventListener('change', () => {
-    if (!checkboxEl.checked) {
-      checkboxEl.disabled = true;
-    }
-  });
-}
-
 function updateEventDayInfo(day, dayOfWeekIndex) {
   if (dateEl) dateEl.textContent = day;
   if (dayWeekEl) dayWeekEl.textContent = fullWeekDays[dayOfWeekIndex];
-
-  // Заповнили інформацію: розблоковуємо та вмикаємо чекбокс
-  if (checkboxEl) {
-    checkboxEl.disabled = false;
-    checkboxEl.checked = true;
-  }
+  if (!checkboxEl.checked) checkboxEl.checked = true;
 }
 
 function initCalendar() {
