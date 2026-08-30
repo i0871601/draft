@@ -199,7 +199,7 @@ body {
     height: 100%;
     border-left: 0.1rem solid var(--shadow);
     padding: 0 0 0 1rem;
-    background-color: var(--fon-color-);
+    background-color: var(--fon-color);
 
     h1 {
       margin: 0;
@@ -276,7 +276,6 @@ body {
       align-items: center;
       justify-content: center;
       visibility: hidden;
-      overflow: auto;
       opacity: 0;
       pointer-events: none;
       transition: opacity 0.5s ease-in-out;
@@ -286,7 +285,7 @@ body {
         position: absolute;
         height: 0.3rem;
         width: 40%;
-        background-color: var(--color-accent);
+        background-color: var(--shadow);
         border-radius: 0.3rem;
       }
 
@@ -309,8 +308,8 @@ body {
   #content-time {
     display: flex;
     justify-content: center;
-    align-items: none;
-    flex-direction: none;
+    align-items: normal;
+    flex-direction: normal;
     gap: 0;
 
     #calendar {
@@ -345,7 +344,6 @@ body {
   #checkbox-event-day:checked ~ #content-time #event-day {
     opacity: 1;
     visibility: visible;
-    overflow: visible;
   }
 }
 
