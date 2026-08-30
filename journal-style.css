@@ -3,6 +3,7 @@
   --fon-color: #fbfbfb;
   --fon-color-1: #1b1b1b;
   --color-accent: #f56e0f;
+  --shadow: #878787;
 }
 
 body {
@@ -29,18 +30,19 @@ body {
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: center;
   animation: fadeUp 0.7s ease-in-out forwards;
 }
 
 #main-bar {
   width: 5rem;
-  height: 100%;
+  height: calc(100% - 0.6rem);
   background-color: var(--fon-color-1);
   border-radius: 1.5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
+  box-shadow: 0 0 0.3rem var(--shadow);
 }
 
 .marks {
@@ -50,6 +52,8 @@ body {
   margin-top: 1.5rem;
   box-sizing: border-box;
 }
+
+
 
 .content {
 
@@ -64,7 +68,7 @@ body {
 }
 
 #table {
-  
+
 }
 
 
