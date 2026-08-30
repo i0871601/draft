@@ -106,9 +106,9 @@ body {
 
 .content {
   position: absolute;
-  width: calc(100% - 7rem);
+  width: calc(100% - 3rem);
   height: calc(100% - 0.6rem);
-  margin: 0.3rem 0 0.3rem 7rem;
+  margin: 0.3rem 0 0.3rem 3rem;
   background-color: var(--shadow);
 }
 
@@ -122,14 +122,20 @@ body {
     width: 30rem;
     aspect-ratio: 1 / 1;
 
+    #month {
+      margin: 0;
+    }
+
     #week {
       display: grid;
       grid-template-columns: repeat(7, 1fr);
+      text-align: center;
     }
 
     #content-calendar {
       display: grid;
       grid-template-columns: repeat(7, 1fr);
+      text-align: center;
     }
   }
 }
