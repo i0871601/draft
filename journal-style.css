@@ -115,6 +115,14 @@ body {
   background-color: var(--color-accent);
 }
 
+/*Клік*/
+#time:checked ~ #main-bar #time-button {
+  outline-color: var(--color-accent);
+}
+#time:checked ~ #main-bar #time-button span::after {
+  background-color: var(--color-accent);
+}
+
 @keyframes fadeUp {
   0% { opacity: 0; }
   100% { opacity: 1; }
