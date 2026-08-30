@@ -163,6 +163,7 @@ body {
         display: flex;
         align-items: center;
         justify-content: center;
+        cursor: pointer;
 
         p {
           margin: 0;
@@ -264,25 +265,34 @@ body {
 
     #off-event-day-button {
       position: absolute;
-      bottom: 1.5rem;
+      right: 0;
+      top: 0;
+      height: 100%;
       aspect-ratio: 1 / 1;
-      width: 100%;
-      visibility: visible;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      visibility: hidden;
       overflow: auto;
       opacity: 0;
       pointer-events: none;
+      transition: opacity 0.5s ease-in-out;
 
       &::after, &::before {
         content: '';
         position: absolute;
+        height: 0.3rem;
+        width: 40%;
+        background-color: var(--color-accent);
+        border-radius: 0.3rem;
       }
 
       &::before {
-
+        transform: rotate(45deg);
       }
 
       &::after {
-
+        transform: rotate(-45deg);
       }
     }
   }
@@ -314,11 +324,14 @@ body {
       overflow: hidden;
       visibility: hidden;
       pointer-events: none;
+      transition: opacity 0.5s ease-in-out ;
+
     }
   }
 
   #checkbox-event-day:checked ~ #main-bar #off-event-day-button {
     opacity: 1;
+    visibility: hidden;
     pointer-events: auto;
     cursor: pointer;
   }
