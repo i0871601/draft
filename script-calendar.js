@@ -2,6 +2,9 @@ const monthEl = document.getElementById('month');
 const weekEl = document.getElementById('week');
 const contentCalendarEl = document.getElementById('content-calendar');
 
+const dateEl = document.getElementById('date');
+const dayWeekEl = document.getElementById('day-week');
+
 const currentDate = new Date();
 
 const monthNames = [
@@ -10,6 +13,11 @@ const monthNames = [
 ];
 
 const weekDays = ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Нд'];
+
+const fullWeekDays = [
+  'Неділя', 'Понеділок', 'Вівторок', 'Середа', 
+  'Четвер', 'П\'ятниця', 'Субота'
+];
 
 function initCalendar() {
   const year = currentDate.getFullYear();
@@ -58,6 +66,11 @@ function initCalendar() {
 
     if (day === today.getDate()) {
       dayDiv.classList.add('today');
+
+      if (dateEl) dateEl.textContent = day;
+      if (dayWeekEl) {
+        dayWeekEl.textContent = fullWeekDays[today.getDay()];
+      }
     }
 
     contentCalendarEl.appendChild(dayDiv);
