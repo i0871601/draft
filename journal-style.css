@@ -179,6 +179,11 @@ body {
         transform: translateY(-50%) rotate(45deg);
       }
 
+      #month {
+        font-size: 1rem;
+        color: var(--fon-color);
+      }
+
     }
   }
 }
