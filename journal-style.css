@@ -6,7 +6,8 @@
   --shadow: #878787;
   --text-color-1: #878787;
   --text-color-2: #151419;
-  --text-color-3: #1b1b1b;
+  --text-color-3: #f56e0f;
+
 }
 
 body {
@@ -164,7 +165,11 @@ body {
         color: var(--text-color-1);
       }
 
-      .today p{
+      .today {
+        color: var(--text-color-3);
+      }
+
+      .active p{
         display: flex;
         align-items: center;
         justify-content: center;
