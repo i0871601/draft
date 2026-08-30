@@ -124,7 +124,7 @@ body {
 
     #month {
       margin: 0;
-      padding-left: calc(((100% / 14) / 2) + 0.3rem);
+      padding-left: calc(((100% / 14) / 2) + 0.15rem);
       color: var(--shadow);
     }
 
