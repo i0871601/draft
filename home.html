@@ -17,45 +17,28 @@
 
         <main id="Journal">
             <input type="radio" name="trigger" id="trigger" class="input">
+            <input type="radio" name="trigger" id="time" class="input">
+            <input type="radio" name="trigger" id="select-folder" class="input">
+            <input type="checkbox" id="off-on-journal" class="input">
 
             <div id="main-bar">
-                <div id="left">
-                    <div id="subject" class="button-select">
-                        <input type="radio" name="trigger" id="select-subject" class="input">
+                <label for="time" class="marks"></label>
 
-                        <label for="select-subject" class="marks">
-                            <p class="text">Предмет</p>
-                            <span class="select-arrow"></span>
-                        </label>
-                        <label for="trigger" class="marks-off"></label>
-                        <ul class="content-select"></ul>
-                    </div>
-                    <div id="class" class="button-select">
-                        <input type="radio" name="trigger" id="select-class" class="input">
-
-                        <label for="select-class" class="marks">
-                            <p class="text">Клас</p>
-                            <span class="select-arrow"></span>
-                        </label>
-                        <label for="trigger" class="marks-off"></label>
-                        <ul class="content-select"></ul>
-                    </div>
-                </div>
-                <div id="right">
-                    <div id="add-form">
-                    </div>
-                </div>
+                <label for="select-subject" class="marks"></label>
             </div>
 
-            <div id="table">
-                <input type="checkbox" id="off-on-journal" class="input">
+            <div id="content-time" class="content"></div>
+
+            <div id="content-select" class="content"></div>
+
+            <div id="table" class="content">
                 <div id="content-journal"></div>
             </div>
         </main>
 
 
-        <script src="./script-list.js" type="module"></script>
-        <script src="./script-journal.js" type="module"></script>
+        <!--<script src="./script-list.js" type="module"></script>
+        <script src="./script-journal.js" type="module"></script>!-->
 
 
     </body>
