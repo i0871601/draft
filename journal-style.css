@@ -178,6 +178,7 @@ body {
 
   #event-day {
     width: 40vmin;
+    height: 100%;
     border-left: 0.1rem solid var(--shadow);
   }
 }
@@ -231,9 +232,19 @@ body {
   #content-time {
     display: flex;
     justify-content: center;
+    align-items: none;
+    flex-direction: none;
+    gap: 0;
 
     #calendar {
       width: 100%;
+    }
+
+    #event-day {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      border: none;
     }
   }
 }
