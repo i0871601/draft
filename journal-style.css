@@ -50,8 +50,6 @@ body {
 
 
   .marks {
-    width: 70%;
-    aspect-ratio: 1 / 1;
     margin-top: 1.5rem;
     position: relative;
     box-sizing: border-box;
@@ -120,8 +118,9 @@ body {
 
 
   #calendar {
-    width: 30rem;
-    aspect-ratio: 1 / 1;
+    width: min(30rem, 100%);
+    display: flex;
+    flex-direction: column;
 
     #month {
       margin: 0;
@@ -192,6 +191,37 @@ body {
   src: url('./SourceSans3-Regular.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
+}
+
+@media (orientation: portrait) {
+  #Journal {
+    flex-direction: column-reverse;
+  }
+
+  #main-bar {
+    width: calc(100% - 0.6rem);
+    height: 5rem;
+    flex-direction: row;
+
+    .marks {
+      margin-left: 1.5rem;
+    }
+
+    #time-button {
+      width: 2.5rem;
+    }
+  }
+
+  .content {
+    width: calc(100% - 0.6rem);
+    height: calc(100% - 3rem);
+    margin: 0.3rem 0 3rem 0;
+  }
+
+  #content-time {
+    display: flex;
+    justify-content: center;
+  }
 }
 
 /*button {
