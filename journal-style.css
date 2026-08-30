@@ -44,51 +44,55 @@ body {
   flex-direction: column;
   align-items: center;
   box-shadow: 0 0 0.3rem var(--shadow);
-}
 
-.marks {
-  width: 70%;
-  aspect-ratio: 1 / 1;
-  margin-top: 1.5rem;
-  position: relative;
-  box-sizing: border-box;
-}
 
-#time-button {
-  width: 55%;
-  aspect-ratio: 1 / 1;
-  outline: 0.21rem solid var(--shadow);
-  outline-offset: -0.21rem;
-  border-radius: 5rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  pointer-events: auto;
-  cursor: pointer;
-  transition: outline-color 0.7s ease-in-out;
-}
-#time-button span {
-  width: 0.21rem;
-  height: 55%;
-  border-radius: 0.21rem;
-  position: absolute;
-}
-#minut {
-  transform: rotate(-45deg);
-  display: flex;
-  flex-direction: column-reverse;
-}
+  .marks {
+    width: 70%;
+    aspect-ratio: 1 / 1;
+    margin-top: 1.5rem;
+    position: relative;
+    box-sizing: border-box;
+  }
 
-#hour::after,
-#minut::after {
-  content: '';
-  height: 55%;
-  width: 100%;
-  position: absolute;
-  border-radius: 0.21rem;
-  background-color: var(--shadow);
-  transition: background-color 0.7s ease-in-out;
+  #time-button {
+    width: 55%;
+    aspect-ratio: 1 / 1;
+    outline: 0.21rem solid var(--shadow);
+    outline-offset: -0.21rem;
+    border-radius: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    pointer-events: auto;
+    cursor: pointer;
+    transition: outline-color 0.7s ease-in-out;
+
+
+    & span {
+      width: 0.21rem;
+      height: 55%;
+      border-radius: 0.21rem;
+      position: absolute;
+
+
+      & ::after {
+        content: '';
+        height: 55%;
+        width: 100%;
+        position: absolute;
+        border-radius: 0.21rem;
+        background-color: var(--shadow);
+        transition: background-color 0.7s ease-in-out;
+      }
+    }
+
+    #minut {
+      transform: rotate(-45deg);
+      display: flex;
+      flex-direction: column-reverse;
+    }
+  }
 }
 
 
@@ -101,8 +105,29 @@ body {
 }
 
 #content-time {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   z-index: 7;
+  position: relative;
+
+
+  #calendar {
+    background-color: var(--fon-color-1);
+    width: 30rem;
+    aspect-ratio: 1 / 1;
+
+
+    #calendar-header {
+      display: flex;
+      justify-content: space-between;
+      margin: 0 1rem;
+      height: 3rem;
+    }
+  }
 }
+
+
 
 #content-select {
   z-index: 5;
@@ -115,19 +140,22 @@ body {
 /*Наведення*/
 #time-button:hover {
   outline-color: var(--color-accent);
+
+
+  & span::after {
+    background-color: var(--color-accent);
+  }
 }
 
-#time-button:hover #hour::after,
-#time-button:hover #minut::after {
-  background-color: var(--color-accent);
-}
 
 /*Клік*/
 #time:checked ~ #main-bar #time-button {
   outline-color: var(--color-accent);
-}
-#time:checked ~ #main-bar #time-button span::after {
-  background-color: var(--color-accent);
+
+
+  & span::after {
+    background-color: var(--color-accent);
+  }
 }
 
 @keyframes fadeUp {
