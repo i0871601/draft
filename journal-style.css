@@ -56,6 +56,8 @@ body {
     margin: 1.5rem 0 0 0;
     position: relative;
     box-sizing: border-box;
+    cursor: pointer;
+    pointer-events: auto;
   }
 
   #time-button {
@@ -68,8 +70,6 @@ body {
     justify-content: center;
     align-items: center;
     position: relative;
-    pointer-events: auto;
-    cursor: pointer;
     transition: outline-color 0.7s ease-in-out;
 
 
@@ -104,6 +104,13 @@ body {
         background-color: var(--color-accent);
       }
     }
+  }
+
+  #off-event-day-button {
+    display: none;
+    visibility: hidden;
+    overflow: hidden;
+    pointer-events: none;
   }
 }
 
@@ -239,10 +246,13 @@ body {
   }
 
   #main-bar {
+    min-width: auto;
+    height: auto;
     width: calc(100% - 0.6rem);
     min-height: calc(5rem - 0.6rem);
     margin: 0 0 0.3rem 0;
     flex-direction: row;
+    position: relative;
 
     .marks {
       margin: 0 0 0 1.5rem;
@@ -250,6 +260,29 @@ body {
 
     #time-button {
       width: 2.5rem;
+    }
+
+    #off-event-day-button {
+      position: absolute;
+      bottom: 1.5rem;
+      aspect-ratio: 1 / 1;
+      width: 100%;
+      visibility: visible;
+      overflow: auto;
+      pointer-events: auto;
+      cursor: pointer;
+
+      &::after, &::before {
+        content: '';
+      }
+
+      &::before {
+
+      }
+
+      &::after {
+        
+      }
     }
   }
 
