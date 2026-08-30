@@ -72,6 +72,7 @@ body {
 }
 #time-button #minut {
   transform: rotate(-45deg);
+  display: flex;
 }
 
 #time-button #hour::after,
@@ -79,6 +80,7 @@ body {
   content: '';
   position: absolute;
 }
+
 
 .content {
 
