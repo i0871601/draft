@@ -109,7 +109,6 @@ body {
   width: calc(100% - 3rem);
   height: calc(100% - 0.6rem);
   margin: 0.3rem 0 0.3rem 3rem;
-  background-color: var(--shadow);
 }
 
 #content-time {
@@ -118,7 +117,6 @@ body {
 
 
   #calendar {
-    background-color: var(--fon-color-1);
     width: 30rem;
     aspect-ratio: 1 / 1;
 
