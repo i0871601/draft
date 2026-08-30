@@ -4,6 +4,9 @@
   --fon-color-1: #1b1b1b;
   --color-accent: #f56e0f;
   --shadow: #878787;
+  --text-color-1: #878787;
+  --text-color-2: #151419;
+  --text-color-3: #1b1b1b;
 }
 
 body {
@@ -123,18 +126,32 @@ body {
     #month {
       margin: 0;
       padding-left: 1.5rem;
+      color: var(--shadow);
     }
 
     #week {
       display: grid;
       grid-template-columns: repeat(7, 1fr);
       text-align: center;
+      color: var(--text-color-2);
+      font-weight: 500;
     }
 
     #content-calendar {
       display: grid;
       grid-template-columns: repeat(7, 1fr);
       text-align: center;
+
+      .other-month {
+        color: var(--text-color-1);
+      }
+
+      .today {
+        background-color: var(--color-accent);
+        color: var(--fon-color);
+        border-radius: 1.5rem;
+        font-weight: 500;
+      }
     }
   }
 }
