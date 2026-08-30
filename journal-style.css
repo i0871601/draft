@@ -69,14 +69,14 @@ body {
     transition: outline-color 0.7s ease-in-out;
 
 
-    & span {
+    span {
       width: 0.21rem;
       height: 55%;
       border-radius: 0.21rem;
       position: absolute;
 
 
-      & ::after {
+      &::after {
         content: '';
         height: 55%;
         width: 100%;
@@ -142,7 +142,7 @@ body {
   outline-color: var(--color-accent);
 
 
-  & span::after {
+  span::after {
     background-color: var(--color-accent);
   }
 }
@@ -153,7 +153,7 @@ body {
   outline-color: var(--color-accent);
 
 
-  & span::after {
+  span::after {
     background-color: var(--color-accent);
   }
 }
