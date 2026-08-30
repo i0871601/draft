@@ -4,6 +4,7 @@ const contentCalendarEl = document.getElementById('content-calendar');
 
 const dateEl = document.getElementById('date');
 const dayWeekEl = document.getElementById('day-week');
+const checkboxEl = document.getElementById('checkbox-event-day');
 
 const currentDate = new Date();
 
@@ -25,7 +26,7 @@ function initCalendar() {
 
   monthEl.textContent = monthNames[month];
 
-  // 1. Дні тижня (теги <p>)
+  //Дні тижня (теги <p>)
   weekEl.innerHTML = '';
   weekDays.forEach(day => {
     const p = document.createElement('p');
@@ -35,30 +36,31 @@ function initCalendar() {
 
   contentCalendarEl.innerHTML = '';
 
-  // Зміщення першого дня почного місяця (0 — Пн, 6 — Нд)
+  // Зміщення першого дня (0 — Пн, 6 — Нд)
   const firstDayIndex = (new Date(year, month, 1).getDay() + 6) % 7;
   // Кількість днів у поточному місяці
   const totalDays = new Date(year, month + 1, 0).getDate();
-  // Кількість днів у ПОПЕРЕДНЬОМУ місяці
-  const prevLastDay = new Date(year, month, 0).getDate();
 
-  // 2. Дні ПОПЕРЕДНЬОГО місяця (заповнення початку)
-  for (let i = firstDayIndex; i > 0; i--) {
-    const dayDiv = document.createElement('div');
-    dayDiv.className = 'day-block other-month';
-
-    const dayText = document.createElement('p');
-    dayText.textContent = prevLastDay - i + 1;
-    dayDiv.appendChild(dayText);
-
-    contentCalendarEl.appendChild(dayDiv);
+  //Порожні блоки
+  for (let i = 0; i < firstDayIndex; i++) {
+    const emptyDiv = document.createElement('div');
+    emptyDiv.className = 'day-block empty';
+    contentCalendarEl.appendChild(emptyDiv);
   }
 
-  // 3. Дні ПОТОЧНОГО місяця
+  //Дні Поточного місяця
   const today = new Date();
   for (let day = 1; day <= totalDays; day++) {
     const dayDiv = document.createElement('div');
     dayDiv.className = 'day-block';
+
+    // Розраховуємо день тижня
+    const dayOfWeek = new Date(year, month, day).getDay();
+
+    //Перевірка на вихідні
+    if (dayOfWeek === 0 || dayOfWeek === 6) {
+      dayDiv.classList.add('weekend');
+    }
 
     const dayText = document.createElement('p');
     dayText.textContent = day;
@@ -68,29 +70,12 @@ function initCalendar() {
       dayDiv.classList.add('today');
 
       if (dateEl) dateEl.textContent = day;
-      if (dayWeekEl) {
-        dayWeekEl.textContent = fullWeekDays[today.getDay()];
-      }
+      if (dayWeekEl) dayWeekEl.textContent = fullWeekDays[today.getDay()];
+      if (checkboxEl) checkboxEl.checked = true;
     }
-
-    contentCalendarEl.appendChild(dayDiv);
-  }
-
-  // 4. Дні НАСТУПНОГО місяця (заповнення кінця рядка)
-  const totalRendered = firstDayIndex + totalDays;
-  const nextDays = (7 - (totalRendered % 7)) % 7; // Скільки днів треба до кінця тижня
-
-  for (let j = 1; j <= nextDays; j++) {
-    const dayDiv = document.createElement('div');
-    dayDiv.className = 'day-block other-month';
-
-    const dayText = document.createElement('p');
-    dayText.textContent = j;
-    dayDiv.appendChild(dayText);
 
     contentCalendarEl.appendChild(dayDiv);
   }
 }
 
-// Запуск
 initCalendar();
