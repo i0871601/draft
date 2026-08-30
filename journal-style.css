@@ -145,6 +145,8 @@ body {
 
       .day-block {
         display: flex;
+        align-items: center;
+        justify-content: center;
 
         p {
           margin: 0;
@@ -155,10 +157,8 @@ body {
         color: var(--text-color-1);
       }
 
-      .today {
-        background-color: var(--color-accent);
-        color: var(--fon-color);
-        border-radius: 1.5rem;
+      .today p{
+        display: flex;
       }
     }
   }
