@@ -29,8 +29,9 @@ body {
   position: relative;
   overflow: hidden;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
   animation: fadeUp 0.7s ease-in-out forwards;
 }
 
@@ -63,6 +64,8 @@ body {
   justify-content: center;
   align-items: center;
   position: relative;
+  pointer-events: auto;
+  cursor: pointer;
   transition: outline-color 0.7s ease-in-out;
 }
 #time-button span {
@@ -90,19 +93,23 @@ body {
 
 
 .content {
-
+  position: absolute;
+  width: calc(100% - 7rem);
+  height: calc(100% - 0.6rem);
+  margin-left: 7rem;
+  background-color: var(--shadow);
 }
 
 #content-time {
-
+  z-index: 7;
 }
 
 #content-select {
-
+  z-index: 5;
 }
 
 #table {
-
+  z-index: 3;
 }
 
 /*Наведення*/
