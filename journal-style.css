@@ -93,23 +93,15 @@ body {
 
 
 .content {
-  position: absolute;
-  width: calc(100% - 7rem);
-  height: calc(100% - 0.6rem);
-  margin-left: 7rem;
-  background-color: var(--shadow);
 }
 
 #content-time {
-  z-index: 7;
 }
 
 #content-select {
-  z-index: 5;
 }
 
 #table {
-  z-index: 3;
 }
 
 /*Наведення*/
