@@ -190,6 +190,7 @@ body {
         background-color: var(--color-accent);
         color: var(--fon-color);
         border-radius: 2.5rem;
+        transform: all 0.5s ease-in-out;
       }
     }
   }

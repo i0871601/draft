@@ -23,7 +23,10 @@ const fullWeekDays = [
 function updateEventDayInfo(day, dayOfWeekIndex) {
   if (dateEl) dateEl.textContent = day;
   if (dayWeekEl) dayWeekEl.textContent = fullWeekDays[dayOfWeekIndex];
-  if (!checkboxEl.checked) checkboxEl.checked = true;
+  
+  setTimeout(() => {
+    if (!checkboxEl.checked) checkboxEl.checked = true;
+  }, 500);
 }
 
 function initCalendar() {
