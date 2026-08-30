@@ -118,7 +118,7 @@ body {
 
 
   #calendar {
-    width: 50%;
+    width: min(100%, 70vh);
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -133,8 +133,9 @@ body {
       display: grid;
       grid-template-columns: repeat(7, 1fr);
       text-align: center;
-      color: var(--text-color-2);
+      color: var(--text-color-1);
       font-weight: 700;
+      border-bottom: 0.1rem solid var(--shadow);
     }
 
     #content-calendar {
@@ -159,6 +160,13 @@ body {
 
       .today p{
         display: flex;
+        align-items: center;
+        justify-content: center;
+        width: max(50%, 1.5rem);
+        aspect-ratio: 1 / 1;
+        background-color: var(--color-accent);
+        color: var(--fon-color);
+        border-radius: 2.5rem;
       }
     }
   }
