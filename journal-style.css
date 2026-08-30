@@ -56,12 +56,13 @@ body {
 #time-button {
   width: 55%;
   aspect-ratio: 1 / 1;
-  outline: 0.21rem solid var(--color-accent);
+  outline: 0.21rem solid var(--shadow);
   outline-offset: -0.21rem;
   border-radius: 5rem;
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: outline-color 0.7s ease-in-out;
 }
 #time-button::after, #time-button::before {
   content: '';
@@ -96,7 +97,7 @@ body {
 
 /*Наведення*/
 #time-button:hover {
-  transform: scale(1.01);
+  outline-color: var(--color-accent);
 }
 
 @keyframes fadeUp {
