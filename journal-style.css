@@ -124,7 +124,7 @@ body {
 
     #month {
       margin: 0;
-      padding-left: 1.5rem;
+      padding-left: calc(((100% / 14) / 2) + 0.3rem);
       color: var(--shadow);
     }
 
@@ -174,24 +174,6 @@ body {
   }
 }
 
-@keyframes fadeUp {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
-}
-
-@font-face{
-  font-family: 'Aristotelica';
-  src: url('./AristotelicaSmallCaps-Regular.ttf') format('truetype');
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face{
-  font-family: 'SourceSans3';
-  src: url('./SourceSans3-Regular.ttf') format('truetype');
-  font-weight: 400;
-  font-style: normal;
-}
 
 @media (orientation: portrait) {
   #Journal {
@@ -222,6 +204,25 @@ body {
     display: flex;
     justify-content: center;
   }
+}
+
+@keyframes fadeUp {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@font-face{
+  font-family: 'Aristotelica';
+  src: url('./AristotelicaSmallCaps-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face{
+  font-family: 'SourceSans3';
+  src: url('./SourceSans3-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
 }
 
 /*button {
