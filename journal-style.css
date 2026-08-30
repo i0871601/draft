@@ -94,7 +94,10 @@ body {
 
 }
 
-
+/*Наведення*/
+#time-button:hover {
+  transform: scale(1.01);
+}
 
 @keyframes fadeUp {
   0% { opacity: 0; }
