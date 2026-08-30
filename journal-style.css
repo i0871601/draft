@@ -169,6 +169,9 @@ body {
           margin: 0;
         }
       }
+      .empty {
+        pointer-events: none;
+      }
 
       .weekend {
         color: var(--text-color-1);
@@ -321,7 +324,6 @@ body {
       border: none;
       background-color: var(--fon-color);
       opacity: 0;
-      overflow: hidden;
       visibility: hidden;
       pointer-events: none;
       transition: opacity 0.5s ease-in-out ;
@@ -331,9 +333,13 @@ body {
 
   #checkbox-event-day:checked ~ #main-bar #off-event-day-button {
     opacity: 1;
-    visibility: hidden;
+    visibility: visible;
     pointer-events: auto;
     cursor: pointer;
+  }
+
+  #checkbox-event-day:checked ~ #content-time #calendar {
+    pointer-events: none;
   }
 
   #checkbox-event-day:checked ~ #content-time #event-day {
