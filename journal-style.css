@@ -53,7 +53,19 @@ body {
   box-sizing: border-box;
 }
 
-
+#time-button {
+  width: 55%;
+  aspect-ratio: 1 / 1;
+  margin-top: 1.5rem;
+  outline: 0.21rem solid var(--color-accent);
+  outline-offset: -0.21rem;
+  border-radius: 5rem;
+  position: relative;
+}
+#time-button::after, #time-button::before {
+  content: '';
+  position: absolute;
+}
 
 .content {
 
