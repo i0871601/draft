@@ -100,11 +100,11 @@ body {
   outline-color: var(--color-accent);
 }
 
-#time-button:hover #time-button::after {
+#time-button:hover::after {
   background: linear-gradient(to top, var(--color-accent) 51%, transparent 49%);
 }
 
-#time-button:hover #time-button::before {
+#time-button:hover::before {
   background: linear-gradient(to bottom, var(--color-accent) 51%, transparent 49%);
 }
 
