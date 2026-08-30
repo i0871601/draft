@@ -71,14 +71,14 @@ body {
   border-radius: 0.21rem;
   position: absolute;
 }
-#time-button #minut {
+#minut {
   transform: rotate(-45deg);
   display: flex;
   flex-direction: column-reverse;
 }
 
-#time-button #hour::after,
-#time-button #minut::after {
+#hour::after,
+#minut::after {
   content: '';
   height: 55%;
   width: 100%;
