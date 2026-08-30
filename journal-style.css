@@ -141,6 +141,10 @@ body {
       grid-template-columns: repeat(7, 1fr);
       text-align: center;
 
+      .day-block p {
+        margin: 0;
+      }
+
       .other-month {
         color: var(--text-color-1);
       }
