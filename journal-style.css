@@ -276,7 +276,7 @@ body {
       align-items: center;
       justify-content: center;
       opacity: 0;
-      visibility: hidden;
+      visibility: visible;
       pointer-events: none;
       transition: opacity 0.5s ease-in-out;
 
