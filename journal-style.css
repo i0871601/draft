@@ -62,23 +62,29 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
   transition: outline-color 0.7s ease-in-out;
 }
 #time-button span {
   width: 0.21rem;
   height: 55%;
   border-radius: 0.21rem;
-  position: relative;
+  position: absolute;
 }
 #time-button #minut {
   transform: rotate(-45deg);
   display: flex;
+  flex-direction: column-reverse;
 }
 
 #time-button #hour::after,
 #time-button #minut::after {
   content: '';
+  height: 55%;
+  width: 100%;
   position: absolute;
+  border-radius: 0.21rem;
+  background-color: var(--shadow);
 }
 
 
