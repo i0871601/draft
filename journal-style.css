@@ -1,4 +1,4 @@
- /*Авторське право (c) липень 2026 рік Сікан Іван Валерійович.*/
+/*Авторське право (c) липень 2026 рік Сікан Іван Валерійович.*/
 :root {
   --fon-color: #fbfbfb;
   --fon-color-1: #1b1b1b;
@@ -142,7 +142,23 @@ body {
         margin: 0;
         outline: none;
         box-shadow: none;
+        position: relative;
+
+
+        &::after, &::before {
+          content: '';
+          position: absolute;
+        }
       }
+
+      #back::after {
+
+      }
+
+      #back::before {
+        
+      }
+
     }
   }
 }
