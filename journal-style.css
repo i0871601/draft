@@ -48,20 +48,17 @@ body {
 .marks {
   width: 70%;
   aspect-ratio: 1 / 1;
-  background-color: var(--color-accent);
   margin-top: 1.5rem;
+  position: relative;
   box-sizing: border-box;
 }
 
 #time-button {
   width: 55%;
   aspect-ratio: 1 / 1;
-  margin-top: 1.5rem;
   outline: 0.21rem solid var(--color-accent);
-  background-color: transparent;
   outline-offset: -0.21rem;
   border-radius: 5rem;
-  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -70,15 +67,15 @@ body {
   content: '';
   position: absolute;
   width: 0.21rem;
-  height: 40%;
-  background-color: var(--color-accent);
+  height: 55%;
   border-radius: 0.21rem;
 }
 #time-button::after {
-
+  transform: rotate(-45deg);
+  background: linear-gradient(to top, var(--color-accent) 51%, transparent 49%);
 }
 #time-button::before {
-  
+  background: linear-gradient(to bottom, var(--color-accent) 51%, transparent 49%);
 }
 
 .content {
