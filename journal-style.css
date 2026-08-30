@@ -99,6 +99,7 @@ body {
       span::after {
         background-color: var(--color-accent);
       }
+    }
   }
 }
 
@@ -155,17 +156,6 @@ body {
 #table {
   z-index: 3;
 }
-
-/*Наведення*/
-#time-button:hover {
-  outline-color: var(--color-accent);
-
-
-  span::after {
-    background-color: var(--color-accent);
-  }
-}
-
 
 /*Клік*/
 #time:checked ~ #main-bar #time-button {
