@@ -64,19 +64,20 @@ body {
   align-items: center;
   transition: outline-color 0.7s ease-in-out;
 }
-#time-button::after, #time-button::before {
-  content: '';
-  position: absolute;
+#time-button span {
   width: 0.21rem;
   height: 55%;
   border-radius: 0.21rem;
+  position: relative;
 }
-#time-button::after {
+#time-button #minut {
   transform: rotate(-45deg);
-  background: linear-gradient(to top, var(--shadow) 51%, transparent 49%);
 }
-#time-button::before {
-  background: linear-gradient(to bottom, var(--shadow) 51%, transparent 49%);
+
+#time-button #hour::after,
+#time-button #minut::after {
+  content: '';
+  position: absolute;
 }
 
 .content {
@@ -100,12 +101,9 @@ body {
   outline-color: var(--color-accent);
 }
 
-#time-button:hover::after {
-  background: linear-gradient(to top, var(--color-accent) 51%, transparent 49%);
-}
-
-#time-button:hover::before {
-  background: linear-gradient(to bottom, var(--color-accent) 51%, transparent 49%);
+#time-button:hover ~ #hour::after,
+#time-button:hover ~ #minut::after {
+  
 }
 
 @keyframes fadeUp {
