@@ -40,7 +40,8 @@ body {
 }
 
 #main-bar {
-  width: 5rem;
+  min-width: calc(5rem - 0.6rem);
+  margin: 0 0 0 0.3rem;
   height: calc(100% - 0.6rem);
   background-color: var(--fon-color-1);
   border-radius: 1.5rem;
@@ -239,7 +240,8 @@ body {
 
   #main-bar {
     width: calc(100% - 0.6rem);
-    height: 5rem;
+    min-height: calc(5rem - 0.6rem);
+    margin: 0 0 0.3rem 0;
     flex-direction: row;
 
     .marks {
