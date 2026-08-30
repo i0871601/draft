@@ -110,8 +110,8 @@ body {
   outline-color: var(--color-accent);
 }
 
-#time-button:hover ~ #hour::after,
-#time-button:hover ~ #minut::after {
+#time-button:hover #hour::after,
+#time-button:hover #minut::after {
   background-color: var(--color-accent);
 }
 
