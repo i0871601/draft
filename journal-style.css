@@ -58,13 +58,27 @@ body {
   aspect-ratio: 1 / 1;
   margin-top: 1.5rem;
   outline: 0.21rem solid var(--color-accent);
+  background-color: transparent;
   outline-offset: -0.21rem;
   border-radius: 5rem;
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 #time-button::after, #time-button::before {
   content: '';
   position: absolute;
+  width: 0.21rem;
+  height: 40%;
+  background-color: var(--color-accent);
+  border-radius: 0.21rem;
+}
+#time-button::after {
+
+}
+#time-button::before {
+  
 }
 
 .content {
