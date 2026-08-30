@@ -73,10 +73,10 @@ body {
 }
 #time-button::after {
   transform: rotate(-45deg);
-  background: linear-gradient(to top, var(--color-accent) 51%, transparent 49%);
+  background: linear-gradient(to top, var(--shadow) 51%, transparent 49%);
 }
 #time-button::before {
-  background: linear-gradient(to bottom, var(--color-accent) 51%, transparent 49%);
+  background: linear-gradient(to bottom, var(--shadow) 51%, transparent 49%);
 }
 
 .content {
@@ -98,6 +98,14 @@ body {
 /*Наведення*/
 #time-button:hover {
   outline-color: var(--color-accent);
+}
+
+#time-button:hover #time-button::after {
+  background: linear-gradient(to top, var(--color-accent) 51%, transparent 49%);
+}
+
+#time-button:hover #time-button::before {
+  background: linear-gradient(to bottom, var(--color-accent) 51%, transparent 49%);
 }
 
 @keyframes fadeUp {
