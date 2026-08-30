@@ -12,7 +12,7 @@ const monthNames = [
 const weekDays = ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Нд'];
 
 function initCalendar() {
-  //const year = currentDate.getFullYear();
+  const year = currentDate.getFullYear();
   const month = currentDate.getMonth();
 
   // 1. Виводимо тільки назву місяця без року
@@ -47,12 +47,7 @@ function initCalendar() {
     dayText.textContent = day;
     dayDiv.appendChild(dayText);
 
-    if (
-      day === today.getDate() &&
-      month === today.getMonth()
-    ) {
-      dayDiv.classList.add('today');
-    }
+    if (day === today.getDate()) dayDiv.classList.add('today');
 
     contentCalendarEl.appendChild(dayDiv);
   }
