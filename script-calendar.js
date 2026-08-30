@@ -29,6 +29,15 @@ function updateEventDayInfo(day, dayOfWeekIndex) {
   }, 500);
 }
 
+if (checkboxEl) {
+  checkboxEl.addEventListener('change', () => {
+    if (!checkboxEl.checked) {
+      const currentActive = contentCalendarEl.querySelector('.day-block.active');
+      if (currentActive) currentActive.classList.remove('active');
+    }
+  });
+}
+
 function initCalendar() {
   const year = currentDate.getFullYear();
   const month = currentDate.getMonth();
