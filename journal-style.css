@@ -107,9 +107,9 @@ body {
 
 .content {
   position: absolute;
-  width: calc(100% - 3rem);
+  width: calc(100% - 5rem);
   height: calc(100% - 0.6rem);
-  margin: 0.3rem 0 0.3rem 3rem;
+  margin: 0.3rem 0 0.3rem 5rem;
 }
 
 #content-time {
@@ -118,7 +118,8 @@ body {
 
 
   #calendar {
-    width: min(30rem, 100%);
+    width: 50%;
+    height: 100%;
     display: flex;
     flex-direction: column;
 
@@ -139,10 +140,15 @@ body {
     #content-calendar {
       display: grid;
       grid-template-columns: repeat(7, 1fr);
-      text-align: center;
+      grid-auto-rows: 1fr;
+      flex: 1;
 
-      .day-block p {
-        margin: 0;
+      .day-block {
+        display: flex;
+
+        p {
+          margin: 0;
+        }
       }
 
       .other-month {
@@ -207,6 +213,10 @@ body {
   #content-time {
     display: flex;
     justify-content: center;
+
+    #calendar {
+      width: 100%;
+    }
   }
 }
 
