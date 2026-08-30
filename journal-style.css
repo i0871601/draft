@@ -269,8 +269,8 @@ body {
       width: 100%;
       visibility: visible;
       overflow: auto;
-      pointer-events: auto;
-      cursor: pointer;
+      opacity: 0;
+      pointer-events: none;
 
       &::after, &::before {
         content: '';
@@ -281,7 +281,7 @@ body {
       }
 
       &::after {
-        
+
       }
     }
   }
@@ -309,7 +309,23 @@ body {
       width: 100%;
       border: none;
       background-color: var(--fon-color);
+      opacity: 0;
+      overflow: hidden;
+      visibility: hidden;
+      pointer-events: none;
     }
+  }
+
+  #checkbox-event-day:checked ~ #main-bar #off-event-day-button {
+    opacity: 1;
+    pointer-events: auto;
+    cursor: pointer;
+  }
+
+  #checkbox-event-day:checked ~ #content-time #event-day {
+    opacity: 1;
+    visibility: visible;
+    overflow: visible;
   }
 }
 
