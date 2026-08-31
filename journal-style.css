@@ -133,7 +133,9 @@ body {
 
 
   #calendar {
-    width: clamp(30vh, 100%, 75vh);
+    min-width: 30vh;
+    max-width: 75vh;
+    width: 100%;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -195,7 +197,9 @@ body {
   }
 
   #event-day {
-    width: clamp(40vmin, 100%, 45vmin);
+    min-width: 35vmin;
+    max-width: 45vmin;
+    width: 100%;
     height: 100%;
     border-left: 0.1rem solid var(--shadow);
     padding: 0 0 0 1rem;
@@ -326,12 +330,16 @@ body {
     gap: 0;
 
     #calendar {
+      min-width: 100%;
+      max-width: 100%;
       width: 100%;
     }
 
     #event-day {
       position: absolute;
       top: 0;
+      min-width: 100%;
+      max-width: 100%;
       width: 100%;
       border: none;
       background-color: var(--fon-color);
