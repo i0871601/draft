@@ -128,12 +128,11 @@ body {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
   gap: 5rem;
 
 
   #calendar {
-    width: min(100%, 75vh);
+    width: clamp(30vh, 100%, 75vh);
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -192,10 +191,22 @@ body {
         border-radius: 2.5rem;
       }
     }
+
+    #legend-key {
+      div {
+        color: var(--shadow);
+        opacity: 0.7;
+        font-size: 0.7rem;
+        letter-spacing: 0.05em;
+      }
+      &div:first-child {
+        
+      }
+    }
   }
 
   #event-day {
-    width: 40vmin;
+    width: clamp(40vmin, 100%, 55vmin);
     height: 100%;
     border-left: 0.1rem solid var(--shadow);
     padding: 0 0 0 1rem;
