@@ -128,6 +128,7 @@ body {
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: space-between;
   gap: 5rem;
 
 
@@ -191,18 +192,6 @@ body {
         border-radius: 2.5rem;
       }
     }
-
-    #legend-key {
-      div {
-        color: var(--shadow);
-        opacity: 0.7;
-        font-size: 0.7rem;
-        letter-spacing: 0.05em;
-      }
-      &div:first-child {
-        
-      }
-    }
   }
 
   #event-day {
@@ -212,25 +201,23 @@ body {
     padding: 0 0 0 1rem;
     background-color: var(--fon-color);
 
-    h1 {
-      margin: 0;
-      font-size: 3rem;
-      color: var(--text-color-2);
-    }
+    #title {
 
-    p {
-      margin: 0;
-      color: var(--text-color-1);
-    }
+      h1 {
+        margin: 0;
+        font-size: 3rem;
+        letter-spacing: 0.07em;
+        color: var(--text-color-2);
+      }
 
-    span {
-      width: 100%;
-      height: 0.1rem;
-      display: block;
-      background-color: var(--shadow);
-      margin: 1rem 0 0 0;
+      &div {
+        p {
+          margin: 0;
+          letter-spacing: 0.05em;
+          color: var(--text-color-1);
+        }
+      }
     }
-
   }
 }
 
