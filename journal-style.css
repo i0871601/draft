@@ -210,7 +210,7 @@ body {
         color: var(--text-color-2);
       }
 
-      &div {
+      div {
         p {
           margin: 0;
           letter-spacing: 0.05em;
