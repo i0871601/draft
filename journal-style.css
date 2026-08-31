@@ -341,6 +341,7 @@ body {
       min-width: calc(100% - 1rem);
       max-width: calc(100% - 1rem);
       width: calc(100% - 1rem);
+      padding: 0;
       border: none;
       background-color: var(--fon-color);
       opacity: 0;
