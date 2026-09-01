@@ -73,7 +73,7 @@ export const listLessonDay = (dayText) => {
                             </div>
                             
                             <div class="start-time-lesson">
-                                <h1>${startTime}</h1>
+                                <h2>${startTime}</h2>
                             </div>
                         </label>
                     </article>
