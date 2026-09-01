@@ -262,6 +262,24 @@ body {
           display: flex;
           flex-direction: row;
           align-items: center;
+
+          .icon {
+            width: 4rem;
+            aspect-ratio: 1 / 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding-right: 1rem;
+
+            span {
+              width: 1.5rem;
+              aspect-ratio: 1 / 1;
+              background-color: var(--shadow);
+              border-radius: 1.5rem;
+              outline: 0.2rem solid var(--fon-color);
+              outline-offset: -0.4rem;
+            }
+          }
         }
       }
     }
