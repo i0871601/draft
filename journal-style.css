@@ -309,6 +309,9 @@ body {
               color: var(--text-color-1);
               font-size: 0.9rem;
               padding-right: 0.5rem;
+            }
+            
+            .border {
               border-right: 0.1rem solid var(--shadow);
             }
 
