@@ -287,8 +287,12 @@ body {
             display: flex;
             flex-direction: column;
 
-            .name-subject-class p, p {
+            p {
               margin: 0;
+            }
+            
+            a {
+
             }
 
             .name-subject-class {
