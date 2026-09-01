@@ -186,11 +186,11 @@ body {
         pointer-events: none;
       }
 
-      .weekend {
+      .weekend p {
         color: var(--text-color-1);
       }
 
-      .today {
+      .today p {
         color: var(--text-color-3);
       }
 
