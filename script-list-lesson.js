@@ -4,7 +4,6 @@ import { getUserData } from './config.js';
 const userData = getUserData();
 
 const contentRoutine = document.getElementById('event-day-content');
-const checkboxVisibility = document.getElementById('visibility-event-day-content');
 
 export const routine = userData?.data?.routine || [];
 
@@ -25,9 +24,6 @@ export const listLessonDay = (dayText) => {
         lessonUpdateTime = null;
     }
 
-    if (checkboxVisibility.checked) {
-        checkboxVisibility.checked = false;
-    }
     setTimeout(() => {
         contentRoutine.innerHTML = '';
 
@@ -88,7 +84,5 @@ export const listLessonDay = (dayText) => {
                 </div>
             `;
         };
-
-        if (!checkboxVisibility.checked) checkboxVisibility.checked = true;
     }, 500);
 };
