@@ -52,7 +52,6 @@ export const listLessonDay = (dayText) => {
                     <p class="lesson-location text">${rawLink}</p>
                 `;
             }
-        }
             
             const lessonHTML = `
             <article class="routine-entry">
@@ -89,6 +88,6 @@ export const listLessonDay = (dayText) => {
         </div>
         `;
     }
-    
-    checkboxVisibility.checked = true;
+
+    if (!checkboxVisibility.checked) checkboxVisibility.checked = true;
 };
