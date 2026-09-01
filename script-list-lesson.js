@@ -89,4 +89,6 @@ export const listLessonDay = (dayText) => {
         </div>
         `;
     }
+    
+    checkboxVisibility.checked = true;
 };
