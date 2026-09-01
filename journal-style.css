@@ -2,6 +2,7 @@
 :root {
   --fon-color: #ecf4f7;
   --fon-color-1: #1b1b1b;
+  --fon-color-2: #fdfdfd;
   --color-accent: #f56e0f;
   --shadow: #878787;
   --text-color-1: #878787;
@@ -133,7 +134,6 @@ body {
 
 
   #calendar {
-    min-width: 30vh;
     max-width: 75vh;
     width: 100%;
     height: 100%;
@@ -279,6 +279,9 @@ body {
               outline: 0.2rem solid var(--fon-color);
               outline-offset: -0.4rem;
             }
+          }
+          &p {
+            margin: 0;
           }
         }
       }
