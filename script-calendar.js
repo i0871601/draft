@@ -25,15 +25,15 @@ function updateEventDayInfo(day, dayOfWeekIndex) {
   if (dayWeekEl) dayWeekEl.textContent = fullWeekDays[dayOfWeekIndex];
   
   setTimeout(() => {
-    if (!checkboxEl.checked) checkboxEl.checked = true;
+    if (checkboxEl && !checkboxEl.checked) checkboxEl.checked = true;
   }, 500);
 }
 
 if (checkboxEl) {
   checkboxEl.addEventListener('change', () => {
     if (!checkboxEl.checked) {
-      const currentActive = contentCalendarEl.querySelector('.day-block.active');
-      if (currentActive) currentActive.classList.remove('active');
+      const activeRadio = contentCalendarEl.querySelector('input[name="calendar-day"]:checked');
+      if (activeRadio) activeRadio.checked = false;
     }
   });
 }
@@ -42,64 +42,64 @@ function initCalendar() {
   const year = currentDate.getFullYear();
   const month = currentDate.getMonth();
 
-  monthEl.textContent = monthNames[month];
+  if (monthEl) monthEl.textContent = monthNames[month];
 
-  //Дні тижня (теги <p>)
-  weekEl.innerHTML = '';
-  weekDays.forEach(day => {
-    const p = document.createElement('p');
-    p.textContent = day;
-    weekEl.appendChild(p);
-  });
+  // Дні тижня
+  if (weekEl) {
+    weekEl.innerHTML = weekDays.map(day => `<p>${day}</p>`).join('');
+  }
 
-  contentCalendarEl.innerHTML = '';
+  if (!contentCalendarEl) return;
 
   const firstDayIndex = (new Date(year, month, 1).getDay() + 6) % 7;
   const totalDays = new Date(year, month + 1, 0).getDate();
 
-  //Порожні блоки перед початком місяця
+  let calendarHTML = '';
+
+  // Порожні блоки перед початком місяця
   for (let i = 0; i < firstDayIndex; i++) {
-    const emptyDiv = document.createElement('div');
-    emptyDiv.className = 'day-block empty';
-    contentCalendarEl.appendChild(emptyDiv);
+    calendarHTML += `<div class="day-block empty"></div>`;
   }
 
-  //Дні Поточного місяця
+  // Дні поточного місяця
   const today = new Date();
+  const isCurrentMonth = today.getFullYear() === year && today.getMonth() === month;
+
   for (let day = 1; day <= totalDays; day++) {
-    const dayDiv = document.createElement('div');
-    dayDiv.className = 'day-block';
-
     const dayOfWeek = new Date(year, month, day).getDay();
+    const isWeekend = dayOfWeek === 0 || dayOfWeek === 6;
+    const isToday = isCurrentMonth && day === today.getDate();
+    
+    const inputId = `day-${day}`;
+    const weekendClass = isWeekend ? ' weekend' : '';
+    const todayClass = isToday ? ' today' : '';
+    const checkedAttr = isToday ? 'checked' : '';
 
-    if (dayOfWeek === 0 || dayOfWeek === 6) {
-      dayDiv.classList.add('weekend');
-    }
-
-    const dayText = document.createElement('p');
-    dayText.textContent = day;
-    dayDiv.appendChild(dayText);
-
-    // За замовчуванням виділяємо сьогоднішній день
-    if (day === today.getDate()) {
-      dayDiv.classList.add('today', 'active');
-      updateEventDayInfo(day, today.getDay());
-    }
-
-    // Клік по дню
-    dayDiv.addEventListener('click', () => {
-      const currentActive = contentCalendarEl.querySelector('.day-block.active');
-      if (currentActive) {
-        currentActive.classList.remove('active');
-      }
-
-      dayDiv.classList.add('active');
-
-      updateEventDayInfo(day, dayOfWeek);
-    });
-
-    contentCalendarEl.appendChild(dayDiv);
+    // Формуємо радіо та лейбл єдиним блоком розмітки
+    calendarHTML += `
+      <input type="radio" name="calendar-day" id="${inputId}" class="day-radio" value="${day}" data-dayofweek="${dayOfWeek}" ${checkedAttr}>
+      <label htmlFor="${inputId}" for="${inputId}" class="day-block${weekendClass}${todayClass}">
+        <p>${day}</p>
+      </label>
+    `;
   }
+
+  // Вставляємо всю розмітку в DOM за один раз
+  contentCalendarEl.innerHTML = calendarHTML;
+
+  // Початкове оновлення інформації для сьогоднішнього дня
+  if (isCurrentMonth) {
+    updateEventDayInfo(today.getDate(), today.getDay());
+  }
+
+  // Делегування подій: один слухач на весь контейнер замість повішування на кожен інпут
+  contentCalendarEl.addEventListener('change', (e) => {
+    if (e.target.matches('input[name="calendar-day"]')) {
+      const day = Number(e.target.value);
+      const dayOfWeek = Number(e.target.dataset.dayofweek);
+      updateEventDayInfo(day, dayOfWeek);
+    }
+  });
 }
 
 initCalendar();
