@@ -3,10 +3,9 @@ import { getUserData } from './config.js';
 
 const userData = getUserData();
 
-export let routine = [];
+export const routine = userData?.data?.routine || [];
 
-if (userData && userData.data.routine) {
-    routine = userData.data.routine;
+if (routine.length > 0) {
     console.log("Ось ваш масив routine:", routine);
 }
 
