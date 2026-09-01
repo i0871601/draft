@@ -64,11 +64,8 @@ export const listLessonDay = (dayText) => {
                             </div>
                             
                             <div class="info-lesson">
-                                <div class="name-subject-class">
-                                    <p class="name-subject">${el.Subject}</p>
-                                    <p class="name-class">${el.Class}</p>
-                                </div>
-                                
+                                <p class="name-subject">${el.Subject}</p>
+                                <p class="name-class">${el.Class}</p>
                                 ${locationHTML}
                             </div>
                             
