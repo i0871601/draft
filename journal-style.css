@@ -250,38 +250,50 @@ body {
       height: calc(100% - 5rem - 1rem);
 
       .routine-entry {
-        height: 100%;
+        height: calc(100% - 1rem);
         width: 100%;
         display: flex;
         align-items: center;
         justify-content: center;
+        background-color: var(--fon-color-2);
+        border-radius: 1.5rem;
 
         .lesson-label {
-          width: 100%;
+          width: calc(100% - 2rem);
           height: 100%;
           display: flex;
           flex-direction: row;
           align-items: center;
 
           .icon {
-            width: 4rem;
+            width: 1.5rem;
             aspect-ratio: 1 / 1;
             display: flex;
             align-items: center;
             justify-content: center;
-            padding-right: 1rem;
+            margin-right: 2rem;
 
             span {
               width: 1.5rem;
               aspect-ratio: 1 / 1;
               background-color: var(--shadow);
               border-radius: 1.5rem;
-              outline: 0.2rem solid var(--fon-color);
+              outline: 0.2rem solid var(--fon-color-2);
               outline-offset: -0.4rem;
             }
           }
-          &p {
-            margin: 0;
+          .info-lesson {
+            width: calc(100% - 3.5rem - 3.5rem);
+            display: flex;
+            flex-direction: column;
+
+            .name-subject-class p, p {
+              margin: 0;
+            }
+
+            .name-subject-class {
+              display: flex;
+            }
           }
         }
       }
