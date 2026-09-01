@@ -15,7 +15,7 @@ let lessonUpdateTime = null;
 
 export const listLessonDay = (dayText) => {
     const filteredLessons = routine.filter(item => item.Day === dayText);
-    filteredLessons.sort((a, b) => Number(a.LessonNumber) - Number(b.LessonNumber));
+    filteredLessons.sort((a, b) => Number(a.lessonNumber) - Number(b.lessonNumber));
 
     console.log(filteredLessons);
 
