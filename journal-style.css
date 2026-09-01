@@ -166,11 +166,22 @@ body {
         align-items: center;
         justify-content: center;
         cursor: pointer;
+        
 
         p {
           margin: 0;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: max(50%, 1.7rem);
+          aspect-ratio: 1 / 1;
+          background-color: transparent;
+          color: var(--text-color-2);
+          border-radius: 2.5rem;
+          transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
         }
       }
+
       .empty {
         pointer-events: none;
       }
@@ -183,15 +194,9 @@ body {
         color: var(--text-color-3);
       }
 
-      .active p{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: max(50%, 1.7rem);
-        aspect-ratio: 1 / 1;
+      .day-radio:checked + .day-block p {
         background-color: var(--color-accent);
         color: var(--fon-color);
-        border-radius: 2.5rem;
       }
     }
   }
