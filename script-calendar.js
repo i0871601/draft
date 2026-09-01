@@ -1,3 +1,5 @@
+import { listLessonDay } from './script-list-lesson.js';
+
 const monthEl = document.getElementById('month');
 const weekEl = document.getElementById('week');
 const contentCalendarEl = document.getElementById('content-calendar');
@@ -21,11 +23,14 @@ const fullWeekDays = [
 ];
 
 function updateEventDayInfo(day, dayOfWeekIndex) {
+  let dayText = fullWeekDays[dayOfWeekIndex];
   if (dateEl) dateEl.textContent = day;
-  if (dayWeekEl) dayWeekEl.textContent = fullWeekDays[dayOfWeekIndex];
+  if (dayWeekEl) dayWeekEl.textContent = dayText;
+  
+  listLessonDay(dayText);
   
   setTimeout(() => {
-    if (checkboxEl && !checkboxEl.checked) checkboxEl.checked = true;
+    if (!checkboxEl.checked) checkboxEl.checked = true;
   }, 500);
 }
 
