@@ -31,8 +31,8 @@ export const listLessonDay = (dayText) => {
             filteredLessons.forEach(el => {
                 const [startTime] = el.Time ? el.Time.split('-') : ['', ''];
                 
-                const activeId = `active-lesson-${el.LessonNumber}`;
-                const passedId = `passed-lesson-${el.LessonNumber}`;
+                const activeId = `active-lesson-${el.lessonNumber}`;
+                const passedId = `passed-lesson-${el.lessonNumber}`;
                 
                 let locationHTML = '';
 
