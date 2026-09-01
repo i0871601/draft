@@ -39,8 +39,11 @@ export const listLessonDay = (dayText) => {
                 const passedId = `passed-lesson-${el.LessonNumber}`;
                 
                 let locationHTML = '';
+
+                let classBorder = '';
                 
                 if (el.Link) {
+                    classBorder = 'border';
                     const rawLink = el.Link.trim();
                     const isUrl = rawLink.startsWith('http://') || rawLink.startsWith('https://');
                     
@@ -65,7 +68,7 @@ export const listLessonDay = (dayText) => {
                             
                             <div class="info-lesson">
                                 <p class="name-subject">${el.Subject}</p>
-                                <p class="name-class">${el.Class}</p>
+                                <p class="name-class ${classBorder}">${el.Class}</p>
                                 ${locationHTML}
                             </div>
                             
