@@ -77,7 +77,7 @@ function initCalendar() {
 
     // Формуємо радіо та лейбл єдиним блоком розмітки
     calendarHTML += `
-      <input type="radio" name="calendar-day" id="${inputId}" class="day-radio" value="${day}" data-dayofweek="${dayOfWeek}" ${checkedAttr}>
+      <input type="radio" name="calendar-day" id="${inputId}" class="input" value="${day}" data-dayofweek="${dayOfWeek}" ${checkedAttr}>
       <label htmlFor="${inputId}" for="${inputId}" class="day-block${weekendClass}${todayClass}">
         <p>${day}</p>
       </label>
