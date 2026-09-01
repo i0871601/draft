@@ -161,11 +161,6 @@ body {
       grid-auto-rows: 1fr;
       flex: 1;
 
-      &.input:checked + .day-block p {
-        background-color: var(--color-accent);
-        color: var(--fon-color);
-      }
-
       .day-block {
         display: flex;
         align-items: center;
@@ -185,6 +180,11 @@ body {
           border-radius: 2.5rem;
           transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
         }
+      }
+
+      .input:checked + .day-block p {
+        background-color: var(--color-accent);
+        color: var(--fon-color);
       }
 
       .empty {
