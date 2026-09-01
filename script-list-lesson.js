@@ -3,14 +3,14 @@ import { getUserData } from './config.js';
 
 const userData = getUserData();
 
-let routine = [];
+export let routine = [];
 
 if (userData && userData.data.routine) {
     routine = userData.data.routine;
     console.log("Ось ваш масив routine:", routine);
 }
 
-export const listLessonDay = (dayName, routine) => {
+export const listLessonDay = (dayText) => {
 
     if (!Array.isArray(routine) || routine.length === 0) {
         return [];
