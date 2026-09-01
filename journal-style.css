@@ -194,7 +194,7 @@ body {
         color: var(--text-color-3);
       }
 
-      .day-radio:checked + .day-block p {
+      &.input:checked + .day-block p {
         background-color: var(--color-accent);
         color: var(--fon-color);
       }
