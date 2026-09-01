@@ -145,6 +145,7 @@ body {
       padding-left: calc(((100% / 14) / 2) + 0.15rem);
       font-weight: 500;
       color: var(--shadow);
+      white-space: nowrap;
     }
 
     #week {
@@ -222,6 +223,7 @@ body {
         letter-spacing: 0.05em;
         line-height: 1;
         color: var(--text-color-2);
+        white-space: nowrap;
       }
 
       div {
@@ -239,6 +241,7 @@ body {
           font-size: 1.1rem;
           letter-spacing: 0.05em;
           color: var(--text-color-1);
+          white-space: nowrap;
         }
       }
     }
@@ -293,10 +296,13 @@ body {
               margin: 0;
               color: var(--text-color-1);
               font-size: 0.9rem;
+              white-space: nowrap;
             }
             .name-subject {
               color: var(--text-color-2);
               letter-spacing: 0.01em;
+              white-space: nowrap;
+              width: 100%;
             }
 
             .name-class {
@@ -314,6 +320,7 @@ body {
               text-overflow: ellipsis;
               display: block;
               max-width: 50%;
+              pointer-events: auto;
             }
           }
 
