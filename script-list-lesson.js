@@ -10,7 +10,7 @@ if (userData && userData.data.routine) {
     console.log("Ось ваш масив routine:", routine);
 }
 
-export const listLessonDay = (dayName) => {
+export const listLessonDay = (dayName, routine) => {
 
     if (!Array.isArray(routine) || routine.length === 0) {
         return [];
