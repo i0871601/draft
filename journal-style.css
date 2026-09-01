@@ -161,6 +161,11 @@ body {
       grid-auto-rows: 1fr;
       flex: 1;
 
+      &.input:checked + .day-block p {
+        background-color: var(--color-accent);
+        color: var(--fon-color);
+      }
+
       .day-block {
         display: flex;
         align-items: center;
@@ -192,11 +197,6 @@ body {
 
       .today p {
         color: var(--text-color-3);
-      }
-
-      &.input:checked + .day-block p {
-        background-color: var(--color-accent);
-        color: var(--fon-color);
       }
     }
   }
