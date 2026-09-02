@@ -330,6 +330,7 @@ body {
               max-width: 50%;
               pointer-events: auto;
               font-size: 0.9rem;
+              transition: color 0.5s ease-in-out;
             }
           }
 
@@ -354,6 +355,10 @@ body {
           .start-time-lesson {
             color: var(--text-color-3);
           }
+
+          .info-lesson a {
+            color: var(--text-color-3);
+          }
         }
 
         .input-passed:checked ~ .lesson-label {
@@ -362,6 +367,10 @@ body {
           }
           
           .start-time-lesson {
+            color: var(--text-color-passed);
+          }
+
+          .info-lesson a {
             color: var(--text-color-passed);
           }
         }
