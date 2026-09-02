@@ -22,12 +22,12 @@ const fullWeekDays = [
   'Четвер', 'П\'ятниця', 'Субота'
 ];
 
-function updateEventDayInfo(day, dayOfWeekIndex) {
+function updateEventDayInfo(day, dayOfWeekIndex, isToday = false) {
   let dayText = fullWeekDays[dayOfWeekIndex];
   if (dateEl) dateEl.textContent = day;
   if (dayWeekEl) dayWeekEl.textContent = dayText;
   
-  listLessonDay(dayText);
+  listLessonDay(dayText, isToday);
   
   setTimeout(() => {
     if (!checkboxEl.checked) checkboxEl.checked = true;
@@ -94,7 +94,7 @@ function initCalendar() {
 
   // Початкове оновлення інформації для сьогоднішнього дня
   if (isCurrentMonth) {
-    updateEventDayInfo(today.getDate(), today.getDay());
+    updateEventDayInfo(today.getDate(), today.getDay(),  true);
   }
 
   // Делегування подій: один слухач на весь контейнер замість повішування на кожен інпут
@@ -102,7 +102,10 @@ function initCalendar() {
     if (e.target.matches('input[name="calendar-day"]')) {
       const day = Number(e.target.value);
       const dayOfWeek = Number(e.target.dataset.dayofweek);
-      updateEventDayInfo(day, dayOfWeek);
+
+      const isSelectedDayToday = isCurrentMonth && day === today.getDate();
+
+      updateEventDayInfo(day, dayOfWeek, , isSelectedDayToday);
     }
   });
 }
