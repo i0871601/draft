@@ -4,6 +4,7 @@
   --fon-color-1: #1b1b1b;
   --fon-color-2: #fdfdfd;
   --color-accent: #f56e0f;
+  --color-passed: #559153;
   --shadow: #878787;
   --text-color-1: #878787;
   --text-color-2: #151419;
@@ -210,6 +211,8 @@ body {
     border-left: 0.1rem solid var(--shadow);
     padding: 0 0 0 1rem;
     background-color: var(--fon-color);
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
 
     #title {
       width: 100%;
@@ -283,6 +286,7 @@ body {
               border-radius: 1.5rem;
               outline: 0.2rem solid var(--fon-color-2);
               outline-offset: -0.4rem;
+              transition: background-color 0.5s ease-in-out;
             }
           }
           .info-lesson {
@@ -340,6 +344,14 @@ body {
             }
           }
         }
+        .input-active:checked ~ .lesson-label .icon span{
+          background-color: var(--color-accent);
+        }
+
+        .input-passed:checked ~ .lesson-label .icon span{
+          background-color: var(--color-passed);
+        }
+
       }
       .holiday p{
         margin: 1rem 0 0 0;
@@ -350,7 +362,6 @@ body {
     }
   }
 }
-
 
 
 #content-select {
@@ -369,6 +380,10 @@ body {
   span::after {
     background-color: var(--color-accent);
   }
+}
+
+#checkbox-event-day:checked ~ #content-time #event-day {
+  opacity: 1;
 }
 
 
@@ -457,8 +472,6 @@ body {
       background-color: var(--fon-color);
       opacity: 0;
       pointer-events: none;
-      transition: opacity 0.5s ease-in-out ;
-
     }
   }
 
