@@ -105,7 +105,7 @@ function initCalendar() {
 
       const isSelectedDayToday = isCurrentMonth && day === today.getDate();
 
-      updateEventDayInfo(day, dayOfWeek, , isSelectedDayToday);
+      updateEventDayInfo(day, dayOfWeek, isSelectedDayToday);
     }
   });
 }
