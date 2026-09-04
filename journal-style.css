@@ -466,6 +466,10 @@ body {
       width: 2.5rem;
     }
 
+    #select-button {
+      width: 2.5rem;
+    }
+
     #off-event-day-button {
       position: absolute;
       right: 0;
