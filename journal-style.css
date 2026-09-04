@@ -109,6 +109,30 @@ body {
     }
   }
 
+  #select-button {
+    width: 55%;
+    aspect-ratio: 1/1;
+    border-radius: 0.3rem;
+    outline: 0.21rem solid var(--shadow);
+    outline-offset: -0.21rem;
+    position: relative;
+
+    &::after, &::before {
+      content: '';
+      position: absolute;
+
+    }
+
+    &::after {
+
+    }
+
+    &::before {
+      
+    }
+  }
+
+
   #off-event-day-button {
     display: none;
     visibility: hidden;
