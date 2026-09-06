@@ -443,10 +443,19 @@ body {
 /*Клік*/
 #time:checked ~ #main-bar #time-button {
   outline-color: var(--color-accent);
-
+  transform: scale(1.05);
 
   span::after {
     background-color: var(--color-accent);
+  }
+}
+
+#select-folder:checked ~ #main-bar #select-button {
+  outline-color: var(--color-accent);
+  transform: scale(1.05);
+
+  span {
+    outline-color: var(--color-accent);
   }
 }
 
@@ -474,7 +483,7 @@ body {
     }
 
     #select-button {
-      width: 2.5rem;
+      width: 2.3rem;
     }
 
     #off-event-day-button {
