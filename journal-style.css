@@ -120,6 +120,7 @@ body {
       outline: 0.21rem solid var(--shadow);
       outline-offset: -0.21rem;
       border-radius: 0.3rem;
+      transition: outline-color 0.7s ease-in-out;
     }
 
     #bookmark {
