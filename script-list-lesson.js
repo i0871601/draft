@@ -5,7 +5,7 @@ const userData = getUserData();
 
 const contentRoutine = document.getElementById('event-day-content');
 
-export const routine = userData?.data?.routine || [];
+export const routine = userData.data.routine;
 
 if (routine.length > 0) {
     console.log("Ось ваш масив routine:", routine);
