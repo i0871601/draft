@@ -34,14 +34,14 @@ function updateEventDayInfo(day, dayOfWeekIndex, isToday = false) {
   }, 500);
 }
 
-if (checkboxEl) {
+/*if (checkboxEl) {
   checkboxEl.addEventListener('change', () => {
     if (!checkboxEl.checked) {
       const activeRadio = contentCalendarEl.querySelector('input[name="calendar-day"]:checked');
       if (activeRadio) activeRadio.checked = false;
     }
   });
-}
+}*/
 
 function initCalendar() {
   const year = currentDate.getFullYear();
@@ -103,7 +103,9 @@ function initCalendar() {
       const day = Number(e.target.value);
       const dayOfWeek = Number(e.target.dataset.dayofweek);
 
-      const isSelectedDayToday = isCurrentMonth && day === today.getDate();
+      const now = new Date();
+      const isSelectedDayToday = ( now.getMonth() === month && day === now.getDate()
+      );
 
       updateEventDayInfo(day, dayOfWeek, isSelectedDayToday);
     }
