@@ -103,9 +103,7 @@ function initCalendar() {
       const day = Number(e.target.value);
       const dayOfWeek = Number(e.target.dataset.dayofweek);
 
-      const now = new Date();
-      const isSelectedDayToday = ( now.getMonth() === month && day === now.getDate()
-      );
+      const isSelectedDayToday = isCurrentMonth && day === today.getDate();
 
       updateEventDayInfo(day, dayOfWeek, isSelectedDayToday);
     }
