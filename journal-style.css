@@ -431,6 +431,8 @@ body {
 }
 
 #select-folder:checked ~ #main-bar #select-button {
+  transform: scale(1.05);
+
   span {
     background-color: var(--color-accent);
   }
