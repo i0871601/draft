@@ -157,6 +157,9 @@ body {
   align-items: center;
   justify-content: space-between;
   gap: 5rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.7s ease-in-out;
 
 
   #calendar {
@@ -415,9 +418,6 @@ body {
   z-index: 5;
 }
 
-#table {
-  z-index: 3;
-}
 
 /*Клік*/
 #time:checked ~ #main-bar #time-button {
@@ -427,6 +427,11 @@ body {
   span::after {
     background-color: var(--color-accent);
   }
+}
+
+#time:checked ~ #content-time {
+  opacity: 1;
+  pointer-events: auto;
 }
 
 #select-folder:checked ~ #main-bar #select-button {

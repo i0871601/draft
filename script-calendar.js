@@ -34,14 +34,6 @@ function updateEventDayInfo(day, dayOfWeekIndex, isToday = false) {
   }, 500);
 }
 
-/*if (checkboxEl) {
-  checkboxEl.addEventListener('change', () => {
-    if (!checkboxEl.checked) {
-      const activeRadio = contentCalendarEl.querySelector('input[name="calendar-day"]:checked');
-      if (activeRadio) activeRadio.checked = false;
-    }
-  });
-}*/
 
 function initCalendar() {
   const year = currentDate.getFullYear();
@@ -111,3 +103,10 @@ function initCalendar() {
 }
 
 initCalendar();
+
+//Повернення у вкладку з іншої програми
+document.addEventListener('visibilitychange', () => {
+  if (document.visibilityState === 'visible') {
+    initCalendar();
+  }
+});
