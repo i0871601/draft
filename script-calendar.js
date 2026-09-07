@@ -106,13 +106,3 @@ export function calendar() {
     }
   });
 }
-
-document.addEventListener('DOMContentLoaded', () => {
-    calendar();
-});
-
-document.addEventListener('visibilitychange', () => {
-  if (document.visibilityState === 'visible') {
-    calendar();
-  }
-});
