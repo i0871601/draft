@@ -1,5 +1,5 @@
 // Авторське право (c) вересень 2026 рік Сікан Іван Валерійович.
-import { calendar } from './script-main.js';
+import { calendar } from './script-calendar.js';
 
 document.addEventListener('DOMContentLoaded', () => {
 
