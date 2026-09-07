@@ -1,3 +1,4 @@
+// Авторське право (c) вересень 2026 рік Сікан Іван Валерійович.
 import { listLessonDay } from './script-list-lesson.js';
 
 const monthEl = document.getElementById('month');
@@ -7,6 +8,8 @@ const contentCalendarEl = document.getElementById('content-calendar');
 const dateEl = document.getElementById('date');
 const dayWeekEl = document.getElementById('day-week');
 const checkboxEl = document.getElementById('checkbox-event-day');
+
+const checkbox = document.getElementById('time');
 
 const currentDate = new Date();
 
@@ -22,7 +25,10 @@ const fullWeekDays = [
   'Четвер', 'П\'ятниця', 'Субота'
 ];
 
-function updateEventDayInfo(day, dayOfWeekIndex, isToday = false) {
+export function updateEventDayInfo(day, dayOfWeekIndex, isToday = false) {
+
+  if (!time) return;
+  
   let dayText = fullWeekDays[dayOfWeekIndex];
   if (dateEl) dateEl.textContent = day;
   if (dayWeekEl) dayWeekEl.textContent = dayText;
@@ -35,7 +41,7 @@ function updateEventDayInfo(day, dayOfWeekIndex, isToday = false) {
 }
 
 
-function initCalendar() {
+export function calendar() {
   const year = currentDate.getFullYear();
   const month = currentDate.getMonth();
 
@@ -84,10 +90,7 @@ function initCalendar() {
   // Вставляємо всю розмітку в DOM за один раз
   contentCalendarEl.innerHTML = calendarHTML;
 
-  // Початкове оновлення інформації для сьогоднішнього дня
-  if (isCurrentMonth) {
-    updateEventDayInfo(today.getDate(), today.getDay(),  true);
-  }
+  if (isCurrentMonth) updateEventDayInfo(today.getDate(), today.getDay(),  true);
 
   // Делегування подій: один слухач на весь контейнер замість повішування на кожен інпут
   contentCalendarEl.addEventListener('change', (e) => {
@@ -102,11 +105,12 @@ function initCalendar() {
   });
 }
 
-initCalendar();
+document.addEventListener('DOMContentLoaded', () => {
+    calendar();
+});
 
-//Повернення у вкладку з іншої програми
 document.addEventListener('visibilitychange', () => {
   if (document.visibilityState === 'visible') {
-    initCalendar();
+    calendar();
   }
 });
