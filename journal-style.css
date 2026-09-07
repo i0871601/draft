@@ -420,7 +420,10 @@ body {
 
 
 footer {
-  
+  font-size: 0.7rem;
+  position: absolute;
+  bottom: 0;
+  color: var(--text-color-1);
 }
 
 
