@@ -419,6 +419,11 @@ body {
 }
 
 
+footer {
+  
+}
+
+
 /*Клік*/
 #time:checked ~ #main-bar #time-button {
   outline-color: var(--color-accent);
