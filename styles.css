@@ -1,10 +1,9 @@
 /*Авторське право (c) серпень 2025 рік Сікан Іван Валерійович.*/
 :root{
-  --fon-color: #151419;
+  --fon-color: #1b1b1b;
   --color-accent: #f56e0f;
   --color-accent-shadow: rgba(245, 110, 15, 0.7);
-  --color1: #1b1b1e;
-  --color2: #262626;
+  --fon-color-2: #262626;
   --text-color: #878787;
 }
 body {
@@ -70,7 +69,6 @@ h1{
 }
 .loginForm input:hover{
   border: 0.22vmin solid var(--color-accent);
-  box-shadow: 0 0 0.5vmin var(--color-accent);
   color: var(--color-accent);
 }
 .loginForm input:focus{
@@ -81,20 +79,17 @@ h1{
   transform: scale(1.03);
   background-color: var(--color-accent);
   font-size: clamp(16px, 2.37vh, 40px);
-  box-shadow: 0 0 0.5vmin var(--color-accent);
 }
 .loginForm button.active-animation{
   transform: none;
   background-color: var(--color-accent);
   font-size: clamp(16px, 2.35vh, 40px);
-  box-shadow: 0 0 0.5vmin var(--color-accent);
 }
 footer{
   width: auto;
   bottom: 0;
   font-size: clamp(5px, 1.3vh, 13px);
   color: var(--text-color);
-  cursor: default;
   position: absolute;
   -webkit-animation: fadeOldUp 1.7s ease-in-out forwards;
   animation: fadeUp 1.7s ease-in-out forwards;
@@ -132,7 +127,6 @@ footer{
     transform: none;
     background-color: var(--color-accent);
     font-size: clamp(16px, 2.35vh, 40px);
-    box-shadow: 0 0 0.5vmin var(--color-accent);
   }
 }
 
