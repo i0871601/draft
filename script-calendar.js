@@ -93,8 +93,10 @@ export function calendar() {
   if (isCurrentMonth) updateEventDayInfo(today.getDate(), today.getDay(),  true);
 
   // Делегування подій: один слухач на весь контейнер замість повішування на кожен інпут
-  contentCalendarEl.addEventListener('change', (e) => {
-    if (e.target.matches('input[name="calendar-day"]')) {
+  contentCalendarEl.addEventListener('click', (e) => {
+    const input = e.target.matches('input[name="calendar-day"]') ? e.target : e.target.closest('label')?.control;
+    
+    if (input) {
       const day = Number(e.target.value);
       const dayOfWeek = Number(e.target.dataset.dayofweek);
 
