@@ -27,7 +27,7 @@ const fullWeekDays = [
 
 export function updateEventDayInfo(day, dayOfWeekIndex, isToday = false) {
 
-  if (!checkbox) return;
+  if (!checkbox.checked) return;
 
   let dayText = fullWeekDays[dayOfWeekIndex];
   if (dateEl) dateEl.textContent = day;
