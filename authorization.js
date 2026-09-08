@@ -1,36 +1,24 @@
 // Авторське право (c) серпень 2025 рік Сікан Іван Валерійович.
 import { API_URL_AUTHORIZATION, messages } from './config.js';
 
-//Всі html об'єкти для скрипта
+// Всі html об'єкти для скрипта
 const button = document.getElementById('loginButton');
 const defaultText = button.querySelector('.default-text');
-const dots = button.querySelector('.dots');
 const form = document.getElementById('loginForm');
 const passwordField = document.getElementById('password');
 const newPasswordField = document.getElementById('newPassword');
 const confirmNewPasswordField = document.getElementById('confirmNewPassword');
 const newPasswordFieldsContainer = document.getElementById('newPasswordFields');
 
-function errorButton(){
+function errorButton() {
     button.style.pointerEvents = 'none';
     setTimeout(() => {
         button.style.pointerEvents = 'auto';
     }, 1000);
 }
 
-export function setButtonState(isLoading, text = "Увійти") {
-    if (isLoading) {
-        defaultText.classList.add('hidden');
-        dots.classList.remove('hidden');
-        button.disabled = true;
-        button.classList.add('active-animation');
-    } else {
-        defaultText.classList.remove('hidden');
-        dots.classList.add('hidden');
-        button.disabled = false;
-        defaultText.textContent = text;
-        button.classList.remove('active-animation');
-    }
+export function setButtonText(text = "Увійти") {
+    defaultText.textContent = text;
 }
 
 export async function hashPassword(password) {
@@ -81,7 +69,6 @@ export async function updatePassword(lastName, newPasswordHash) {
 
 function handleFormSubmission(event) {
     event.preventDefault();
-    setButtonState(true);
 
     const lastName = document.getElementById('lastName').value.trim();
     const password = passwordField.value.trim();
@@ -96,9 +83,8 @@ function handleFormSubmission(event) {
 
 async function handleLogin(lastName, password) {
     if (!lastName || !password) {
-        errorButton()
+        errorButton();
         console.log(messages.fieldsEmpty);
-        setButtonState(false);
         return;
     }
     
@@ -110,7 +96,7 @@ async function handleLogin(lastName, password) {
             passwordField.classList.add('hidden');
             newPasswordFieldsContainer.classList.remove('hidden');
             newPasswordFieldsContainer.classList.add('active');
-            setButtonState(false, "Зберегти");
+            setButtonText("Зберегти");
             newPasswordField.disabled = false;
             confirmNewPasswordField.disabled = false;
             newPasswordField.focus();
@@ -121,8 +107,6 @@ async function handleLogin(lastName, password) {
         }
     } catch (error) {
         console.log(messages.loginError);
-    } finally {
-        setButtonState(false);
     }
 }
 
@@ -132,7 +116,6 @@ async function handlePasswordUpdate(lastName) {
 
     if (!newPassword || newPassword !== confirmNewPassword) {
         console.log(messages.passwordMismatch);
-        setButtonState(false);
         return;
     }
     
@@ -144,7 +127,7 @@ async function handlePasswordUpdate(lastName) {
             passwordField.classList.remove('hidden');
             newPasswordFieldsContainer.classList.add('hidden');
             newPasswordFieldsContainer.classList.remove('active');
-            setButtonState(false, "Увійти");
+            setButtonText("Увійти");
             newPasswordField.disabled = true;
             confirmNewPasswordField.disabled = true;
             newPasswordField.value = '';
@@ -156,8 +139,6 @@ async function handlePasswordUpdate(lastName) {
         }
     } catch (error) {
         console.log("Помилка: " + error.message);
-    } finally {
-        setButtonState(false);
     }
 }
 
