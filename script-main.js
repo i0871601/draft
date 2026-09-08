@@ -20,3 +20,7 @@ document.addEventListener('visibilitychange', () => {
     calendar();
   }
 });
+
+window.addEventListener('pageshow', (event) => {
+  calendar();
+});
