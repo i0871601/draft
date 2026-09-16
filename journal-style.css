@@ -306,7 +306,7 @@
     flex-direction: row;
     width: calc(100% - 0.6rem);
     height: 100%;
-    margin: 0;
+    margin: 0 0 5rem 0;
   }
 
   .content {
