@@ -176,7 +176,7 @@ footer {
 }
 
 #select-folder:checked ~ #content #content-select {
-    transform: translateY(100%);
+    transform: translateY(-100%);
     pointer-events: auto;
 }
 
@@ -238,5 +238,15 @@ footer {
                 transform: rotate(-45deg);
             }
         }
+    }
+
+    #time:checked ~ #content #content-time {
+        transform: translateX(0);
+        pointer-events: auto;
+    }
+
+    #select-folder:checked ~ #content #content-select {
+        transform: translateX(-100%);
+        pointer-events: auto;
     }
 }

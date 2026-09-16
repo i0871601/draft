@@ -30,14 +30,14 @@
 }
 
 #content-time {
+  background-color: var(--fon-color);
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
   gap: 5rem;
-  opacity: 0;
   pointer-events: none;
-  transition: opacity 0.7s ease-in-out;
+  transition: transform 0.7s ease-in-out;
 
 
   #calendar {
@@ -293,16 +293,18 @@
 
 
 #content-select {
-  z-index: 5;
+  transition: transform 0.7s ease-in-out;
 }
 
 
 
 @media (orientation: portrait) {
+  #content {
+    flex-direction: row;
+  }
+
   .content {
-    width: calc(100% - 1.6rem);
-    height: calc(100% - 3rem);
-    margin: 0.3rem 0 3rem 0;
+    
   }
 
   #content-time {
