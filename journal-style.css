@@ -65,7 +65,6 @@
     #content-calendar {
       display: grid;
       grid-template-columns: repeat(7, 1fr);
-      grid-auto-rows: 1fr;
       flex: 1;
 
       .day-block {
@@ -106,7 +105,7 @@
         color: var(--text-color-3);
       }
 
-      .other-month {
+      .other-month p{
         color: var(--text-color-1);
       }
     }
@@ -304,6 +303,9 @@
 @media (orientation: portrait) {
   #content {
     flex-direction: row;
+    width: calc(100% - 0.6rem);
+    height: 100%;
+    margin: 0;
   }
 
   .content {
