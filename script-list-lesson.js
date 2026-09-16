@@ -51,12 +51,13 @@ function TimeNow (lessonList){
             const activeInput = entryArticle.querySelector('.input-active');
             const passedInput = entryArticle.querySelector('.input-passed');
 
-            const [startTimeStr, endTimeStr] = item.Time.split('-');
+            const startTimeStr = item.TimeStart;
+            const endTimeStr = item.TimeEnd;
             
             const startTotalMinutes = timeToMinutes(startTimeStr);
             const endTotalMinutes = timeToMinutes(endTimeStr);
             
-            const nextStartTime = (index + 1 <lessonList.length) ? lessonList[index + 1].Time.split('-')[0] : null;
+            const nextStartTime = (index + 1 < lessonList.length) ? lessonList[index + 1].TimeStart : null;
             let nextTotalMinutes = nextStartTime ? timeToMinutes(nextStartTime) : null;
             
             //Зараз триває урок
@@ -121,7 +122,7 @@ export const listLessonDay = (dayText, isToday) => {
 
         if (filteredLessons && filteredLessons.length > 0) {
             filteredLessons.forEach(el => {
-                const [startTime] = el.Time ? el.Time.split('-') : ['', ''];
+                const startTime = el.TimeStart || '';
                 
                 const activeId = `active-lesson-${el.lessonNumber}`;
                 const passedId = `passed-lesson-${el.lessonNumber}`;
@@ -130,9 +131,9 @@ export const listLessonDay = (dayText, isToday) => {
 
                 let classBorder = '';
                 
-                if (el.Link) {
+                if (el.Venue) {
                     classBorder = 'border';
-                    const rawLink = el.Link.trim();
+                    const rawLink = el.Venue.trim();
                     const isUrl = rawLink.startsWith('http://') || rawLink.startsWith('https://');
                     
                     if (isUrl) locationHTML = `
