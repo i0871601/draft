@@ -32,8 +32,8 @@ function TimeNow (lessonList){
 
     const now = new Date();
     const currentTotalMinutes = now.getHours() * 60 + now.getMinutes();
-    const StartTime = lessonList[0].Time.split('-')[0];
-    const EndTime = lessonList[lessonList.length - 1].Time.split('-')[1];
+    const StartTime = lessonList[0].TimeStart;
+    const EndTime = lessonList[lessonList.length - 1].TimeEnd;
 
     const startLesson = timeToMinutes(StartTime);
     const endLesson = timeToMinutes(EndTime);
