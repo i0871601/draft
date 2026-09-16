@@ -13,11 +13,16 @@
 
 }
 
+#content {
+    width: calc(100% - 5rem);
+    height: calc(100% - 0.6rem);
+    margin: 0 0 0 5rem;
+    overflow: hidden;
+    display: flex;
+}
+
 .content {
-  position: absolute;
-  width: calc(100% - 5rem);
-  height: calc(100% - 0.6rem);
-  margin: 0.3rem 0 0.3rem 5rem;
+  
 }
 
 #content-time {

@@ -137,6 +137,14 @@ body {
     }
 }
 
+#content {
+    width: calc(100% - 5rem);
+    height: calc(100% - 0.6rem);
+    margin: 0 0 0 5rem;
+    overflow: hidden;
+    display: flex;
+}
+
 footer {
     font-size: 0.7rem;
     position: absolute;
@@ -154,8 +162,8 @@ footer {
     }
 }
 
-#time:checked ~ #content-time {
-    opacity: 1;
+#time:checked ~ #content #content-time {
+    transform: translateX(0);
     pointer-events: auto;
 }
 
