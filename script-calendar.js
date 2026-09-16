@@ -26,7 +26,6 @@ const fullWeekDays = [
 ];
 
 export function updateEventDayInfo(day, dayOfWeekIndex, isToday = false) {
-
   if (!checkbox.checked) return;
 
   let dayText = fullWeekDays[dayOfWeekIndex];
@@ -40,14 +39,12 @@ export function updateEventDayInfo(day, dayOfWeekIndex, isToday = false) {
   }, 500);
 }
 
-
 export function calendar() {
   const year = currentDate.getFullYear();
   const month = currentDate.getMonth();
 
   if (monthEl) monthEl.textContent = monthNames[month];
 
-  // Дні тижня
   if (weekEl) {
     weekEl.innerHTML = weekDays.map(day => `<p>${day}</p>`).join('');
   }
@@ -56,15 +53,20 @@ export function calendar() {
 
   const firstDayIndex = (new Date(year, month, 1).getDay() + 6) % 7;
   const totalDays = new Date(year, month + 1, 0).getDate();
+  
+  const prevMonthTotalDays = new Date(year, month, 0).getDate();
 
   let calendarHTML = '';
 
-  // Порожні блоки перед початком місяця
-  for (let i = 0; i < firstDayIndex; i++) {
-    calendarHTML += `<div class="day-block empty"></div>`;
+  for (let i = firstDayIndex; i > 0; i--) {
+    const prevDay = prevMonthTotalDays - i + 1;
+    calendarHTML += `
+      <div class="day-block other-month">
+        <p>${prevDay}</p>
+      </div>
+    `;
   }
 
-  // Дні поточного місяця
   const today = new Date();
   const isCurrentMonth = today.getFullYear() === year && today.getMonth() === month;
 
@@ -78,7 +80,6 @@ export function calendar() {
     const todayClass = isToday ? ' today' : '';
     const checkedAttr = isToday ? 'checked' : '';
 
-    // Формуємо радіо та лейбл єдиним блоком розмітки
     calendarHTML += `
       <input type="radio" name="calendar-day" id="${inputId}" class="input" value="${day}" data-dayofweek="${dayOfWeek}" ${checkedAttr}>
       <label for="${inputId}" class="day-block${weekendClass}${todayClass}">
@@ -87,18 +88,27 @@ export function calendar() {
     `;
   }
 
-  // Вставляємо всю розмітку в DOM за один раз
+  const totalRendered = firstDayIndex + totalDays;
+  const nextDaysNeeded = (totalRendered > 35 ? 42 : 35) - totalRendered;
+
+  for (let day = 1; day <= nextDaysNeeded; day++) {
+    calendarHTML += `
+      <div class="day-block other-month">
+        <p>${day}</p>
+      </div>
+    `;
+  }
+
   contentCalendarEl.innerHTML = calendarHTML;
 
-  if (isCurrentMonth) updateEventDayInfo(today.getDate(), today.getDay(),  true);
+  if (isCurrentMonth) updateEventDayInfo(today.getDate(), today.getDay(), true);
 
-  // Делегування подій: один слухач на весь контейнер замість повішування на кожен інпут
   contentCalendarEl.addEventListener('click', (e) => {
     const input = e.target.matches('input[name="calendar-day"]') ? e.target : e.target.closest('label')?.control;
     
     if (input) {
-      const day = Number(e.target.value);
-      const dayOfWeek = Number(e.target.dataset.dayofweek);
+      const day = Number(input.value);
+      const dayOfWeek = Number(input.dataset.dayofweek);
 
       const isSelectedDayToday = isCurrentMonth && day === today.getDate();
 
