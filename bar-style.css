@@ -1,232 +1,228 @@
 /*Авторське право (c) липень 2026 рік Сікан Іван Валерійович.*/
 :root {
-  --fon-color: #f1f1f1;
-  --fon-color-1: #1b1b1b;
-  --fon-color-2: #fdfdfd;
-  --color-accent: #f56e0f;
-  --color-passed: #559153;
-  --shadow: #878787;
-  --text-color-1: #878787;
-  --text-color-2: #1b1b1b;
-  --text-color-3: #f56e0f;
-  --text-color-passed: #559153;
-
+    --fon-color: #f1f1f1;
+    --fon-color-1: #1b1b1b;
+    --fon-color-2: #fdfdfd;
+    --color-accent: #f56e0f;
+    --color-passed: #559153;
+    --shadow: #878787;
+    --text-color-1: #878787;
+    --text-color-2: #1b1b1b;
+    --text-color-3: #f56e0f;
+    --text-color-passed: #559153;
 }
 
 body {
-  height: 100dvh;
-  margin: 0;
-  padding: 0;
-  background-color: var(--fon-color);
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  position: relative;
-  user-select: none;
-  font-family: 'SourceSans3';
+    height: 100dvh;
+    margin: 0;
+    padding: 0;
+    background-color: var(--fon-color);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    user-select: none;
+    font-family: 'SourceSans3';
 }
+
 .input {
-  display: none;
+    display: none;
 }
 
 #Journal {
-  width: 95%;
-  height: 90%;
-  position: relative;
-  overflow: hidden;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
-  animation: fadeUp 0.7s ease-in-out forwards;
+    width: 97%;
+    height: 90%;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    animation: fadeUp 0.7s ease-in-out forwards;
 }
 
 #main-bar {
-  min-width: calc(5rem - 0.6rem);
-  margin: 0 0 0 0.3rem;
-  height: calc(100% - 0.6rem);
-  background-color: var(--fon-color-1);
-  border-radius: 1.5rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  box-sizing: border-box;
-  box-shadow: 0 0 0.3rem var(--shadow);
-
-
-  .marks {
-    margin: 1.5rem 0 0 0;
-    position: relative;
-    box-sizing: border-box;
-    cursor: pointer;
-    pointer-events: auto;
-  }
-
-  #time-button {
-    width: 50%;
-    aspect-ratio: 1 / 1;
-    border-radius: 5rem;
+    min-width: calc(5rem - 0.6rem);
+    margin: 0 0 0 0.3rem;
+    height: calc(100% - 0.6rem);
+    background-color: var(--fon-color-1);
+    border-radius: 1.5rem;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    outline: 0.21rem solid var(--shadow);
-    outline-offset: -0.21rem;
-    transition: transform 0.7s ease-in-out, outline-color 0.7s ease-in-out;
-
-
-    span {
-      width: 0.21rem;
-      height: 55%;
-      border-radius: 0.21rem;
-      position: absolute;
-
-
-      &::after {
-        content: '';
-        height: 55%;
-        width: 100%;
-        position: absolute;
-        border-radius: 0.21rem;
-        background-color: var(--shadow);
-        transition: background-color 0.7s ease-in-out;
-      }
+    box-sizing: border-box;
+    box-shadow: 0 0 0.3rem var(--shadow);
+    
+    .marks {
+        margin: 1.5rem 0 0 0;
+        position: relative;
+        box-sizing: border-box;
+        cursor: pointer;
+        pointer-events: auto;
     }
-
-    #minut {
-      transform: rotate(-45deg);
-      display: flex;
-      flex-direction: column-reverse;
+    
+    #time-button {
+        width: 50%;
+        aspect-ratio: 1 / 1;
+        border-radius: 5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        outline: 0.21rem solid var(--shadow);
+        outline-offset: -0.21rem;
+        transition: transform 0.7s ease-in-out, outline-color 0.7s ease-in-out;
+        
+        span {
+            width: 0.21rem;
+            height: 55%;
+            border-radius: 0.21rem;
+            position: absolute;
+            
+            &::after {
+                content: '';
+                height: 55%;
+                width: 100%;
+                position: absolute;
+                border-radius: 0.21rem;
+                background-color: var(--shadow);
+                transition: background-color 0.7s ease-in-out;
+            }
+        }
+        
+        #minut {
+            transform: rotate(-45deg);
+            display: flex;
+            flex-direction: column-reverse;
+        }
+        
+        &:hover {
+            outline-color: var(--color-accent);
+            
+            span::after {
+                background-color: var(--color-accent);
+            }
+        }
     }
-
-    &:hover {
-      outline-color: var(--color-accent);
-      
-      span::after {
-        background-color: var(--color-accent);
-      }
+    
+    #select-button {
+        width: 45%;
+        aspect-ratio: 1 / 1;
+        border-radius: 0.3rem;
+        overflow: hidden;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        gap: 0.21rem;
+        transition: transform 0.7s ease-in-out;
+        
+        span {
+            display: block;
+            outline: 0.21rem solid var(--shadow);
+            outline-offset: -0.21rem;
+            border-radius: 0.3rem;
+            transition: outline 0.7s ease-in-out;
+        }
+        
+        &:hover span{
+            outline: 0.21rem solid var(--color-accent);
+        }
     }
-  }
-
-  #select-button {
-    width: 45%;
-    aspect-ratio: 1 / 1;
-    border-radius: 0.3rem;
-    overflow: hidden;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    gap: 0.21rem;
-    transition: transform 0.7s ease-in-out;
-
-    span {
-      display: block;
-      background-color: var(--shadow);
-      border-radius: 0.3rem;
-      transition: background-color 0.7s ease-in-out;
+    
+    #off-event-day-button {
+        display: none;
+        visibility: hidden;
+        overflow: hidden;
+        pointer-events: none;
     }
-
-
-    &:hover span{
-      background-color: var(--color-accent);
-    }
-  }
-
-
-  #off-event-day-button {
-    display: none;
-    visibility: hidden;
-    overflow: hidden;
-    pointer-events: none;
-  }
 }
 
 footer {
-  font-size: 0.7rem;
-  position: absolute;
-  bottom: 0;
-  color: var(--text-color-1);
+    font-size: 0.7rem;
+    position: absolute;
+    bottom: 0;
+    color: var(--text-color-1);
 }
 
 /*Клік*/
 #time:checked ~ #main-bar #time-button {
-  outline-color: var(--color-accent);
-  transform: scale(1.05);
-
-  span::after {
-    background-color: var(--color-accent);
-  }
+    outline-color: var(--color-accent);
+    transform: scale(1.05);
+    
+    span::after {
+        background-color: var(--color-accent);
+    }
 }
 
 #time:checked ~ #content-time {
-  opacity: 1;
-  pointer-events: auto;
+    opacity: 1;
+    pointer-events: auto;
 }
 
 #select-folder:checked ~ #main-bar #select-button {
-  transform: scale(1.05);
-
-  span {
-    background-color: var(--color-accent);
-  }
+    transform: scale(1.05);
+    
+    span {
+        outline: 0.21rem solid var(--color-accent);
+    }
 }
 
 @media (orientation: portrait) {
-  #Journal {
-    flex-direction: column-reverse;
-  }
-
-  #main-bar {
-    min-width: auto;
-    height: auto;
-    width: calc(100% - 0.6rem);
-    min-height: calc(5rem - 0.6rem);
-    margin: 0 0 0.3rem 0;
-    flex-direction: row;
-    position: relative;
-
-    .marks {
-      margin: 0 0 0 1.5rem;
+    #Journal {
+        flex-direction: column-reverse;
     }
+    
+    #main-bar {
+        min-width: auto;
+        height: auto;
+        width: calc(100% - 0.6rem);
+        min-height: calc(5rem - 0.6rem);
+        margin: 0 0 0.3rem 0;
+        flex-direction: row;
+        position: relative;
+        
+        .marks {
+            margin: 0 0 0 1.5rem;
+        }
+        
+        #time-button {
+            width: 2.5rem;
+        }
+        
+        #select-button {
+            width: 2.3rem;
+        }
 
-    #time-button {
-      width: 2.5rem;
+        #off-event-day-button {
+            position: absolute;
+            right: 0;
+            top: 0;
+            height: 100%;
+            aspect-ratio: 1 / 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: visible;
+            pointer-events: none;
+            transition: opacity 0.5s ease-in-out;
+            
+            &::after, &::before {
+                content: '';
+                position: absolute;
+                height: 0.3rem;
+                width: 40%;
+                background-color: var(--shadow);
+                border-radius: 0.3rem;
+            }
+            
+            &::before {
+                transform: rotate(45deg);
+            }
+            
+            &::after {
+                transform: rotate(-45deg);
+            }
+        }
     }
-
-    #select-button {
-      width: 2.3rem;
-    }
-
-    #off-event-day-button {
-      position: absolute;
-      right: 0;
-      top: 0;
-      height: 100%;
-      aspect-ratio: 1 / 1;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      opacity: 0;
-      visibility: visible;
-      pointer-events: none;
-      transition: opacity 0.5s ease-in-out;
-
-      &::after, &::before {
-        content: '';
-        position: absolute;
-        height: 0.3rem;
-        width: 40%;
-        background-color: var(--shadow);
-        border-radius: 0.3rem;
-      }
-
-      &::before {
-        transform: rotate(45deg);
-      }
-
-      &::after {
-        transform: rotate(-45deg);
-      }
-    }
-  }
 }
