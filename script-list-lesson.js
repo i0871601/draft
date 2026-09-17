@@ -22,6 +22,9 @@ const timeToMinutes = (timeStr) => {
 
 function TimeNow (lessonList){
 
+    const contentRoutine = document.getElementById('event-day-content');
+    if (!contentRoutine) return -1;
+
     const entries = contentRoutine.querySelectorAll('.routine-entry');
     // Скидаємо стан чекбоксів для всіх уроків
     entries.forEach(entry => {
@@ -118,7 +121,7 @@ function listLessonDay(dayText, isToday) {
     const routine = userData.data.routine;
 
     const filteredLessons = routine.filter(item => item.Day === dayText);
-    filteredLessons.sort((a, b) => Number(a.lessonNumber) - Number(b.lessonNumber));
+    filteredLessons.sort((a, b) => Number(a.LessonNumber) - Number(b.LessonNumber));
 
     console.log(filteredLessons);
 
@@ -134,8 +137,8 @@ function listLessonDay(dayText, isToday) {
             filteredLessons.forEach(el => {
                 const startTime = el.TimeStart || '';
                 
-                const activeId = `active-lesson-${el.lessonNumber}`;
-                const passedId = `passed-lesson-${el.lessonNumber}`;
+                const activeId = `active-lesson-${el.LessonNumber}`;
+                const passedId = `passed-lesson-${el.LessonNumber}`;
                 
                 let locationHTML = '';
 
