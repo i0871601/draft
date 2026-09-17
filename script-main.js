@@ -10,7 +10,7 @@ function init() {
         contentCalendarEl: document.getElementById('content-calendar'),
         dateEl: document.getElementById('date'),
         dayWeekEl: document.getElementById('day-week'),
-        eventDayContent: document.getElementById('event-day-content');
+        eventDayContent: document.getElementById('event-day-content')
     };
 
     //Слухачі на перемикачі
