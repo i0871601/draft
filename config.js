@@ -1,8 +1,8 @@
 // Авторське право (c) серпень 2025 рік Сікан Іван Валерійович.
-export const API_URL_AUTHORIZATION = "https://worker-refuge.i087.workers.dev/";
+const API_URL_AUTHORIZATION = "https://worker-refuge.i087.workers.dev/";
 const API_URL = "https://worker-refuge.i087.workers.dev/";
 
-export const messages = {
+const messages = {
   loginError: {status: 'error', text: "Помилка: невірний логін чи пароль."},
   fieldsEmpty: {status: 'error', text: "Будь ласка, заповніть всі поля."},
   newPassword: {status: 'success', text: "Був введений тимчасовий пароль. Створіть постійний пароль."},

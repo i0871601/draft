@@ -1,5 +1,4 @@
 // Авторське право (c) серпень 2025 рік Сікан Іван Валерійович.
-import { API_URL_AUTHORIZATION, messages } from './config.js';
 
 //Всі html об'єкти для скрипта
 const button = document.getElementById('loginButton');
@@ -17,13 +16,13 @@ function errorButton(){
     }, 1000);
 }
 
-export function setButtonText(text = "Увійти") {
+function setButtonText(text = "Увійти") {
     defaultText.classList.remove('hidden');
     button.disabled = false;
     defaultText.textContent = text;
 }
 
-export async function hashPassword(password) {
+async function hashPassword(password) {
     const encoder = new TextEncoder();
     const data = encoder.encode(password);
     const hashBuffer = await crypto.subtle.digest('SHA-256', data);
@@ -31,7 +30,7 @@ export async function hashPassword(password) {
     return hashArray.map(byte => byte.toString(16).padStart(2, '0')).join('');
 }
 
-export async function authorizeUser(lastName, passwordHash) {
+async function authorizeUser(lastName, passwordHash) {
     const response = await fetch(API_URL_AUTHORIZATION, {
         method: 'POST',
         headers: {
@@ -50,7 +49,7 @@ export async function authorizeUser(lastName, passwordHash) {
     return data;
 }
 
-export async function updatePassword(lastName, newPasswordHash) {
+async function updatePassword(lastName, newPasswordHash) {
     const response = await fetch(API_URL_AUTHORIZATION, {
         method: 'POST',
         headers: {
@@ -149,7 +148,7 @@ function saveSessionData(data) {
     sessionStorage.setItem('userBase', jsonString);
 }
 
-export function initAuth() {
+function initAuth() {
     window.addEventListener('pageshow', (event) => {
         if (event.persisted) {
             sessionStorage.clear();
