@@ -89,7 +89,7 @@ function calendar(elements) {
 
   contentCalendarEl.innerHTML = calendarHTML;
 
-  if (isCurrentMonth) {
+  /*if (isCurrentMonth) {
     updateEventDayInfo(today.getDate(), today.getDay(), true, elements);
-  }
+  }*/
 }
