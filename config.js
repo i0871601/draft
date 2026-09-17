@@ -1,6 +1,6 @@
 // Авторське право (c) серпень 2025 рік Сікан Іван Валерійович.
 export const API_URL_AUTHORIZATION = "https://worker-refuge.i087.workers.dev/";
-export const API_URL = "https://worker-refuge.i087.workers.dev/";
+const API_URL = "https://worker-refuge.i087.workers.dev/";
 
 export const messages = {
   loginError: {status: 'error', text: "Помилка: невірний логін чи пароль."},
@@ -11,7 +11,7 @@ export const messages = {
   passwordUpdateError: {status: 'error', text: "Не вдалося оновити пароль."}
 };
 
-export function getUserData() {
+function getUserData() {
     try {
         const sessionData = sessionStorage.getItem('userBase');
         return sessionData ? JSON.parse(sessionData) : null;
@@ -21,7 +21,7 @@ export function getUserData() {
     }
 }
 
-export async function request(payload) {
+async function request(payload) {
     const userData = getUserData();
     if (!userData) { throw new Error("Дані користувача не знайдено в сесії. Відправка запиту неможлива."); }
     const finalPayload = {

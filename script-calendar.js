@@ -1,78 +1,62 @@
-// Авторське право (c) вересень 2026 рік Сікан Іван Валерійович.
-import { listLessonDay } from './script-list-lesson.js';
+// Авторське право (c) вересень 2026 рік Сікан Іван Валерійович
+function updateEventDayInfo(day, dayOfWeekIndex, isToday, elements) {
+  const { checkbox, dateEl, dayWeekEl, checkboxEl } = elements;
 
-const monthEl = document.getElementById('month');
-const weekEl = document.getElementById('week');
-const contentCalendarEl = document.getElementById('content-calendar');
-
-const dateEl = document.getElementById('date');
-const dayWeekEl = document.getElementById('day-week');
-const checkboxEl = document.getElementById('checkbox-event-day');
-
-const checkbox = document.getElementById('time');
-
-const currentDate = new Date();
-
-const monthNames = [
-  'Січень', 'Лютий', 'Березень', 'Квітень', 'Травень', 'Червень',
-  'Липень', 'Серпень', 'Вересень', 'Жовтень', 'Листопад', 'Грудень'
-];
-
-const weekDays = ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Нд'];
-
-const fullWeekDays = [
-  'Неділя', 'Понеділок', 'Вівторок', 'Середа', 
-  'Четвер', 'П\'ятниця', 'Субота'
-];
-
-export function updateEventDayInfo(day, dayOfWeekIndex, isToday = false) {
   if (!checkbox.checked) return;
+
+  const fullWeekDays = [
+    'Неділя', 'Понеділок', 'Вівторок', 'Середа', 
+    'Четвер', 'П\'ятниця', 'Субота'
+  ];
 
   let dayText = fullWeekDays[dayOfWeekIndex];
   if (dateEl) dateEl.textContent = day;
   if (dayWeekEl) dayWeekEl.textContent = dayText;
-  
-  listLessonDay(dayText, isToday);
-  
+
+  // Викликаємо функцію з script-list-lesson.js
+  if (typeof listLessonDay === 'function') listLessonDay(dayText, isToday);
+
   setTimeout(() => {
     if (!checkboxEl.checked) checkboxEl.checked = true;
   }, 500);
 }
 
-export function calendar() {
+function calendar(elements) {
+  const { monthEl, weekEl, contentCalendarEl, checkbox } = elements;
+
+  //Перевірка чекбокса time
+  if (!checkbox.checked) return;
+
+  //Перевірка на непустоту
   const isCalendarRendered = contentCalendarEl && contentCalendarEl.children.length > 0;
   const isMonthRendered = monthEl && monthEl.textContent.trim() !== '';
 
-  // Якщо календар і місяць НЕ порожні
-  if (isCalendarRendered && isMonthRendered) {
-    return;
-  }
-  
+  if (isCalendarRendered && isMonthRendered) return;
+
+  const currentDate = new Date();
+  const monthNames = [
+    'Січень', 'Лютий', 'Березень', 'Квітень', 'Травень', 'Червень',
+    'Липень', 'Серпень', 'Вересень', 'Жовтень', 'Листопад', 'Грудень'
+  ];
+  const weekDays = ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Нд'];
+
   const year = currentDate.getFullYear();
   const month = currentDate.getMonth();
 
   if (monthEl) monthEl.textContent = monthNames[month];
-
-  if (weekEl) {
-    weekEl.innerHTML = weekDays.map(day => `<p>${day}</p>`).join('');
-  }
+  if (weekEl) weekEl.innerHTML = weekDays.map(d => `<p>${d}</p>`).join('');
 
   if (!contentCalendarEl) return;
 
   const firstDayIndex = (new Date(year, month, 1).getDay() + 6) % 7;
   const totalDays = new Date(year, month + 1, 0).getDate();
-  
   const prevMonthTotalDays = new Date(year, month, 0).getDate();
 
   let calendarHTML = '';
 
   for (let i = firstDayIndex; i > 0; i--) {
     const prevDay = prevMonthTotalDays - i + 1;
-    calendarHTML += `
-      <div class="day-block other-month">
-        <p>${prevDay}</p>
-      </div>
-    `;
+    calendarHTML += `<div class="day-block other-month"><p>${prevDay}</p></div>`;
   }
 
   const today = new Date();
@@ -82,7 +66,7 @@ export function calendar() {
     const dayOfWeek = new Date(year, month, day).getDay();
     const isWeekend = dayOfWeek === 0 || dayOfWeek === 6;
     const isToday = isCurrentMonth && day === today.getDate();
-    
+
     const inputId = `day-${day}`;
     const weekendClass = isWeekend ? ' weekend' : '';
     const todayClass = isToday ? ' today' : '';
@@ -100,27 +84,12 @@ export function calendar() {
   const nextDaysNeeded = (totalRendered > 35 ? 42 : 35) - totalRendered;
 
   for (let day = 1; day <= nextDaysNeeded; day++) {
-    calendarHTML += `
-      <div class="day-block other-month">
-        <p>${day}</p>
-      </div>
-    `;
+    calendarHTML += `<div class="day-block other-month"><p>${day}</p></div>`;
   }
 
   contentCalendarEl.innerHTML = calendarHTML;
 
-  if (isCurrentMonth) updateEventDayInfo(today.getDate(), today.getDay(), true);
-
-  contentCalendarEl.addEventListener('click', (e) => {
-    const input = e.target.matches('input[name="calendar-day"]') ? e.target : e.target.closest('label')?.control;
-    
-    if (input) {
-      const day = Number(input.value);
-      const dayOfWeek = Number(input.dataset.dayofweek);
-
-      const isSelectedDayToday = isCurrentMonth && day === today.getDate();
-
-      updateEventDayInfo(day, dayOfWeek, isSelectedDayToday);
-    }
-  });
+  if (isCurrentMonth) {
+    updateEventDayInfo(today.getDate(), today.getDay(), true, elements);
+  }
 }

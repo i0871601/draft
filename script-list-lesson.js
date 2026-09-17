@@ -1,5 +1,6 @@
 // Авторське право (c) вересень 2026 рік Сікан Іван Валерійович
-import { getUserData } from './config.js';
+
+/*import { getUserData } from './config.js';
 
 const userData = getUserData();
 
@@ -9,7 +10,7 @@ export const routine = userData.data.routine;
 
 if (routine.length > 0) {
     console.log("Ось ваш масив routine:", routine);
-}
+}*/
 
 let lessonUpdateTime = null;
 
@@ -20,6 +21,7 @@ const timeToMinutes = (timeStr) => {
 };
 
 function TimeNow (lessonList){
+
     const entries = contentRoutine.querySelectorAll('.routine-entry');
     // Скидаємо стан чекбоксів для всіх уроків
     entries.forEach(entry => {
@@ -106,7 +108,15 @@ function setStatusLesson(routineLesson) {
     }, delay );
 };
 
-export const listLessonDay = (dayText, isToday) => {
+function listLessonDay(dayText, isToday) {
+    const contentRoutine = document.getElementById('event-day-content');
+    if (!contentRoutine) return;
+
+    let userData = null;
+    if (typeof getUserData === 'function') userData = getUserData();
+
+    const routine = userData.data.routine;
+
     const filteredLessons = routine.filter(item => item.Day === dayText);
     filteredLessons.sort((a, b) => Number(a.lessonNumber) - Number(b.lessonNumber));
 

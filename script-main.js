@@ -1,18 +1,51 @@
 // Авторське право (c) вересень 2026 рік Сікан Іван Валерійович.
-import { calendar } from './script-calendar.js';
+function init() {
+    //DOM-елементи
+    const elements = {
+        checkbox: document.getElementById('time'),
+        inputSelectFolder: document.getElementById('select-folder'),
+        checkboxEl: document.getElementById('checkbox-event-day'),
+        monthEl: document.getElementById('month'),
+        weekEl: document.getElementById('week'),
+        contentCalendarEl: document.getElementById('content-calendar'),
+        dateEl: document.getElementById('date'),
+        dayWeekEl: document.getElementById('day-week')
+    };
 
-document.addEventListener('DOMContentLoaded', () => {
-
-    const inputTime = document.getElementById('time');
-    const inputSelectFolder = document.getElementById('select-folder');
-    const checkboxEventDay = document.getElementById('checkbox-event-day');
-
+    //Слухачі на перемикачі
     document.querySelectorAll('input[name="trigger"]').forEach(radio => {
         radio.addEventListener('change', () => {
-            if (inputTime.checked) calendar();
-            if (inputSelectFolder.checked) checkboxEventDay.checked = false;
+            
+            if (elements.checkbox.checked && typeof calendar === 'function') calendar(elements);
+            if (elements.inputSelectFolder.checked) elements.checkboxEl.checked = false;
         });
     });
 
-    calendar();
-});
+    // Делегування кліків на сітку календаря
+    if (elements.contentCalendarEl) {
+        elements.contentCalendarEl.addEventListener('click', (e) => {
+            const input = e.target.matches('input[name="calendar-day"]') ? e.target : e.target.closest('label')?.control;
+            
+            if (input) {
+                const day = Number(input.value);
+                const dayOfWeek = Number(input.dataset.dayofweek);
+                const today = new Date();
+                const isSelectedDayToday = day === today.getDate();
+
+                if (typeof updateEventDayInfo === 'function') updateEventDayInfo(day, dayOfWeek, isSelectedDayToday, elements);
+            }
+        });
+    }
+
+    // Первинний запуск
+    if (typeof calendar === 'function') {
+        calendar(elements);
+    }
+}
+
+// Захищений запуск (для завантаження з кешу)
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+} else {
+    init();
+}
