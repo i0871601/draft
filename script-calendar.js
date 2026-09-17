@@ -1,6 +1,6 @@
 // Авторське право (c) вересень 2026 рік Сікан Іван Валерійович
 function updateEventDayInfo(day, dayOfWeekIndex, isToday, elements) {
-  const { checkbox, dateEl, dayWeekEl, checkboxEl } = elements;
+  const { checkbox, dateEl, dayWeekEl, checkboxEl, eventDayContent } = elements;
 
   if (!checkbox.checked) return;
 
@@ -14,7 +14,7 @@ function updateEventDayInfo(day, dayOfWeekIndex, isToday, elements) {
   if (dayWeekEl) dayWeekEl.textContent = dayText;
 
   // Викликаємо функцію з script-list-lesson.js
-  if (typeof listLessonDay === 'function') listLessonDay(dayText, isToday);
+  if (typeof listLessonDay === 'function') listLessonDay(dayText, isToday, eventDayContent);
 
   setTimeout(() => {
     if (!checkboxEl.checked) checkboxEl.checked = true;

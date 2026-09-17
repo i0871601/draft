@@ -1,17 +1,5 @@
 // Авторське право (c) вересень 2026 рік Сікан Іван Валерійович
 
-/*import { getUserData } from './config.js';
-
-const userData = getUserData();
-
-const contentRoutine = document.getElementById('event-day-content');
-
-export const routine = userData.data.routine;
-
-if (routine.length > 0) {
-    console.log("Ось ваш масив routine:", routine);
-}*/
-
 let lessonUpdateTime = null;
 
 const timeToMinutes = (timeStr) => {
@@ -20,12 +8,9 @@ const timeToMinutes = (timeStr) => {
     return h * 60 + m;
 };
 
-function TimeNow (lessonList){
+function TimeNow (lessonList, eventDayContent){
 
-    const contentRoutine = document.getElementById('event-day-content');
-    if (!contentRoutine) return -1;
-
-    const entries = contentRoutine.querySelectorAll('.routine-entry');
+    const entries = eventDayContent.querySelectorAll('.routine-entry');
     // Скидаємо стан чекбоксів для всіх уроків
     entries.forEach(entry => {
         const activeInput = entry.querySelector('.input-active');
@@ -96,24 +81,24 @@ function TimeNow (lessonList){
     return delayMinutes * 60 * 1000;
 };
 
-function setStatusLesson(routineLesson) {
+function setStatusLesson(routineLesson, eventDayContent) {
     if(lessonUpdateTime) {
         clearTimeout(lessonUpdateTime);
         lessonUpdateTime = null;
     }
 
-    const delay = TimeNow(routineLesson);
+    const delay = TimeNow(routineLesson, eventDayContent);
     if (delay === -1) { console.log("Уроки закінчилися"); return;}
     const delayMinutes = delay / (60 * 1000);
     console.log(`Наступне оновлення через ${delayMinutes.toFixed(2)} хвилин`);
     lessonUpdateTime = setTimeout(() => {
-        setStatusLesson(routineLesson);
+        setStatusLesson(routineLesson, eventDayContent);
     }, delay );
 };
 
-function listLessonDay(dayText, isToday) {
-    const contentRoutine = document.getElementById('event-day-content');
-    if (!contentRoutine) return;
+function listLessonDay(dayText, isToday, eventDayContent) {
+
+    if (!eventDayContent) return;
 
     let userData = null;
     if (typeof getUserData === 'function') userData = getUserData();
@@ -131,7 +116,7 @@ function listLessonDay(dayText, isToday) {
     }
 
     setTimeout(() => {
-        contentRoutine.innerHTML = '';
+        eventDayContent.innerHTML = '';
 
         if (filteredLessons && filteredLessons.length > 0) {
             filteredLessons.forEach(el => {
@@ -181,11 +166,11 @@ function listLessonDay(dayText, isToday) {
                     </article>
                 `;
                 
-                contentRoutine.insertAdjacentHTML('beforeend', lessonHTML);
+                eventDayContent.insertAdjacentHTML('beforeend', lessonHTML);
             });
-            if (isToday) setStatusLesson(filteredLessons);
+            if (isToday) setStatusLesson(filteredLessons, eventDayContent);
         } else {
-            contentRoutine.innerHTML = `
+            eventDayContent.innerHTML = `
                 <div class="holiday">
                     <p>Вихідний</p>
                 </div>

@@ -9,7 +9,8 @@ function init() {
         weekEl: document.getElementById('week'),
         contentCalendarEl: document.getElementById('content-calendar'),
         dateEl: document.getElementById('date'),
-        dayWeekEl: document.getElementById('day-week')
+        dayWeekEl: document.getElementById('day-week'),
+        eventDayContent: document.getElementById('event-day-content');
     };
 
     //Слухачі на перемикачі
