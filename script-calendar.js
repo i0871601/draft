@@ -40,6 +40,14 @@ export function updateEventDayInfo(day, dayOfWeekIndex, isToday = false) {
 }
 
 export function calendar() {
+  const isCalendarRendered = contentCalendarEl && contentCalendarEl.children.length > 0;
+  const isMonthRendered = monthEl && monthEl.textContent.trim() !== '';
+
+  // Якщо календар і місяць НЕ порожні
+  if (isCalendarRendered && isMonthRendered) {
+    return;
+  }
+  
   const year = currentDate.getFullYear();
   const month = currentDate.getMonth();
 
