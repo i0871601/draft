@@ -24,15 +24,15 @@ function init() {
 
     // Делегування кліків на сітку календаря
     if (elements.contentCalendarEl) {
-        elements.contentCalendarEl.addEventListener('click', (e) => {
-            const input = e.target.matches('input[name="calendar-day"]') ? e.target : e.target.closest('label')?.control;
+        elements.contentCalendarEl.addEventListener('change', (e) => {
             
-            if (input) {
+            if (e.target.matches('input[name="calendar-day"]')) {
+                const input = e.target;
                 const day = Number(input.value);
                 const dayOfWeek = Number(input.dataset.dayofweek);
                 const today = new Date();
                 const isSelectedDayToday = day === today.getDate();
-
+                
                 if (typeof updateEventDayInfo === 'function') updateEventDayInfo(day, dayOfWeek, isSelectedDayToday, elements);
             }
         });
