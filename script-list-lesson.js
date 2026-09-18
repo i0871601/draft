@@ -98,7 +98,11 @@ function setStatusLesson(routineLesson, eventDayContent) {
 
 function listLessonDay(dayText, isToday, eventDayContent) {
 
-    if (!eventDayContent) return;
+    alert('опрацьовуємо розклад');
+    if (!eventDayContent) {
+        alert('дали задню на розкладі');
+        return;
+    }
 
     let userData = null;
     if (typeof getUserData === 'function') userData = getUserData();
@@ -119,6 +123,7 @@ function listLessonDay(dayText, isToday, eventDayContent) {
         eventDayContent.innerHTML = '';
 
         if (filteredLessons && filteredLessons.length > 0) {
+            alert('заповнюємо розклад');
             filteredLessons.forEach(el => {
                 const startTime = el.TimeStart || '';
                 
