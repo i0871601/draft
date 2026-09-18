@@ -107,7 +107,10 @@ function listLessonDay(dayText, isToday, eventDayContent) {
     let userData = null;
     if (typeof getUserData === 'function') userData = getUserData();
 
+    alert(JSON.stringify(userData, null, 2));
     const routine = userData.data.routine;
+
+    alert(JSON.stringify(routine, null, 2));
 
     const filteredLessons = routine.filter(item => item.Day === dayText);
     filteredLessons.sort((a, b) => Number(a.LessonNumber) - Number(b.LessonNumber));
