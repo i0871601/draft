@@ -15,7 +15,7 @@ function getUserData() {
   alert('дивимось на зберезенн');
     try {
         const sessionData = sessionStorage.getItem('userBase');
-        alert('${sessionData}');
+        alert(${sessionData});
         return sessionData ? JSON.parse(sessionData) : null;
     } catch (error) {
         alert('помилка');
