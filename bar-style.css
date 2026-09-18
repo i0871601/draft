@@ -165,6 +165,7 @@ footer {
 #time:checked ~ #content #content-time {
     transform: translateY(0);
     pointer-events: auto;
+    animation: fadeUp 0.7s ease-in-out forwards;
 }
 
 #select-folder:checked ~ #main-bar #select-button {
