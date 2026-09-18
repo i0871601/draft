@@ -12,7 +12,6 @@ const messages = {
 };
 
 function getUserData() {
-  alert('дивимось на зберезенн');
     try {
         const sessionData = sessionStorage.getItem('userBase');
         return sessionData ? JSON.parse(sessionData) : null;

@@ -1,4 +1,11 @@
 // Авторське право (c) вересень 2026 рік Сікан Іван Валерійович.
+const sessionData = sessionStorage.getItem('userBase');
+if (!sessionData) {
+    window.location.href = './index.html';
+    
+    throw new Error("Відсутня сесія. Перенаправлення на index.html");
+}
+
 function init() {
     //DOM-елементи
     const elements = {
@@ -32,10 +39,8 @@ function init() {
                 const dayOfWeek = Number(input.dataset.dayofweek);
                 const today = new Date();
                 const isSelectedDayToday = day === today.getDate();
-                alert('відбувся клік по дню');
                 if (typeof updateEventDayInfo === 'function') 
                 {
-                    alert('Запуск скрипта для отримання інформації про день');
                     updateEventDayInfo(day, dayOfWeek, isSelectedDayToday, elements);
                 }
             }
