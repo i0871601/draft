@@ -113,6 +113,7 @@ function listLessonDay(dayText, isToday, eventDayContent) {
     filteredLessons.sort((a, b) => Number(a.LessonNumber) - Number(b.LessonNumber));
 
     console.log(filteredLessons);
+    alert(JSON.stringify(routine, nuĺ, 2));
     alert(JSON.stringify(filteredLessons, null, 2));
 
     if(lessonUpdateTime) {
