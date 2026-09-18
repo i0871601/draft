@@ -2,6 +2,8 @@
 function updateEventDayInfo(day, dayOfWeekIndex, isToday, elements) {
   const { checkbox, dateEl, dayWeekEl, checkboxEl, eventDayContent } = elements;
 
+  alert('підготовка до заповнення про день');
+
   if (!checkbox.checked) return;
 
   const fullWeekDays = [
@@ -14,10 +16,18 @@ function updateEventDayInfo(day, dayOfWeekIndex, isToday, elements) {
   if (dayWeekEl) dayWeekEl.textContent = dayText;
 
   // Викликаємо функцію з script-list-lesson.js
-  if (typeof listLessonDay === 'function') listLessonDay(dayText, isToday, eventDayContent);
+  if (typeof listLessonDay === 'function') 
+  {
+    alert('перехід до заповнення розкладу');
+    listLessonDay(dayText, isToday, eventDayContent);
+  }
 
   setTimeout(() => {
-    if (!checkboxEl.checked) checkboxEl.checked = true;
+    alert('готовність включити чекбокс розкладу');
+    if (!checkboxEl.checked) {
+      alert('включили чекбокс розкладу');
+      checkboxEl.checked = true;
+    }
   }, 500);
 }
 
