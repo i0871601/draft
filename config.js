@@ -12,10 +12,13 @@ const messages = {
 };
 
 function getUserData() {
+  alert('дивимось на зберезенн');
     try {
         const sessionData = sessionStorage.getItem('userBase');
+        alert('збереження є');
         return sessionData ? JSON.parse(sessionData) : null;
     } catch (error) {
+        alert('помилка');
         console.error("Помилка при парсингу даних сесії:", error);
         return null;
     }
