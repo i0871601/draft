@@ -32,8 +32,12 @@ function init() {
                 const dayOfWeek = Number(input.dataset.dayofweek);
                 const today = new Date();
                 const isSelectedDayToday = day === today.getDate();
-                
-                if (typeof updateEventDayInfo === 'function') updateEventDayInfo(day, dayOfWeek, isSelectedDayToday, elements);
+                alert('відбувся клік по дню');
+                if (typeof updateEventDayInfo === 'function') 
+                {
+                    alert('Запуск скрипта для отримання інформації про день');
+                    updateEventDayInfo(day, dayOfWeek, isSelectedDayToday, elements);
+                }
             }
         });
     }
