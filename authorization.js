@@ -104,7 +104,7 @@ async function handleLogin(lastName, password) {
             console.log(messages.newPassword);
         } else {
             saveSessionData(data);
-            window.location.href = "../home.html";
+            window.location.href = "./home.html";
         }
     } catch (error) {
         console.log(messages.loginError);
