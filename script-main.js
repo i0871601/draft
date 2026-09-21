@@ -1,7 +1,7 @@
 // Авторське право (c) вересень 2026 рік Сікан Іван Валерійович.
 const sessionData = sessionStorage.getItem('userBase');
 if (!sessionData) {
-    window.location.href = '../index.html';
+    window.location.href = './index.html';
     
     throw new Error("Відсутня сесія. Перенаправлення на index.html");
 }
