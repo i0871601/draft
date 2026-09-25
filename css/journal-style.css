@@ -32,7 +32,7 @@
 
 #content-time {
   display: flex;
-  flex-direction: row;
+  flex-direction: row-reverse;
   justify-content: space-between;
   gap: clamp(1rem, 5%, 5rem);
   pointer-events: none;
