@@ -313,11 +313,14 @@
     }
 
     #event-day {
+      min-width: 100%;
+      max-width: 100%;
       width: 100%;
-      height: auto;
       padding: 0;
       border: none;
       background-color: var(--fon-color);
+      /* opacity: 0; */
+      height: 100%;
       pointer-events: none;
 
       & #title h1 {
