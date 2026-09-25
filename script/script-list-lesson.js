@@ -167,8 +167,10 @@ function EventDayInfo(day, dayOfWeekIndex, isToday, elements) {
                             
                             <div class="info-lesson">
                                 <p class="name-subject">${el.Subject}</p>
-                                <p class="name-class ${classBorder}">${el.Class}</p>
-                                ${locationHTML}
+                                <div class="info-placing">
+                                    <p class="name-class ${classBorder}">${el.Class}</p>
+                                    ${locationHTML}
+                                </div>
                             </div>
                             
                             <div class="start-time-lesson">
