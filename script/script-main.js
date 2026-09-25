@@ -19,7 +19,7 @@ function init() {
     document.querySelectorAll('input[name="trigger"]').forEach(radio => {
         radio.addEventListener('change', () => {
             if (typeof calendar === 'function') calendar(elements);
-            if (elements.checkboxEl) elements.checkboxEl.checked = false;
+            //if (elements.checkboxEl) elements.checkboxEl.checked = false;
         });
     });
 

@@ -177,6 +177,7 @@
           flex-direction: row;
           align-items: center;
           padding: 1rem 0;
+          border-left: 0.5rem solid var(--shadow);
 
           .info-lesson {
             width: fit-content;
@@ -312,15 +313,11 @@
     }
 
     #event-day {
-      position: absolute;
-      top: 0;
-      min-width: 100%;
-      max-width: 100%;
       width: 100%;
+      height: auto;
       padding: 0;
       border: none;
       background-color: var(--fon-color);
-      opacity: 0;
       pointer-events: none;
 
       & #title h1 {
