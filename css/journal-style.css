@@ -125,7 +125,7 @@
     #title {
       width: 100%;
       height: 5rem;
-      display: flex;
+      display: none;
       align-items: center;
 
       h1 {
@@ -158,52 +158,32 @@
     }
 
     #event-day-content {
-      margin: 1rem 0 0 0;
       display: grid;
       grid-template-rows: repeat(4, 1fr);
-      height: calc(100% - 5rem - 1rem);
+      gap: 1.5rem;
 
       .routine-entry {
-        height: calc(100% - 1rem);
         width: 100%;
         display: flex;
         align-items: center;
         justify-content: center;
         background-color: var(--fon-color-2);
-        border-radius: 1.5rem;
+        border-radius: 0.5rem;
+        overflow: hidden;
 
         .lesson-label {
-          width: calc(100% - 2rem);
-          height: 100%;
+          width: 100%;
           display: flex;
           flex-direction: row;
           align-items: center;
-
-          .icon {
-            width: 1.5rem;
-            aspect-ratio: 1 / 1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-right: 2rem;
-
-            span {
-              width: 1.5rem;
-              aspect-ratio: 1 / 1;
-              background-color: var(--shadow);
-              border-radius: 1.5rem;
-              outline: 0.2rem solid var(--fon-color-2);
-              outline-offset: -0.4rem;
-              transition: background-color 0.5s ease-in-out;
-            }
-          }
+          padding: 1rem 0;
 
           .info-lesson {
-            width: calc(100% - 3.5rem - 3.5rem - 1rem);
+            width: fit-content;
             display: flex;
             gap: 0.5rem;
             flex-wrap: wrap;
-            margin-right: 1rem;
+            margin: 0 2rem;
 
             p {
               margin: 0;
@@ -223,13 +203,7 @@
               display: flex;
               flex-direction: row;
 
-              .text {
-                margin: 0 0 0 0.5rem;
-              }
-
               .name-class {
-                color: var(--text-color-1);
-                font-size: 0.9rem;
                 padding-right: 0.5rem;
               }
               
@@ -237,6 +211,10 @@
                 border-right: 0.1rem solid var(--shadow);
               }
               
+              .text {
+                margin: 0 0 0 0.5rem;
+              }
+
               a {
                 color: var(--text-color-3);
                 text-decoration: none;
@@ -253,12 +231,9 @@
           }
 
           .start-time-lesson {
-            display: flex;
-            width: 3.5rem;
-            align-items: center;
-            justify-content: center;
             color: var(--text-color-2);
             transition: color 0.5s ease-in-out;
+            margin: 0 2rem 0 auto;
 
             h2 {
               margin: 0;
@@ -266,9 +241,7 @@
           }
         }
         .input-active:checked ~ .lesson-label {
-          .icon span {
-            background-color: var(--color-accent);
-          }
+          border-left: 0.5rem solid var(--color-accent);
           
           .start-time-lesson {
             color: var(--text-color-3);
@@ -280,9 +253,7 @@
         }
 
         .input-passed:checked ~ .lesson-label {
-          .icon span {
-            background-color: var(--color-passed);
-          }
+          border-left: 0.5rem solid var(--color-passed);
           
           .start-time-lesson {
             color: var(--text-color-passed);
@@ -354,6 +325,10 @@
 
       & #title h1 {
         font-size: 4.5rem;
+      }
+
+      #event-day-content {
+        margin: 1.5rem 0 0 0;
       }
     }
   }
