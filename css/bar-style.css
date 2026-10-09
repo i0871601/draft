@@ -46,7 +46,7 @@ body {
 }
 
 #main-bar {
-    min-width: calc(5rem - 0.6rem);
+    min-width: calc(5rem - 0.3rem);
     margin: 0 0 0 0.3rem;
     height: calc(100% - 0.6rem);
     background-color: var(--fon-color-1);
