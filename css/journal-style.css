@@ -59,6 +59,7 @@
       .day-block {
         height: 100%;
         cursor: pointer;
+        pointer-events: auto;
         aspect-ratio: 1 / 1;
         background-color: var(--fon-color-2);
         border-radius: 1.5rem;
@@ -96,7 +97,7 @@
     max-width: 70vmin;
     width: 100%;
     height: 100%;
-    padding: 0 0 0 1rem;
+    /*padding: 0 0 0 1rem;*/
     background-color: var(--fon-color);
     transition: opacity 0.5s ease-in-out;
 
@@ -223,7 +224,7 @@
             }
           }
         }
-        
+
         .input-active:checked ~ .lesson-label {
           border-left: 0.5rem solid var(--color-accent);
           

@@ -90,10 +90,8 @@ function EventDayInfo(day, dayOfWeekIndex, isToday, elements) {
     
     if (!checkbox || !checkbox.checked || !contentTimeBlok) return;
 
-    let eventDayWrapper = contentTimeBlok.querySelector('#event-day');
+    let eventDayWrapper = contentTimeBlok.querySelector('#event-day-content');
     if (!eventDayWrapper) {
-        eventDayWrapper = document.createElement('div');
-        eventDayWrapper.id = 'event-day';
         eventDayWrapper.innerHTML = `<div id="event-day-content"></div>`;
         contentTimeBlok.appendChild(eventDayWrapper);
     }
