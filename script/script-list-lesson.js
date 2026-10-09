@@ -97,9 +97,6 @@ function EventDayInfo(day, dayOfWeekIndex, isToday, elements) {
         contentTimeBlok.appendChild(eventDayContent);
     }
 
-    const eventDayContent = eventDayWrapper.querySelector('#event-day-content');
-    if (!eventDayContent) return;
-
     const fullWeekDays = [
         'Неділя', 'Понеділок', 'Вівторок', 'Середа', 'Четвер', 'П\'ятниця', 'Субота'
     ];
