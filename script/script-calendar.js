@@ -103,11 +103,9 @@ function calendar(elements) {
 
         calendarHTML += `
             <input type="radio" name="calendar-day" id="${inputId}" class="input" value="${dayNum}" data-dayofweek="${dayOfWeekIndex}" ${checkedAttr}>
-            <label for="${inputId}" class="day-block${todayClass}">
-              <div class="blok">    
+            <label for="${inputId}" class="day-block${todayClass}">    
                 <p class="day-number">${dayNum}</p>
                 <p class="day-name">${weekDaysShort[index]}</p>
-              </div>
             </label>
         `;
     });
