@@ -90,37 +90,22 @@ function EventDayInfo(day, dayOfWeekIndex, isToday, elements) {
     
     if (!checkbox || !checkbox.checked || !contentTimeBlok) return;
 
-    // Динамічне створення контейнера подій
     let eventDayWrapper = contentTimeBlok.querySelector('#event-day');
     if (!eventDayWrapper) {
         eventDayWrapper = document.createElement('div');
         eventDayWrapper.id = 'event-day';
-        eventDayWrapper.innerHTML = `
-            <div id="title">
-                <h1 id="date"></h1>
-                <div>
-                    <p id="day-week"></p>
-                </div>
-            </div>
-            <div id="event-day-content"></div>
-        `;
+        eventDayWrapper.innerHTML = `<div id="event-day-content"></div>`;
         contentTimeBlok.appendChild(eventDayWrapper);
     }
 
-    const dateEl = eventDayWrapper.querySelector('#date');
-    const dayWeekEl = eventDayWrapper.querySelector('#day-week');
     const eventDayContent = eventDayWrapper.querySelector('#event-day-content');
+    if (!eventDayContent) return;
 
     const fullWeekDays = [
         'Неділя', 'Понеділок', 'Вівторок', 'Середа', 'Четвер', 'П\'ятниця', 'Субота'
     ];
     
     const dayText = fullWeekDays[dayOfWeekIndex];
-
-    if (dateEl) dateEl.textContent = day;
-    if (dayWeekEl) dayWeekEl.textContent = dayText;
-
-    if (!eventDayContent) return;
 
     let userData = getUserData();
     const routine = userData.data.routine;
@@ -134,7 +119,16 @@ function EventDayInfo(day, dayOfWeekIndex, isToday, elements) {
     }
 
     setTimeout(() => {
-        eventDayContent.innerHTML = '';
+        const titleHTML = `
+            <article id="title">
+                <h1 id="date">${day}</h1>
+                <div>
+                    <p id="day-week">${dayText}</p>
+                </div>
+            </article>
+        `;
+
+        eventDayContent.innerHTML = titleHTML;
 
         if (filteredLessons.length > 0) {
             filteredLessons.forEach(el => {
@@ -187,11 +181,11 @@ function EventDayInfo(day, dayOfWeekIndex, isToday, elements) {
                 setStatusLesson(filteredLessons, eventDayContent);
             }
         } else {
-            eventDayContent.innerHTML = `
+            eventDayContent.insertAdjacentHTML('beforeend', `
                 <div class="holiday">
                     <p>Вихідний</p>
                 </div>
-            `;
+            `);
         }
     }, 500);
 
