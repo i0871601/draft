@@ -66,6 +66,7 @@
         align-items: center;
         justify-content: center;
         color: var(--text-color-1);
+        transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
         
 
         p {
@@ -85,7 +86,6 @@
 
         .day-number {
           font-size: 2rem;
-          color: var(--text-color-1);
         }
       }
 
@@ -94,8 +94,8 @@
         color: var(--fon-color);
       }
 
-      .today p {
-        
+      .today {
+        color: var(--text-color-passed);
       }
     }
   }
