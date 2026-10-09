@@ -63,28 +63,28 @@ body {
     }
     
     #time-button {
-        width: 50%;
+        width: 2.2rem;
         aspect-ratio: 1 / 1;
         border-radius: 5rem;
         display: flex;
         justify-content: center;
         align-items: center;
-        outline: 0.21rem solid var(--shadow);
-        outline-offset: -0.21rem;
+        outline: 0.2rem solid var(--shadow);
+        outline-offset: -0.2rem;
         transition: transform 0.7s ease-in-out, outline-color 0.7s ease-in-out;
         
         span {
-            width: 0.21rem;
-            height: 55%;
-            border-radius: 0.21rem;
+            width: 0.2rem;
+            height: 1.2rem;
+            border-radius: 0.2rem;
             position: absolute;
             
             &::after {
                 content: '';
-                height: 55%;
+                height: 1.2rem;
                 width: 100%;
                 position: absolute;
-                border-radius: 0.21rem;
+                border-radius: 0.2rem;
                 background-color: var(--shadow);
                 transition: background-color 0.7s ease-in-out;
             }
@@ -106,7 +106,7 @@ body {
     }
     
     #select-button {
-        width: 45%;
+        width: 2rem;
         aspect-ratio: 1 / 1;
         border-radius: 0.3rem;
         overflow: hidden;
@@ -118,14 +118,14 @@ body {
         
         span {
             display: block;
-            outline: 0.21rem solid var(--shadow);
-            outline-offset: -0.21rem;
+            outline: 0.2rem solid var(--shadow);
+            outline-offset: -0.2rem;
             border-radius: 0.3rem;
             transition: outline 0.7s ease-in-out;
         }
         
         &:hover span{
-            outline: 0.21rem solid var(--color-accent);
+            outline: 0.2rem solid var(--color-accent);
         }
     }
     
@@ -143,6 +143,8 @@ body {
     margin: 0 0 0 5rem;
     overflow: hidden;
     display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 footer {
