@@ -91,9 +91,10 @@ function EventDayInfo(day, dayOfWeekIndex, isToday, elements) {
     if (!checkbox || !checkbox.checked || !contentTimeBlok) return;
 
     let eventDayWrapper = contentTimeBlok.querySelector('#event-day-content');
-    if (!eventDayWrapper) {
-        eventDayWrapper.innerHTML = `<div id="event-day-content"></div>`;
-        contentTimeBlok.appendChild(eventDayWrapper);
+    if (!eventDayContent) {
+        eventDayContent = document.createElement('div');
+        eventDayContent.id = 'event-day-content';
+        contentTimeBlok.appendChild(eventDayContent);
     }
 
     const eventDayContent = eventDayWrapper.querySelector('#event-day-content');
