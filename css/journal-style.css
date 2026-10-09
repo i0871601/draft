@@ -150,6 +150,7 @@
       display: grid;
       grid-template-rows: repeat(4, 1fr);
       gap: 1.5rem;
+      height: 100%;
 
       .routine-entry {
         width: 100%;
