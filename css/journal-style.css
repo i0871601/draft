@@ -46,6 +46,9 @@
     }
 
     #content-calendar {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(5, 1fr);
       display: flex;
       flex-direction: column;
       align-items: center;
