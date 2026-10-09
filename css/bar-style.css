@@ -81,7 +81,7 @@ body {
             
             &::after {
                 content: '';
-                height: 1.2rem;
+                height: 55%;
                 width: 100%;
                 position: absolute;
                 border-radius: 0.2rem;
@@ -106,7 +106,7 @@ body {
     }
     
     #select-button {
-        width: 2rem;
+        width: 2.1rem;
         aspect-ratio: 1 / 1;
         border-radius: 0.3rem;
         overflow: hidden;

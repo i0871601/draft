@@ -32,9 +32,7 @@ function init() {
                 const dayOfWeek = Number(input.dataset.dayofweek);
                 
                 const today = new Date();
-                const isSelectedDayToday = 
-                    day === today.getDate() && 
-                    new Date().getMonth() === today.getMonth() && new Date().getFullYear() === today.getFullYear();
+                const isSelectedDayToday = day === today.getDate() && today.getDay() === dayOfWeek;
 
                 if (typeof EventDayInfo === 'function') EventDayInfo(day, dayOfWeek, isSelectedDayToday, elements);
             }
