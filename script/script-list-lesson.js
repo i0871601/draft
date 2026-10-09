@@ -86,7 +86,7 @@ function setStatusLesson(routineLesson, eventDayContent) {
 }
 
 function EventDayInfo(day, dayOfWeekIndex, isToday, elements) {
-    const { checkbox, checkboxEl, contentTimeBlok } = elements;
+    const { checkbox, contentTimeBlok } = elements;
     
     if (!checkbox || !checkbox.checked || !contentTimeBlok) return;
 
@@ -184,8 +184,4 @@ function EventDayInfo(day, dayOfWeekIndex, isToday, elements) {
             `);
         }
     }, 500);
-
-    if (checkboxEl && !checkboxEl.checked) {
-        checkboxEl.checked = true;
-    }
 }

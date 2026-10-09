@@ -11,17 +11,9 @@ function init() {
     const elements = {
         checkbox: document.getElementById('time'),
         inputSelectFolder: document.getElementById('select-folder'),
-        checkboxEl: document.getElementById('checkbox-event-day'),
+        //checkboxEl: document.getElementById('checkbox-event-day'),
         contentTimeBlok: document.getElementById('content-time')
     };
-
-    // Слухачі на перемикачі
-    document.querySelectorAll('input[name="trigger"]').forEach(radio => {
-        radio.addEventListener('change', () => {
-            if (typeof calendar === 'function') calendar(elements);
-            //if (elements.checkboxEl) elements.checkboxEl.checked = false;
-        });
-    });
 
     // Делегування кліків на сітку календаря
     if (elements.contentTimeBlok) {
