@@ -94,7 +94,6 @@
     background-color: var(--fon-color);
     display: grid;
     grid-template-rows: 3fr 1fr 3fr 1fr 3fr 1fr 3fr 1fr 3fr;
-    gap: 1.5rem;
     transition: opacity 0.5s ease-in-out;
 
     #title {
@@ -267,13 +266,12 @@
   
   #content-time {
     grid-template-columns: 1fr;
-    grid-template-rows: minmax(0, 5.7rem) 5fr;
+    grid-template-rows: 1fr 5fr;
     grid-template-areas: "week" "event-day";
     flex-direction: column;
 
     #week-grid {
       min-width: 100%;
-      padding: 0 0 1rem;
       border-bottom: 0.1rem solid var(--shadow);
       grid-template-columns: 3fr 1fr 3fr 1fr 3fr 1fr 3fr 1fr 3fr;
       grid-template-rows: 1fr;
@@ -288,9 +286,9 @@
         }
         
         .day-number {
-          aspect-ratio: 1 / 1;
+          /*aspect-ratio: 1 / 1;*/
           border-radius: 1rem;
-          padding: 0.5rem;
+          padding: 0.2rem 0.5rem;
           display: flex;
           align-items: center;
           justify-content: center;
@@ -360,15 +358,15 @@
   }
 
   #title {
-    height: 100%;
+    height: 100% !important;
 
     h1 {
-      font-size: 2em;
+      font-size: 2em !important;
     }
   }
 
   .routine-entry {
-    height: 100%;
+    height: min-content !important;
   }
 }
 
