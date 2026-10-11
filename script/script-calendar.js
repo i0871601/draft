@@ -5,15 +5,16 @@ function calendar(elements) {
     if (!checkbox || !checkbox.checked || !contentTimeBlok) return;
 
     // Створення або отримання контейнера
-    let calendarWrapper = contentTimeBlok.querySelector('#calendar');
-    if (!calendarWrapper) {
-        calendarWrapper = document.createElement('div');
-        calendarWrapper.id = 'calendar';
-        calendarWrapper.innerHTML = `
+    let monthEl = contentTimeBlok.querySelector('#month');
+    let contentCalendarEl = contentTimeBlok.querySelector('#content-calendar');
+
+    if (!monthEl || !contentCalendarEl) {
+        contentTimeBlok.innerHTML = `
             <h2 id="month"></h2>
             <div id="content-calendar" class="week-grid"></div>
         `;
-        contentTimeBlok.appendChild(calendarWrapper);
+        monthEl = contentTimeBlok.querySelector('#month');
+        contentCalendarEl = contentTimeBlok.querySelector('#content-calendar');
     }
 
     const monthEl = calendarWrapper.querySelector('#month');
@@ -76,7 +77,7 @@ function calendar(elements) {
     }
 
     // Виводимо місяць першого дня в списку
-    if (monthEl) monthEl.textContent = monthNames[daysDates[0].getMonth()];
+    if (monthEl) //monthEl.textContent = monthNames[daysDates[0].getMonth()];
 
     // Порядок коротких назв відповідно до обраного режиму
     const weekDaysShort = currentDayOfWeek === 5 
