@@ -366,7 +366,15 @@
   }
 
   .routine-entry {
-    height: min-content !important;
+    height: 105% !important;
+  }
+
+  .info-lesson { 
+    gap: 0;
+  }
+
+  .start-time-lesson h2{ 
+    font-size: 1.3em;
   }
 }
 
