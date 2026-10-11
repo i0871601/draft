@@ -74,7 +74,7 @@ function calendar(elements) {
     }
 
     // Виводимо місяць першого дня в списку
-    if (monthEl) //monthEl.textContent = monthNames[daysDates[0].getMonth()];
+    //if (monthEl) monthEl.textContent = monthNames[daysDates[0].getMonth()];
 
     // Порядок коротких назв відповідно до обраного режиму
     const weekDaysShort = currentDayOfWeek === 5 
