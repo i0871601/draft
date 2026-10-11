@@ -280,12 +280,12 @@
         aspect-ratio: unset;
       }
       
-      .day-block:nth-child(1) { grid-column: 1; }
-      .day-block:nth-child(2) { grid-column: 3; }
-      .day-block:nth-child(3) { grid-column: 5; }
-      .day-block:nth-child(4) { grid-column: 7; }
-      .day-block:nth-child(5) { grid-column: 9; }
     }
+    #week-grid .day-block:nth-child(1) { grid-column: 1; }
+    #week-grid .day-block:nth-child(2) { grid-column: 3; }
+    #week-grid .day-block:nth-child(3) { grid-column: 5; }
+    #week-grid .day-block:nth-child(4) { grid-column: 7; }
+    #week-grid .day-block:nth-child(5) { grid-column: 9; }
 
     #event-day-content {
       max-width: 100%;
