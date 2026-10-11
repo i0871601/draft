@@ -282,9 +282,15 @@
         grid-template-rows: 1fr;
 
         .day-block {
-          aspect-ratio: unset;
+          height: 4.7rem;
         }
       }
+      
+    }
+
+    #event-day-content {
+      max-width: 100%;
+      min-width: 100%;
     }
 
     #event-day {
@@ -300,10 +306,6 @@
 
       & #title h1 {
         font-size: 4.5rem;
-      }
-
-      #event-day-content {
-        margin: 1.5rem 0 0 0;
       }
     }
   }
