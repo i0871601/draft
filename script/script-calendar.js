@@ -6,15 +6,15 @@ function calendar(elements) {
 
     // Створення або отримання контейнера
     let monthEl = contentTimeBlok.querySelector('#month');
-    let contentCalendarEl = contentTimeBlok.querySelector('#content-calendar');
+    let weekGridEl = contentTimeBlok.querySelector('#week-grid');
 
-    if (!monthEl || !contentCalendarEl) {
-        contentTimeBlok.innerHTML = `
+    if (!monthEl || !weekGridEl) {
+        weekGridEl.innerHTML = `
             <h2 id="month"></h2>
-            <div id="content-calendar" class="week-grid"></div>
+            <div id="week-grid"></div>
         `;
         monthEl = contentTimeBlok.querySelector('#month');
-        contentCalendarEl = contentTimeBlok.querySelector('#content-calendar');
+        weekGridEl = contentTimeBlok.querySelector('#week-grid');
     }
 
     const today = new Date();
@@ -108,7 +108,7 @@ function calendar(elements) {
         `;
     });
 
-    contentCalendarEl.innerHTML = calendarHTML;
+    weekGridEl.innerHTML = calendarHTML;
 
     if (currentDayOfWeek === 6 || currentDayOfWeek === 0) {
         // --- СЦЕНАРІЙ ДЛЯ ВИХІДНИХ (Субота / Неділя) ---
