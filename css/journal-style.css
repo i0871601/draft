@@ -41,6 +41,7 @@
     max-width: 35vmin;
     width: 100%;
     height: 100%;
+    min-height: 100%;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: repeat(5, 1fr);
@@ -49,6 +50,7 @@
     gap: 1.5rem;
 
     .day-block {
+      /*width: 70%;*/
       height: 100%;
       cursor: pointer;
       pointer-events: auto;
@@ -88,6 +90,7 @@
     max-width: 70vmin;
     width: 100%;
     height: 100%;
+    min-height: 100%;
     background-color: var(--fon-color);
     display: grid;
     grid-template-rows: repeat(5, 1fr);
@@ -257,31 +260,34 @@
 @media (orientation: portrait) {
   
   #content-time {
-    display: flex;
-    align-items: center;
+    grid-template-columns: 1fr;
+    grid-template-rows: minmax(0, 5.7rem) 5fr;
+    grid-template-areas: "week" "event-day";
     flex-direction: column;
-    gap: 0;
 
     #week-grid {
       min-width: 100%;
       max-width: 100%;
       width: 100%;
-      height: 5.7rem;
       padding: 0 0 1rem;
       border-bottom: 0.1rem solid var(--shadow);
       grid-template-columns: repeat(5, 1fr);
       grid-template-rows: 1fr;
 
       .day-block {
-        height: 4.7rem;
+        height: 100%;
+        width: 100%;
+        aspect-ratio: unset;
       }
     }
 
     #event-day-content {
       max-width: 100%;
       min-width: 100%;
-      height: calc(100% - 1rem - 1rem - 4.7rem);
+      min-height: calc(100% - 1rem);
+      height: calc(100% - 1rem);
       margin: 1rem 0 0 0;
+      grid-template-rows: repeat(4, 1fr);
 
       #title {
         display: none;
