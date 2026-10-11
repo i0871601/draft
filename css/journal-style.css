@@ -370,7 +370,7 @@
   }
 
   .info-lesson { 
-    gap: 0;
+    gap: 0 !important;
   }
 
   .start-time-lesson h2{ 
