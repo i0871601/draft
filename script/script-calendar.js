@@ -17,9 +17,6 @@ function calendar(elements) {
         contentCalendarEl = contentTimeBlok.querySelector('#content-calendar');
     }
 
-    const monthEl = calendarWrapper.querySelector('#month');
-    const contentCalendarEl = calendarWrapper.querySelector('#content-calendar');
-
     const today = new Date();
     const monthNames = [
         'Січень', 'Лютий', 'Березень', 'Квітень', 'Травень', 'Червень',
