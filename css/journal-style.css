@@ -268,9 +268,8 @@
   
   #content-time {
     display: flex;
-    justify-content: center;
-    align-items: normal;
-    flex-direction: normal;
+    align-items: center;
+    flex-direction: column;
     gap: 0;
 
     #calendar {
@@ -279,7 +278,8 @@
       width: 100%;
 
       #content-calendar {
-        flex: 1;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(5, 1fr);
 
         .day-block {
           aspect-ratio: unset;
