@@ -67,10 +67,6 @@
       p, h2 {
         margin: 0;
       }
-
-      .day-number {
-        font-size: 2rem;
-      }
     }
 
     .day-block:nth-of-type(1) { grid-row: 1; }
