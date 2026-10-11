@@ -112,8 +112,15 @@ function calendar(elements) {
 
     contentCalendarEl.innerHTML = calendarHTML;
 
-    // Автоматично завантажуємо інформацію для обраного дня
-    if (selectedDayForInit && typeof EventDayInfo === 'function') {
-        EventDayInfo(selectedDayForInit.day, selectedDayForInit.dayOfWeek, selectedDayForInit.isToday, elements);
+    if (currentDayOfWeek === 6 || currentDayOfWeek === 0) {
+        // --- СЦЕНАРІЙ ДЛЯ ВИХІДНИХ (Субота / Неділя) ---
+        if (typeof EventDayInfo === 'function') {
+            EventDayInfo(today.getDate(), currentDayOfWeek, false, elements);
+        }
+    } else {
+        // Автоматично завантажуємо інформацію для обраного дня
+        if (selectedDayForInit && typeof EventDayInfo === 'function') {
+            EventDayInfo(selectedDayForInit.day, selectedDayForInit.dayOfWeek, selectedDayForInit.isToday, elements);
+        }
     }
 }
