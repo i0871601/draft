@@ -249,7 +249,7 @@
     }
 
     .holiday p{
-      margin: 1rem 0 0 0;
+      margin: 0;
       font-size: 1.1rem;
       color: var(--text-color-1);
       letter-spacing: 0.01em;
@@ -265,13 +265,7 @@
 
 
 @media (orientation: portrait) {
-  #content {
-    flex-direction: row;
-    width: calc(100% - 0.6rem);
-    height: 100%;
-    margin: 0 0 5rem 0;
-  }
-
+  
   #content-time {
     display: flex;
     justify-content: center;
@@ -312,20 +306,6 @@
         margin: 1.5rem 0 0 0;
       }
     }
-  }
-
-  #checkbox-event-day:checked ~ #main-bar #off-event-day-button {
-    opacity: 1;
-    pointer-events: auto;
-    cursor: pointer;
-  }
-
-  #checkbox-event-day:checked ~ #content #content-time #calendar {
-    pointer-events: none;
-  }
-
-  #checkbox-event-day:checked ~ #content #content-time #event-day {
-    opacity: 1;
   }
 }
 

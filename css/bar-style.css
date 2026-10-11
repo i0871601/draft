@@ -191,6 +191,7 @@ footer {
 
 @media (orientation: portrait) {
     #Journal {
+        height: calc(100% - 4em - 0.7rem);
         flex-direction: column-reverse;
     }
     
@@ -198,7 +199,7 @@ footer {
         min-width: auto;
         height: auto;
         width: calc(100% - 0.6rem);
-        min-height: calc(5rem - 0.6rem);
+        min-height: calc(5rem - 0.3rem);
         margin: 0 0 0.3rem 0;
         flex-direction: row;
         position: relative;
@@ -215,7 +216,7 @@ footer {
             width: 2.3rem;
         }
 
-        #off-event-day-button {
+        /*#off-event-day-button {
             position: absolute;
             right: 0;
             top: 0;
@@ -245,15 +246,22 @@ footer {
             &::after {
                 transform: rotate(-45deg);
             }
-        }
+        }*/
     }
 
-    #time:checked ~ #content #content-time {
+    #content {
+        flex-direction: row;
+        width: calc(100% - 0.6rem);
+        height: 100%;
+        margin: 0 0 3rem 0;
+    }
+
+    #time:checked ~ #content {
         transform: translateX(0);
         pointer-events: auto;
     }
 
-    #select-folder:checked ~ #content #content-select {
+    #select-folder:checked ~ #content {
         transform: translateX(-100%);
         pointer-events: auto;
     }
