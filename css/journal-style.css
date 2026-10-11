@@ -279,12 +279,13 @@
         width: 100%;
         aspect-ratio: unset;
       }
+
+      label:nth-child(1) { grid-column: 1; }
+      label:nth-child(2) { grid-column: 3; }
+      label:nth-child(3) { grid-column: 5; }
+      label:nth-child(4) { grid-column: 7; }
       
     }
-    .day-block:nth-child(1) { grid-column: 1; }
-    .day-block:nth-child(2) { grid-column: 3; }
-    .day-block:nth-child(3) { grid-column: 5; }
-    .day-block:nth-child(4) { grid-column: 7; }
 
     #event-day-content {
       max-width: 100%;
