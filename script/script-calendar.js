@@ -9,7 +9,7 @@ function calendar(elements) {
     let weekGridEl = contentTimeBlok.querySelector('#week-grid');
 
     if (!monthEl || !weekGridEl) {
-        weekGridEl.innerHTML = `
+        contentTimeBlok.innerHTML = `
             <h2 id="month"></h2>
             <div id="week-grid"></div>
         `;
