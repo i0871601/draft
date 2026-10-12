@@ -370,6 +370,10 @@
     height: 85%;
   }
 
+  #week-grid {
+    height: 85dvh;
+  }
+
   .day-number {
     display: none;
   }
@@ -380,6 +384,10 @@
     h1 {
       font-size: 2em !important;
     }
+  }
+
+  #event-day-content {
+    height: 85dvh;
   }
 
   .routine-entry {

@@ -266,18 +266,4 @@ footer {
         width: calc(100% - 0.6rem);
         height: 100%;
     }
-
-    #time:checked ~ #content #content-time{
-        transform: translateX(0);
-    }
-    #time:checked ~ #content #content-select{
-        transform: translateX(100%);
-    }
-
-    #select-folder:checked ~ #content #content-time {
-        transform: translateX(-100%);
-    }
-    #select-folder:checked ~ #content #content-select {
-        transform: translateX(0);
-    }
 }
