@@ -192,7 +192,7 @@ footer {
     transform: translateY(0%);
     pointer-events: auto;
 }
-#select-folder:checked ~ #content #content-select { 
+#select-folder:checked ~ #content #content-time { 
     transform: translateY(-100%);
 }
 
