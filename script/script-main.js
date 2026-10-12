@@ -9,10 +9,11 @@ if (!sessionData) {
 function init() {
     //DOM-елементи
     const elements = {
-        checkbox: document.getElementById('time'),
-        inputSelectFolder: document.getElementById('select-folder'),
+        checkboxTime: document.getElementById('time'),
+        checkboxFolder: document.getElementById('select-folder'),
         //checkboxEl: document.getElementById('checkbox-event-day'),
-        contentTimeBlok: document.getElementById('content-time')
+        contentTimeBlok: document.getElementById('content-time'),
+        contentFolderBlok: document.getElementById('content-select')
     };
 
     // Делегування кліків на сітку календаря
@@ -32,9 +33,9 @@ function init() {
     }
 
     // Первинний запуск
-    if (typeof calendar === 'function') {
-        calendar(elements);
-    }
+    if (typeof calendar === 'function') calendar(elements);
+
+    if (typeof folder === 'function') folder(elements);
 }
 
 // Захищений запуск (для завантаження з кешу)

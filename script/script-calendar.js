@@ -1,8 +1,8 @@
 // Авторське право (c) вересень 2026 рік Сікан Іван Валерійович
 function calendar(elements) {
-    const { contentTimeBlok, checkbox } = elements;
+    const { contentTimeBlok, checkboxTime } = elements;
 
-    if (!checkbox || !checkbox.checked || !contentTimeBlok) return;
+    if (!checkboxTime || !checkboxTime.checked) return;
 
     // Створення або отримання контейнера
     let monthEl = contentTimeBlok.querySelector('#month');

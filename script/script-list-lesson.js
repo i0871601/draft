@@ -86,9 +86,9 @@ function setStatusLesson(routineLesson, eventDayContent) {
 }
 
 function EventDayInfo(day, dayOfWeekIndex, isToday, elements) {
-    const { checkbox, contentTimeBlok } = elements;
+    const { checkboxTime, contentTimeBlok } = elements;
     
-    if (!checkbox || !checkbox.checked || !contentTimeBlok) return;
+    if (!checkboxTime || !checkboxTime.checked) return;
 
     let eventDayContent = contentTimeBlok.querySelector('#event-day-content');
     if (!eventDayContent) {
