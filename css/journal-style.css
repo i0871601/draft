@@ -20,6 +20,7 @@
   left: 0;
   width: 100%;
   height: 100%;
+  padding: 0.6rem 0;
   background-color: var(--fon-color);
   pointer-events: none;
   transition: transform 0.7s ease-in-out;
@@ -45,7 +46,6 @@
     max-width: 35vmin;
     width: 100%;
     height: 100%;
-    min-height: 100%;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 3fr 1fr 3fr 1fr 3fr 1fr 3fr 1fr 3fr;
@@ -261,7 +261,20 @@
 
 
 #content-select {
+  overflow: hidden;
+  overflow-y: auto;
   transition: transform 0.7s ease-in-out;
+
+  div {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
+    grid-template-rows: repeat(auto-fill, minmax(7rem, 1fr));
+
+    article {
+      height: 100%;
+      width: 100%;
+    }
+  }
 }
 
 
