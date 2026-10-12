@@ -38,14 +38,15 @@ body {
     height: 80%;
     position: relative;
     overflow: hidden;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
+    display: grid;
+    grid-template-columns: minmax(0, 5rem) 1fr 10fr;
+    grid-template-rows: 1fr;
     animation: fadeUp 0.7s ease-in-out forwards;
 }
 
 #main-bar {
+    grid-column: 1;
+    grid-row: 1;
     min-width: calc(5rem - 0.3rem);
     margin: 0 0 0 0.3rem;
     height: calc(100% - 0.6rem);
@@ -141,6 +142,8 @@ body {
 }
 
 #content {
+    grid-column: 3;
+    grid-row: 1;
     width: calc(100% - 5rem);
     height: 100%;
     margin: 0 0 0 5rem;
