@@ -7,24 +7,21 @@ function folder(elements) {
     let userData = getUserData();
     const routine = userData.data.classes;
 
-    const allClasses = [];
-
     classes.forEach(item => {
+        const subject = item.Subject;
+        
         if (item.Class) {
-            const splitClasses = item.Class.split(',').map(c => c.trim());
-            allClasses.push(...splitClasses);
+            const classList = item.Class.split(',').map(c => c.trim());
+
+            classList.forEach(className => {
+                const articleHTML = `
+                    <article class="folder-item" data-class="${className}" data-subject="${subject}">
+                        <span>${className} - ${subject}</span>
+                    </article>
+                `;
+
+                contentFolderBlok.insertAdjacentHTML('beforeend', articleHTML);
+            });
         }
-    });
-
-    const uniqueClasses = [...new Set(allClasses)];
-
-    uniqueClasses.forEach(className => {
-        const articleHTML = `
-            <article class="folder-item" data-class="${className}">
-                <span>${className}</span>
-            </article>
-        `;
-
-        contentFolderBlok.insertAdjacentHTML('beforeend', articleHTML);
     });
 }
