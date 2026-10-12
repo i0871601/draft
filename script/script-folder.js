@@ -5,7 +5,7 @@ function folder(elements) {
     if (!checkboxFolder || !contentFolderBlok || checkboxFolder.checked) return;
 
     let userData = getUserData();
-    const routine = userData.data.classes;
+    const classes = userData.data.classes;
 
     classes.forEach(item => {
         const subject = item.Subject;
