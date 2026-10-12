@@ -83,10 +83,6 @@
       background-color: var(--color-accent);
       color: var(--fon-color);
     }
-
-    .today {
-      color: var(--text-color-passed);
-    }
   }
 
   #event-day-content {
@@ -371,6 +367,10 @@
 }
 
 @media (max-height: 500px) {
+  #Journal {
+    height: 90%;
+  }
+
   .day-number {
     display: none;
   }
@@ -393,6 +393,10 @@
 
   .start-time-lesson h2{ 
     font-size: 1.3em;
+  }
+
+  #content-select div {
+    
   }
 }
 
