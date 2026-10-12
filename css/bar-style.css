@@ -199,16 +199,17 @@ footer {
 @media (orientation: portrait) {
     #Journal {
         height: calc(100% - 4em - 0.7rem);
-        flex-direction: column-reverse;
+        grid-template-columns: 1fr;
+        grid-template-rows: 10fr 1fr minmax(0, 5rem);
     }
     
     #main-bar {
+        grid-column: 1;
+        grid-row: 3;
         min-width: auto;
-        height: auto;
+        height: 100%;
         width: calc(100% - 0.6rem);
-        min-height: calc(5rem - 0.3rem);
         margin: 0 0 0.3rem 0;
-        flex-direction: row;
         position: relative;
         
         .marks {
@@ -257,20 +258,24 @@ footer {
     }
 
     #content {
+        grid-column: 1;
+        grid-row: 1;
         flex-direction: row;
         width: calc(100% - 0.6rem);
-        height: calc(100% - 5rem - 0.3rem - 3rem);
-        margin: 0 0 5rem 0;
-        padding: 0 0.6rem;
+        height: 100%;
     }
 
-    #time:checked ~ #content {
+    #time:checked ~ #content #content-time{
         transform: translateX(0);
-        pointer-events: auto;
+    }
+    #time:checked ~ #content #content-select{
+        transform: translateX(100%);
     }
 
-    #select-folder:checked ~ #content {
+    #select-folder:checked ~ #content #content-time {
         transform: translateX(-100%);
-        pointer-events: auto;
+    }
+    #select-folder:checked ~ #content #content-select {
+        transform: translateX(0);
     }
 }
