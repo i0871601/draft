@@ -20,7 +20,6 @@
   left: 0;
   width: 100%;
   height: 100%;
-  padding: 0.6rem 0;
   background-color: var(--fon-color);
   pointer-events: none;
   transition: transform 0.7s ease-in-out;
@@ -368,7 +367,7 @@
 
 @media (max-height: 500px) {
   #Journal {
-    height: 90%;
+    height: 85%;
   }
 
   .day-number {
@@ -396,7 +395,8 @@
   }
 
   #content-select div {
-    
+    grid-template-columns: repeat(auto-fill, minmax(0, 11rem));
+    justify-content: space-between;
   }
 }
 

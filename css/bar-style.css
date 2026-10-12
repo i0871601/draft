@@ -201,6 +201,7 @@ footer {
         height: calc(100% - 4em - 0.7rem);
         grid-template-columns: 1fr;
         grid-template-rows: 10fr 1fr minmax(0, 5rem);
+        justify-items: center;
     }
     
     #main-bar {
