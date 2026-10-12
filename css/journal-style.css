@@ -45,7 +45,7 @@
     grid-area: week;
     max-width: 35vmin;
     width: 100%;
-    height: 100%;
+    height: calc(80dvh - 1.2rem);
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 3fr 1fr 3fr 1fr 3fr 1fr 3fr 1fr 3fr;
@@ -89,7 +89,7 @@
     grid-area: event-day;
     max-width: 70vmin;
     width: 100%;
-    height: 100%;
+    height: calc(80dvh - 1.2rem);
     background-color: var(--fon-color);
     display: grid;
     grid-template-rows: 3fr 1fr 3fr 1fr 3fr 1fr 3fr 1fr 3fr;
