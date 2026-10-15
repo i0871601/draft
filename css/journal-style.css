@@ -86,6 +86,7 @@
   }
 
   #event-day-content {
+    position: relative;
     flex: 4 0 min-content;
     display: flex;
     flex-direction: column;
@@ -104,6 +105,9 @@
       display: flex;
       align-items: center;
       flex: 0 1 min-content;
+      position: sticky;
+      top: 0;
+      left: 0;
         
       h1 {
         margin: 0;
