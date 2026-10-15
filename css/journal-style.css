@@ -27,11 +27,11 @@
 }
 
 #content-time {
-  display: grid;
-  grid-template-columns: 3fr 1fr 1fr;
-  grid-template-areas: "event-day gap week";
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: center;
   pointer-events: none;
-  justify-items: stretch;
   
   #month {
     display: none;
@@ -283,9 +283,6 @@
   }
   
   #content-time {
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 5fr;
-    grid-template-areas: "week" "event-day";
     flex-direction: column;
 
     #week-grid {
