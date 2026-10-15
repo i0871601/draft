@@ -108,6 +108,7 @@
       position: sticky;
       top: 0;
       left: 0;
+      background-color: var(--fon-color);
         
       h1 {
         margin: 0;
