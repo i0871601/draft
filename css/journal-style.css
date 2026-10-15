@@ -42,7 +42,7 @@
   }
 
   #week-grid {
-    grid-area: week;
+    flex: 1 0 min-content;
     max-width: 35vmin;
     width: 100%;
     height: calc(80dvh - 1.2rem);
@@ -86,13 +86,15 @@
   }
 
   #event-day-content {
-    grid-area: event-day;
+    flex: 4 0 min-content;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
     max-width: 70vmin;
     width: 100%;
     height: calc(80dvh - 1.2rem);
     background-color: var(--fon-color);
-    display: grid;
-    grid-template-rows: 3fr 1fr 3fr 1fr 3fr 1fr 3fr 1fr 3fr;
     transition: opacity 0.5s ease-in-out;
 
     #title {
@@ -100,7 +102,7 @@
       height: 5rem;
       display: flex;
       align-items: center;
-      /*margin: 0 0 1.5rem 0;*/
+      flex: 0 1 min-content;
         
       h1 {
         margin: 0;
@@ -132,6 +134,7 @@
     }
 
     .routine-entry {
+      flex: 0 1 auto;
       width: 100%;
       height: 100%;
       display: flex;
@@ -279,7 +282,6 @@
 @media (orientation: portrait) {
 
   .content {
-    margin: 0 0 0.6rem 0;
   }
   
   #content-time {
@@ -288,6 +290,8 @@
     #week-grid {
       min-width: 100%;
       height: 100%;
+      max-height: max-content;
+      padding: 0 0 0.5rem 0;
       border-bottom: 0.1rem solid var(--shadow);
       grid-template-columns: 3fr 1fr 3fr 1fr 3fr 1fr 3fr 1fr 3fr;
       grid-template-rows: 1fr;
@@ -334,10 +338,9 @@
     #event-day-content {
       max-width: 100%;
       min-width: 100%;
-      min-height: 100%;
+      min-height: min-content;
       height: 100%;
       margin: 1rem 0 0 0;
-      grid-template-rows: 3fr 1fr 3fr 1fr 3fr 1fr 3fr;
 
       #title {
         display: none;
