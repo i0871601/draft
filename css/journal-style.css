@@ -89,8 +89,8 @@
     flex: 4 0 min-content;
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
-
+    gap: clamp(0.5rem, 5%, 1.5rem);
+    overflow: hidden;
     max-width: 70vmin;
     width: 100%;
     height: calc(80dvh - 1.2rem);
