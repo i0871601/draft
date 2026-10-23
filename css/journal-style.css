@@ -101,7 +101,7 @@
 
     #title {
       width: 100%;
-      height: 5rem;
+      height: min-content;
       display: flex;
       align-items: center;
       flex: 0 1 min-content;
@@ -112,7 +112,7 @@
         
       h1 {
         margin: 0;
-        font-size: 5rem;
+        font-size: 4rem;
         letter-spacing: 0.05em;
         line-height: 1;
         color: var(--text-color-2);
