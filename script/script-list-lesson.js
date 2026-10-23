@@ -151,10 +151,6 @@ function EventDayInfo(day, dayOfWeekIndex, isToday, elements) {
                         <input type="checkbox" id="${passedId}" class="input input-passed">
                         
                         <label for="${activeId}" class="lesson-label">
-                            <div class="icon">
-                                <span class="status-icon"></span>
-                            </div>
-                            
                             <div class="info-lesson">
                                 <p class="name-subject">${el.Subject}</p>
                                 <div class="info-placing">
