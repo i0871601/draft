@@ -289,10 +289,6 @@
 
 
 @media (orientation: portrait) {
-
-  .content {
-  }
-  
   #content-time {
     flex-direction: column;
 
