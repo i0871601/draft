@@ -97,7 +97,7 @@ async function handleLogin(lastName, password) {
             passwordField.classList.add('hidden');
             newPasswordFieldsContainer.classList.remove('hidden');
             newPasswordFieldsContainer.classList.add('active');
-            //setButtonState(false, "Зберегти");
+            setButtonText("Зберегти");
             newPasswordField.disabled = false;
             confirmNewPasswordField.disabled = false;
             newPasswordField.focus();
@@ -128,7 +128,7 @@ async function handlePasswordUpdate(lastName) {
             passwordField.classList.remove('hidden');
             newPasswordFieldsContainer.classList.add('hidden');
             newPasswordFieldsContainer.classList.remove('active');
-            setButtonText(false, "Увійти");
+            setButtonText("Увійти");
             newPasswordField.disabled = true;
             confirmNewPasswordField.disabled = true;
             newPasswordField.value = '';
