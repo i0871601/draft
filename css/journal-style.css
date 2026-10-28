@@ -24,13 +24,13 @@
   background-color: var(--fon-color);
   pointer-events: none;
   transition: transform 0.7s ease-in-out;
+  display: flex;
+  align-items: center;
 }
 
 #content-time {
-  display: flex;
   flex-direction: row-reverse;
   justify-content: space-between;
-  align-items: center;
   pointer-events: none;
   
   #month {
@@ -272,15 +272,18 @@
   overflow-y: auto;
   scroll-snap-type: y mandatory;
   transition: transform 0.7s ease-in-out;
+  justify-content: flex-end;
 
   div {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(13rem, 1fr));
+    display: flex;
+    flex-wrap: wrap;
+    width: 90%;
+    height: 100%;
     gap: 1rem;
 
     article {
-      width: 100%;
-      aspect-ratio: 4 / 3;
+      width: calc((100% - 2rem) / 3);
+      aspect-ratio: 4 / 1;
       scroll-snap-align: start;
     }
   }
