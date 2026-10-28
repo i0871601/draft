@@ -273,20 +273,38 @@
   scroll-snap-type: y mandatory;
   transition: transform 0.7s ease-in-out;
   justify-content: flex-end;
+  display: flex;
+  flex-wrap: wrap;
+  width: max-content;
+  height: 100%;
+  gap: 1rem;
+  justify-content: flex-end;
 
-  div {
-    display: flex;
-    flex-wrap: wrap;
-    width: 90%;
-    height: 100%;
-    gap: 1rem;
-
-    article {
-      width: calc((100% - 2rem) / 3);
-      aspect-ratio: 4 / 1;
-      scroll-snap-align: start;
-    }
+  article {
+    min-width: 11rem;
+    max-width: 15rem;
+    width: calc((100% - 2rem) / 3);
+    aspect-ratio: 3 / 2;
+    scroll-snap-align: start;
   }
+}
+
+#content-select::-webkit-scrollbar{
+    width: 0.5rem;
+    height: 0.5rem;
+    background-color: transparent;
+}
+
+#content-select::-webkit-scrollbar-thumb{
+    background-color: var(--color-accent);
+    border-radius: 25px;
+}
+#content-select::-webkit-scrollbar-track {
+    background: transparent;
+    margin-top: 2.71rem;
+}
+#content-select::-webkit-scrollbar-corner {
+  background: transparent;
 }
 
 

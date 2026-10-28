@@ -7,9 +7,6 @@ function folder(elements) {
     let userData = getUserData();
     const classes = userData.data.classes;
 
-    const wrapperDiv = document.createElement('div');
-    contentFolderBlok.appendChild(wrapperDiv);
-
     classes.forEach(item => {
         const subject = item.Subject;
         
@@ -23,7 +20,7 @@ function folder(elements) {
                     </article>
                 `;
 
-                wrapperDiv.insertAdjacentHTML('beforeend', articleHTML);
+                contentFolderBlok.insertAdjacentHTML('beforeend', articleHTML);
             });
         }
     });
