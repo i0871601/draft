@@ -275,7 +275,7 @@
   justify-content: flex-end;
   display: flex;
   flex-wrap: wrap;
-  width: max-content;
+  width: 100%;
   height: 100%;
   gap: 1rem;
   justify-content: flex-end;
@@ -296,12 +296,11 @@
 }
 
 #content-select::-webkit-scrollbar-thumb{
-    background-color: var(--color-accent);
+    background-color: var(--shadow);
     border-radius: 25px;
 }
 #content-select::-webkit-scrollbar-track {
     background: transparent;
-    margin-top: 2.71rem;
 }
 #content-select::-webkit-scrollbar-corner {
   background: transparent;
