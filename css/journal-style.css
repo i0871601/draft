@@ -307,6 +307,8 @@
       width: 100%;
       height: 100%;
       opacity: 0.3;
+      display: flex;
+      align-items: flex-end;
 
       .file {
         width: 80%;
@@ -314,14 +316,14 @@
         background-color: var(--fon-color-1);
         position: absolute;
         z-index: -1;
+        top: 0;
+        left: 0;
       }
 
       .folder {
-        position: absolute;
         width: 100%;
         height: 85%;
         background-color: var(--shadow);
-        bottom: 0;
         border-radius: 0.5rem 0 0.5rem 0.5rem;
       }
       
@@ -330,7 +332,7 @@
         position: absolute;
         width: 35%;
         height: 20%;
-        top: -18%;
+        top: 0;
         right: 0;
         background-color: var(--shadow);
         z-index: -1;
