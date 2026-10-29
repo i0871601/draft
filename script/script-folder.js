@@ -18,6 +18,7 @@ function folder(elements) {
                     <article class="folder-item" data-class="${className}" data-subject="${subject}">
                         <span>${className}</span>
                         <span>${subject}</span>
+                        <div class="file-colder"></div>
                         <div class="folder"></div>
                     </article>
                 `;

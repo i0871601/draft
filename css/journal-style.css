@@ -323,15 +323,6 @@
       z-index: -1;
     }
   }
-
-  article:before {
-    content: "";
-    position: absolute;
-    width: 80%;
-    height: 30%;
-    top: 0;
-    z-index: -1;
-  }
 }
 
 #content-select::-webkit-scrollbar{
