@@ -280,6 +280,7 @@
   gap: 1rem;
   justify-content: flex-end;
   align-items: flex-start;
+  padding-right: 0.5rem;
 
   article {
     min-width: 11rem;
@@ -311,31 +312,30 @@
       bottom: 0;
     }
 
-    .folder::after, .folder::before {
+    .folder::after {
       content: "";
       position: absolute;
+      width: 35%;
       height: 20%;
-      background-color: var(--shadow);
       top: -20%;
-
-    }
-    .folder::after {
-      width: 85%;
-      left: 0;
-      background-color: var(--fon-color-1);
+      right: 0;
+      background-color: var(--shadow);
       z-index: -1;
     }
+  }
 
-    .folder::before {
-      width: 35%;
-      right: 0;
-    }
+  article:before {
+    content: "";
+    position: absolute;
+    width: 80%;
+    height: 30%;
+    top: 0;
+    z-index: -1;
   }
 }
 
 #content-select::-webkit-scrollbar{
   width: 0.5rem;
-  height: 0.5rem;
   background-color: transparent;
 }
 
