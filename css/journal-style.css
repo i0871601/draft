@@ -304,12 +304,15 @@
     }
 
     .folder-file {
+      width: 100%;
+      height: 100%;
+      opacity: 0.3;
+
       .folder {
         position: absolute;
         width: 100%;
         height: 85%;
         background-color: var(--shadow);
-        opacity: 0.3;
         bottom: 0;
       }
       
