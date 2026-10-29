@@ -15,14 +15,7 @@ function select(elements) {
 
             classList.forEach(className => {
                 const liHTML = `
-                    <article class="folder-item" data-class="${className}" data-subject="${subject}">
-                        <span>${className}</span>
-                        <span>${subject}</span>
-                        <div class="folder-file">
-                            <div class="file"></div>
-                            <div class="folder"></div>
-                        </div>
-                    </article>
+                    <li>${className}  ${subject}</li>
                 `;
 
                 contentSelect.insertAdjacentHTML('beforeend', liHTML);
