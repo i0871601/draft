@@ -108,7 +108,7 @@ body {
         }
     }
     
-    #select-button {
+    #journal {
         width: 2.1rem;
         aspect-ratio: 1 / 1;
         border-radius: 0.3rem;
@@ -179,7 +179,7 @@ footer {
 }
 
 
-#select-folder:checked ~ #main-bar #select-button {
+#journal:checked ~ #main-bar #select-button {
     transform: scale(1.05);
     
     span {
@@ -187,11 +187,11 @@ footer {
     }
 }
 
-#select-folder:checked ~ #content #content-journal {
+#journal:checked ~ #content #content-journal {
     transform: translateY(0%);
     pointer-events: auto;
 }
-#select-folder:checked ~ #content #content-time { 
+#journal:checked ~ #content #content-time { 
     transform: translateY(-100%);
 }
 
@@ -223,7 +223,7 @@ footer {
             width: 2.5rem;
         }
         
-        #select-button {
+        #journal {
             width: 2.3rem;
         }
 
