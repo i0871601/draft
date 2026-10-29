@@ -270,81 +270,15 @@
 #content-select {
   overflow: hidden;
   overflow-y: auto;
-  scroll-snap-type: y mandatory;
   transition: transform 0.7s ease-in-out;
   justify-content: flex-end;
   display: flex;
-  flex-wrap: wrap;
   width: 100%;
   height: 100%;
-  gap: 1rem;
-  justify-content: flex-end;
-  align-items: flex-start;
-  padding-right: 0.5rem;
 
-  article {
-    min-width: 11rem;
-    max-width: 15rem;
-    width: calc((100% - 2rem) / 3);
-    aspect-ratio: 3 / 2;
-    scroll-snap-align: start;
-    position: relative;
-    overflow: hidden;
-
-    span {
-      position: absolute;
-      z-index: 1;
-      bottom: 0;
-    }
-    span:first-child {
-      right: 0;
-    }
-    span:last-child {
-      left: 0;
-    }
-
-    .folder-file {
-      width: 100%;
-      height: 100%;
-      opacity: 0.3;
-      display: flex;
-      align-items: flex-end;
-
-      .file {
-        width: 80%;
-        height: 30%;
-        background-color: var(--fon-color-1);
-        position: absolute;
-        z-index: -1;
-        top: 0.3rem;
-        left: 0.3rem;
-        border-radius: 0.5rem 0 0 0;
-      }
-
-      .folder {
-        width: 100%;
-        height: 88%;
-        background-color: var(--shadow);
-        border-radius: 0.5rem 0 0.5rem 0.5rem;
-      }
-      
-      .folder::after {
-        content: "";
-        position: absolute;
-        width: 35%;
-        height: 20%;
-        top: 0;
-        right: 0;
-        background-color: var(--shadow);
-        z-index: -1;
-        border-radius: 0 0.5rem 0 0;
-        clip-path: polygon(30% 0%, 100% 0%, 100% 100%, 0% 100%);
-      }
-    }
-  }
 }
 
-#content-select::-webkit-scrollbar{
+/*#content-select::-webkit-scrollbar{
   width: 0.5rem;
   background-color: transparent;
 }
@@ -358,7 +292,7 @@
 }
 #content-select::-webkit-scrollbar-corner {
   background: transparent;
-}
+}*/
 
 
 
