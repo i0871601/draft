@@ -273,7 +273,7 @@
   justify-content: flex-end;
   align-items: flex-start;
 
-  #select-subject {
+  #button-select-subject {
     min-width: 11rem;
     width: min-content;
     margin: 0 1rem 0 0;
