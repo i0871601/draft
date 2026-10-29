@@ -338,7 +338,13 @@
   border-radius: 1rem;
   background-color: var(--fon-color-2);
   overflow: hidden;
+  pointer-events: none;
   transition: max-height 0.5s ease-in-out;
+}
+
+#list-subject li {
+  pointer-events: auto;
+  text-decoration: none;
 }
 
 #select-subject:checked ~ #select-colm #button-select-subject #list-subject {
