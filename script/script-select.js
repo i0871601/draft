@@ -23,7 +23,7 @@ function select(elements) {
                             <div class="folder"></div>
                         </div>
                     </article>
-                `;*/
+                `;
 
                 contentSelect.insertAdjacentHTML('beforeend', liHTML);
             });

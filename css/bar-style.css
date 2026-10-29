@@ -108,7 +108,7 @@ body {
         }
     }
     
-    #journal {
+    #main-button {
         width: 2.1rem;
         aspect-ratio: 1 / 1;
         border-radius: 0.3rem;
@@ -223,7 +223,7 @@ footer {
             width: 2.5rem;
         }
         
-        #journal {
+        #main-button {
             width: 2.3rem;
         }
 
