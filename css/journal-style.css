@@ -284,7 +284,7 @@
 
 #button-select-subject {
   min-width: 11rem;
-  width: 100%;
+  width: min-content;
   padding: 0.5rem 1rem;
   background-color: var(--fon-color-2);
   border-radius: 1rem;
@@ -300,7 +300,7 @@
 }
 
 #arrow {
-  height: 1.5rem;
+  height: 1rem;
   aspect-ratio: 1 / 1;
   display: flex;
   align-items: center;
@@ -315,9 +315,17 @@
   border-radius: 0.5rem;
 }
 
+#arrow span:nth-of-type(1)  {
+  transform: rotate(45deg);
+}
+#arrow span:nth-of-type(2) {
+  transform: rotate(-45deg);
+}
+
 #list-subject {
   position: absolute;
   top: 3.5rem;
+  left: 0;
   margin: 0;
   padding: 0;
   width: 100%;
@@ -330,6 +338,13 @@
 
 #select-subject:checked ~ #select-colm #button-select-subject #list-subject {
   max-height: 20rem;
+}
+
+#select-subject:checked ~ #select-colm #button-select-subject #arrow span:nth-of-type(1) {
+  transform: rotate(-45deg);
+}
+#select-subject:checked ~ #select-colm #button-select-subject #arrow span:nth-of-type(2) {
+  transform: rotate(45deg);
 }
 
 
