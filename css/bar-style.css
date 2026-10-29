@@ -179,7 +179,7 @@ footer {
 }
 
 
-#journal:checked ~ #main-bar #select-button {
+#journal:checked ~ #main-bar #main-button {
     transform: scale(1.05);
     
     span {
