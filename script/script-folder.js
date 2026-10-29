@@ -10,7 +10,7 @@ function folder(elements) {
     classes.forEach(item => {
         const subject = item.Subject;
         
-        if (item.Class) {
+        /*if (item.Class) {
             const classList = item.Class.split(',').map(c => c.trim());
 
             classList.forEach(className => {
@@ -27,6 +27,6 @@ function folder(elements) {
 
                 contentFolderBlok.insertAdjacentHTML('beforeend', articleHTML);
             });
-        }
+        }*/
     });
 }
