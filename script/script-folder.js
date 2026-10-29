@@ -16,7 +16,9 @@ function folder(elements) {
             classList.forEach(className => {
                 const articleHTML = `
                     <article class="folder-item" data-class="${className}" data-subject="${subject}">
-                        <span>${className} - ${subject}</span>
+                        <span>${className}</span>
+                        <span>${subject}</span>
+                        <div class="folder"></div>
                     </article>
                 `;
 

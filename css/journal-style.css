@@ -279,6 +279,7 @@
   height: 100%;
   gap: 1rem;
   justify-content: flex-end;
+  align-items: flex-start;
 
   article {
     min-width: 11rem;
@@ -286,21 +287,27 @@
     width: calc((100% - 2rem) / 3);
     aspect-ratio: 3 / 2;
     scroll-snap-align: start;
+    position: relative;
+
+    .folder {
+      position: absolute;
+      
+    }
   }
 }
 
 #content-select::-webkit-scrollbar{
-    width: 0.5rem;
-    height: 0.5rem;
-    background-color: transparent;
+  width: 0.5rem;
+  height: 0.5rem;
+  background-color: transparent;
 }
 
 #content-select::-webkit-scrollbar-thumb{
-    background-color: var(--shadow);
-    border-radius: 25px;
+  background-color: var(--shadow);
+  border-radius: 25px;
 }
 #content-select::-webkit-scrollbar-track {
-    background: transparent;
+  background: transparent;
 }
 #content-select::-webkit-scrollbar-corner {
   background: transparent;
