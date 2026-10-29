@@ -322,6 +322,10 @@
       background-color: var(--shadow);
       z-index: -1;
     }
+
+    file-folder {
+      
+    }
   }
 }
 
