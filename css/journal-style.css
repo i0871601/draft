@@ -355,6 +355,15 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  color: var(--text-color-1);
+}
+
+#list-subject li:nth-of-type(1) {
+  margin: 1rem 0 0 0;
+}
+
+#list-subject li:nth-last-child {
+  margin: 0 0 1rem 0;
 }
 
 #select-subject:checked ~ #select-colm #button-select-subject #list-subject {
