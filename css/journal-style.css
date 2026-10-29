@@ -331,12 +331,11 @@
   right: 0;
 }
 
-#list-subject {
+#content-list-subject {
   position: absolute;
   top: 3.5rem;
   left: 0;
-  margin: 0;
-  padding: 0;
+  padding: 1rem;
   width: 100%;
   height: 20rem;
   max-height: 0rem;
@@ -344,10 +343,15 @@
   background-color: var(--fon-color-2);
   overflow: hidden;
   pointer-events: none;
-  list-style-type: none;
-  padding: 0 1rem;
   transition: max-height 0.5s ease-in-out;
 }
+
+#list-subject {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
 
 #list-subject li {
   pointer-events: auto;
@@ -362,11 +366,11 @@
   margin: 1rem 0 0 0;
 }
 
-#list-subject li:nth-last-child {
+#list-subject li:last-child {
   margin: 0 0 1rem 0;
 }
 
-#select-subject:checked ~ #select-colm #button-select-subject #list-subject {
+#select-subject:checked ~ #select-colm #button-select-subject #content-list-subject {
   max-height: 20rem;
 }
 
