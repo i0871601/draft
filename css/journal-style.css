@@ -310,9 +310,10 @@
 #arrow span {
   display: block;
   width: 59%;
-  height: 0.2rem;
+  height: 0.15rem;
   background-color: var(--shadow);
   border-radius: 0.5rem;
+  transition: transform 0.5s ease-in-out;
 }
 
 #arrow span:nth-of-type(1)  {
@@ -320,6 +321,8 @@
 }
 #arrow span:nth-of-type(2) {
   transform: rotate(-45deg);
+  position: absolute;
+  right: 0;
 }
 
 #list-subject {
