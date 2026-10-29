@@ -272,6 +272,27 @@
   transition: transform 0.7s ease-in-out;
   justify-content: flex-end;
   align-items: flex-start;
+
+  #select-subject {
+    min-width: 11rem;
+    width: min-content;
+    margin: 0 1rem 0 0;
+    padding: 0.5rem 1rem;
+    background-color: var(--fon-color-2);
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+
+  #text-select {
+    margin: 0;
+  }
+
+  #list-subject {
+    display: none;
+  }
 }
 
 /*#content-select::-webkit-scrollbar{
