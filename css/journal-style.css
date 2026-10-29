@@ -267,7 +267,7 @@
 }
 
 
-#content-select {
+#content-journal {
   overflow: hidden;
   transition: transform 0.7s ease-in-out;
   justify-content: flex-end;
@@ -450,11 +450,6 @@
 
   .start-time-lesson h2{ 
     font-size: 1.3em;
-  }
-
-  #content-select div {
-    grid-template-columns: repeat(auto-fill, minmax(0, 11rem));
-    justify-content: space-between;
   }
 }
 
