@@ -10,10 +10,12 @@ function init() {
     //DOM-елементи
     const elements = {
         checkboxTime: document.getElementById('time'),
-        checkboxFolder: document.getElementById('select-folder'),
+        checkboxMain: document.getElementById('journal'),
         //checkboxEl: document.getElementById('checkbox-event-day'),
         contentTimeBlok: document.getElementById('content-time'),
-        contentFolderBlok: document.getElementById('content-select')
+        contentJournalBlok: document.getElementById('content-journal'),
+        contentSelect: document.getElementById('list-subject'),
+        textSelect: document.getElementById('text-select')
     };
 
     // Делегування кліків на сітку календаря
@@ -35,7 +37,7 @@ function init() {
     // Первинний запуск
     if (typeof calendar === 'function') calendar(elements);
 
-    if (typeof folder === 'function') folder(elements);
+    if (typeof select === 'function') select(elements);
 }
 
 // Захищений запуск (для завантаження з кешу)

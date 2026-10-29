@@ -1,8 +1,8 @@
 // Авторське право (c) жовтень 2026 рік Сікан Іван Валерійович
-function folder(elements) {
-    const { checkboxFolder, contentFolderBlok } = elements;
+function select(elements) {
+    const { checkboxMain, contentSelect, textSelect } = elements;
     
-    if (!checkboxFolder || !contentFolderBlok || checkboxFolder.checked) return;
+    if (!checkboxMain || !contentSelect || checkboxMain.checked) return;
 
     let userData = getUserData();
     const classes = userData.data.classes;
@@ -10,11 +10,11 @@ function folder(elements) {
     classes.forEach(item => {
         const subject = item.Subject;
         
-        /*if (item.Class) {
+        if (item.Class) {
             const classList = item.Class.split(',').map(c => c.trim());
 
             classList.forEach(className => {
-                const articleHTML = `
+                const liHTML = `
                     <article class="folder-item" data-class="${className}" data-subject="${subject}">
                         <span>${className}</span>
                         <span>${subject}</span>
@@ -23,10 +23,10 @@ function folder(elements) {
                             <div class="folder"></div>
                         </div>
                     </article>
-                `;
+                `;*/
 
-                contentFolderBlok.insertAdjacentHTML('beforeend', articleHTML);
+                contentSelect.insertAdjacentHTML('beforeend', liHTML);
             });
-        }*/
+        }
     });
 }
