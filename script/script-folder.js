@@ -18,8 +18,10 @@ function folder(elements) {
                     <article class="folder-item" data-class="${className}" data-subject="${subject}">
                         <span>${className}</span>
                         <span>${subject}</span>
-                        <div class="file-folder"></div>
-                        <div class="folder"></div>
+                        <div class="folder-file">
+                            <div class="file"></div>
+                            <div class="folder"></div>
+                        </div>
                     </article>
                 `;
 
