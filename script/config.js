@@ -1,6 +1,6 @@
 // Авторське право (c) серпень 2025 рік Сікан Іван Валерійович.
-const API_URL_AUTHORIZATION = "https://worker-refuge.i087.workers.dev/";
-const API_URL = "https://worker-refuge.i087.workers.dev/";
+const API_URL_AUTHORIZATION = "https://worker-auth.i087.workers.dev/";
+const API_URL = "https://worker-auth.i087.workers.dev/";
 
 const messages = {
   loginError: {status: 'error', text: "Помилка: невірний логін чи пароль."},
