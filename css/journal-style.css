@@ -578,6 +578,14 @@
   .start-time-lesson h2{ 
     font-size: 1.3em;
   }
+
+  #select-colm {
+    max-width: 50vmin;
+  }
+
+  #select-subject:checked ~ #select-colm #button-select-subject #content-list-subject {
+    max-height: 13rem;
+  }
 }
 
 @keyframes fadeUp {
