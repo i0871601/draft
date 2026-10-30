@@ -38,6 +38,8 @@ function select(elements) {
             const classList = item.Class.split(',').map(c => c.trim());
             totalClassCount += classList.length;
 
+            console.log(totalClassCount);
+
             if (totalClassCount > 1) {
                 classList.forEach(className => {
                     const liHTML = `<li>${className}</li>`;
