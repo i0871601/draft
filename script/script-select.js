@@ -9,15 +9,15 @@ function select(elements) {
 
     classes.forEach(item => {
         const subject = item.Subject;
+
+        const liElementHTML = `<li>${subject}</li>`;
+        contentSelect.insertAdjacentHTML('beforeend', liElementHTML);
         
         if (item.Class) {
             const classList = item.Class.split(',').map(c => c.trim());
 
             classList.forEach(className => {
-                const liHTML = `
-                    <li>${className}  ${subject}</li>
-                `;
-
+                const liHTML = `<li>${className}</li>`;
                 contentSelect.insertAdjacentHTML('beforeend', liHTML);
             });
         }
