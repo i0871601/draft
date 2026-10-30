@@ -348,10 +348,27 @@
 
 #wrapper-list {
   margin: 1rem 0;
-  height: calc(100% - 1.5rem);
+  height: calc(100% - 2rem);
   overflow: hidden;
   overflow-y: auto;
   overflow-x: hidden;
+}
+
+#wrapper-list::-webkit-scrollbar{
+  margin: 1rem 0;
+  width: 0.5rem;
+  background-color: transparent;
+}
+
+#wrapper-list::-webkit-scrollbar-thumb{
+  background-color: var(--shadow);
+  border-radius: 25px;
+}
+#wrapper-list::-webkit-scrollbar-track {
+  background: transparent;
+}
+#wrapper-list::-webkit-scrollbar-corner {
+  background: transparent;
 }
 
 #list-subject {
@@ -359,7 +376,9 @@
   padding: 0;
   list-style-type: none;
   display: flex;
+  flex-direction: column;
   gap: 1rem;
+  pointer-events: auto;
 }
 
 
