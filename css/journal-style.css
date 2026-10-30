@@ -532,6 +532,14 @@
       }
     }
   }
+
+  #select-colm { 
+    min-width: 100%;
+  }
+
+  #button-select-subject {
+    min-width: 100%;
+  }
 }
 
 @media (max-height: 500px) {
