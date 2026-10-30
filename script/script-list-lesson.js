@@ -106,6 +106,8 @@ function EventDayInfo(day, dayOfWeekIndex, isToday, elements) {
     let userData = getUserData();
     const routine = userData.data.routine;
 
+    const result = userData.data.role === "teacher" ? Class : Teacher_LastName;
+
     const filteredLessons = routine.filter(item => item.Day === dayText);
     filteredLessons.sort((a, b) => Number(a.LessonNumber) - Number(b.LessonNumber));
 
@@ -154,7 +156,7 @@ function EventDayInfo(day, dayOfWeekIndex, isToday, elements) {
                             <div class="info-lesson">
                                 <p class="name-subject">${el.Subject}</p>
                                 <div class="info-placing">
-                                    <p class="name-class ${classBorder}">${el.Class}</p>
+                                    <p class="name-class ${classBorder}">${el.result}</p>
                                     ${locationHTML}
                                 </div>
                             </div>
