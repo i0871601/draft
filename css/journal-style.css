@@ -583,6 +583,10 @@
     max-width: 50vmin;
   }
 
+  #wrapper-list {
+    max-height: calc(13rem - 2rem);
+  }
+
   #select-subject:checked ~ #select-colm #button-select-subject #content-list-subject {
     max-height: 13rem;
   }
