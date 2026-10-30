@@ -29,7 +29,7 @@ function select(elements) {
         const subject = item.Subject;
 
         if (isMultipleSubjects) {
-            const liElementHTML = `<li>${subject}</li>`;
+            const liElementHTML = `<li class="subject-li">${subject}</li>`;
             contentSelect.insertAdjacentHTML('beforeend', liElementHTML);
         }
         
@@ -38,11 +38,9 @@ function select(elements) {
             const classList = item.Class.split(',').map(c => c.trim());
             totalClassCount += classList.length;
 
-            console.log(totalClassCount);
-
             if (totalClassCount > 1) {
                 classList.forEach(className => {
-                    const liHTML = `<li>${className}</li>`;
+                    const liHTML = `<li class="class-li">${className}</li>`;
                     contentSelect.insertAdjacentHTML('beforeend', liHTML);
                 });
             }

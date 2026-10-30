@@ -392,7 +392,11 @@
   transition: color 0.5s ease-in-out;
 }
 
-#list-subject li:hover {
+#list-subject .subject-li {
+
+}
+
+#list-subject .class-li:hover {
   color: var(--text-color-3);
 }
 
