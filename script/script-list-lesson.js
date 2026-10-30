@@ -133,6 +133,8 @@ function EventDayInfo(day, dayOfWeekIndex, isToday, elements) {
                 const passedId = `passed-lesson-${el.LessonNumber}`;
 
                 const result = userData.data.role === "teacher" ? el.Class : el.Teacher_LastName;
+                console.log(result);
+                console.log(userData.data.role);
                 
                 let locationHTML = '';
                 let classBorder = '';
