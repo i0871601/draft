@@ -337,7 +337,7 @@
   left: 0;
   padding: 0 0 0 1rem;
   width: 100%;
-  height: 17rem;
+  height: min-content;
   max-height: 0rem;
   border-radius: 1rem;
   background-color: var(--fon-color-2);
@@ -348,7 +348,8 @@
 
 #wrapper-list {
   margin: 1rem 0;
-  height: calc(100% - 2rem);
+  max-height: calc(17rem - 2rem);
+  height: min-content;
   overflow: hidden;
   overflow-y: auto;
   overflow-x: hidden;
@@ -402,7 +403,7 @@
 
 
 #select-subject:checked ~ #select-colm #button-select-subject #content-list-subject {
-  max-height: 20rem;
+  max-height: 17rem;
 }
 
 #select-subject:checked ~ #select-colm #button-select-subject #arrow span:nth-of-type(1) {
