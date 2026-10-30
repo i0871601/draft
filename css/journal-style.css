@@ -373,7 +373,7 @@
 
 #list-subject {
   margin: 0;
-  padding: 0;
+  padding: 0 0.5rem 0 0;
   list-style-type: none;
   display: flex;
   flex-direction: column;
@@ -392,11 +392,11 @@
   transition: color 0.5s ease-in-out;
 }
 
-#list-subject .subject-li {
-
+#list-subject .li-subject {
+  border-bottom: 0.1rem solid var(--shadow);
 }
 
-#list-subject .class-li:hover {
+#list-subject .li:hover {
   color: var(--text-color-3);
 }
 

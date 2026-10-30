@@ -7,29 +7,25 @@ function select(elements) {
     let userData = getUserData();
     const classes = userData.data.classes;
 
-    let isMultipleSubjects = false;
-
-    if (classes.length > 1) isMultipleSubjects = true;
-
-
-    let totalSubjectCount = 0;
+    let classElement = "li";
+    let totalClassCount = 0;
 
     classes.forEach(item => {
         if (item.Class) {
             const classList = item.Class.split(',').map(c => c.trim());
-            totalSubjectCount += classList.length;
+            totalClassCount += classList.length;
         }
     });
 
-    if (totalSubjectCount > 1) {
-        isMultipleClasses = true;
+    if (totalClassCount > 2) {
+        classElement = "li-subject"
     }
 
     classes.forEach(item => {
         const subject = item.Subject;
 
-        if (isMultipleSubjects) {
-            const liElementHTML = `<li class="subject-li">${subject}</li>`;
+        if (classes.length > 1) {
+            const liElementHTML = `<li class=${classElement}>${subject}</li>`;
             contentSelect.insertAdjacentHTML('beforeend', liElementHTML);
         }
         
@@ -40,7 +36,7 @@ function select(elements) {
 
             if (totalClassCount > 1) {
                 classList.forEach(className => {
-                    const liHTML = `<li class="class-li">${className}</li>`;
+                    const liHTML = `<li class="li">${className}</li>`;
                     contentSelect.insertAdjacentHTML('beforeend', liHTML);
                 });
             }
