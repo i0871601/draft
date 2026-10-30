@@ -14,6 +14,9 @@ function select(elements) {
 
     let totalSubjectCount = 0;
     let totalClassCount = 0;
+
+    let classList = "";
+
     classes.forEach(item => {
         if (item.Class) {
             const classList = item.Class.split(',').map(c => c.trim());
@@ -34,7 +37,7 @@ function select(elements) {
         }
         
         if (item.Class) {
-            const classList = item.Class.split(',').map(c => c.trim());
+            classList = item.Class.split(',').map(c => c.trim());
             totalClassCount += classList.length;
         }
 
