@@ -106,7 +106,7 @@ function EventDayInfo(day, dayOfWeekIndex, isToday, elements) {
     let userData = getUserData();
     const routine = userData.data.routine;
 
-    const result = userData.data.role === "teacher" ? Class : Teacher_LastName;
+    const result = userData.data.role === "teacher" ? "Class" : "Teacher_LastName";
 
     const filteredLessons = routine.filter(item => item.Day === dayText);
     filteredLessons.sort((a, b) => Number(a.LessonNumber) - Number(b.LessonNumber));
