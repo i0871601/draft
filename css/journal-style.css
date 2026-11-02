@@ -416,8 +416,39 @@
 }
 
 #navg-journal-or-lesson {
-  
+  position: absolute;
+  left: 0;
+  display: flex;
+  align-items: center;
+  color: var(--text-color-1);
+  padding: 0 1rem;
 }
+
+#navg-journal-or-lesson p{
+  margin: 0;
+  padding: 0 0.5rem;
+  background-color: var(--fon-color);
+  color: var(--text-color-1);
+}
+
+#navg-journal-or-lesson span {
+  position: absolute;
+  z-index: -1;
+  display: block;
+  height: 0.1rem;
+  width: 100%;
+  border-radius: 1rem;
+  background-color: var(--shadow);
+}
+
+#radio-journal-frame:checked ~ #navg-journal-or-lesson p:first-child {
+  color: var(--text-color-3);
+}
+
+#radio-lesson-frame:checked ~ #navg-journal-or-lesson p:last-child {
+  color: var(--text-color-3);
+}
+
 
 #journal-frame {
   width: 100%;
