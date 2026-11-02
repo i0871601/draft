@@ -424,7 +424,7 @@
   color: var(--text-color-1);
 }
 
-#navg-journal-or-lesson p{
+#navg-journal-or-lesson label{
   margin: 0 0.5rem;
   padding: 0 0.5rem;
   background-color: var(--fon-color);
