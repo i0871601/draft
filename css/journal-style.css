@@ -421,14 +421,19 @@
   display: flex;
   align-items: center;
   color: var(--text-color-1);
-  padding: 0 1rem;
 }
 
 #navg-journal-or-lesson p{
-  margin: 0;
+  margin: 0 0.5rem;
   padding: 0 0.5rem;
   background-color: var(--fon-color);
   color: var(--text-color-1);
+  cursor: pointer;
+  transition: color 0.5s ease-in-out;
+}
+
+#navg-journal-or-lesson p:last-child {
+  pointer-events: none;
 }
 
 #navg-journal-or-lesson span {
@@ -449,6 +454,10 @@
   color: var(--text-color-3);
 }
 
+#on-off-journal:checked ~ #navg-journal-or-lesson p:last-child {
+  pointer-events: auto;
+}
+
 
 #journal-frame {
   width: 100%;
@@ -458,7 +467,7 @@
   justify-content: center;
 }
 
-#journal-frame #text-error {
+#journal-frame #text-error-frame {
   margin: 0;
   color: var(--text-color-1);
 }
