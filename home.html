@@ -12,10 +12,6 @@
     </head>
 
     <body>
-        <input type="checkbox" id="on-Subject" class="input" checked>
-        <input type="checkbox" id="on-Class" class="input" checked>
-        
-
         <main id="Journal">
             <input type="radio" name="trigger" id="trigger" class="input">
             <input type="radio" name="trigger" id="time" class="input" checked>
@@ -44,7 +40,10 @@
                 
                 <div id="content-journal" class="content">
                     <input type="checkbox" id="select-subject" class="input">
-                    <input type="checkbox" id="on/off-journal" class="input" checked>
+                    <input type="checkbox" id="on/off-journal" class="input">
+
+                    <input type="radio" name="content" id="journal-frame" class="input" checked>
+                    <input type="radio" name="content" id="lesson-frame" class="input">
 
                     <div id="select-colm">
                         <label for="select-subject" id="button-select-subject">
@@ -60,8 +59,15 @@
                             </div>
                         </label>
                     </div>
+
+                    <div id="navg-journal-or-lesson">
+                        <p id="static-text-journal">Журнал</p>
+                        <p id="let-text-lesson">Уроки</p>
+                        <span></span>
+                    </div>
+
                     <div id="journal-frame">
-                        <p id="text-error">Не вибраний журнал</p>
+                        <p id="text-error-frame">Не вибраний журнал</p>
                     </div>
                 </div>
             </div>
