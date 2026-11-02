@@ -418,6 +418,7 @@
 #navg-journal-or-lesson {
   position: absolute;
   left: 0;
+  height: 2.4rem;
   display: flex;
   align-items: center;
   color: var(--text-color-1);
