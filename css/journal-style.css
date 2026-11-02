@@ -279,23 +279,20 @@
 }
 
 #select-navg {
-  max-width: 35vmin;
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+  position: relative;
 }
 
-#navg-journal-or-lesson {
-  position: absolute;
-  left: 0;
-  height: 2.4rem;
+#journal-or-lesson {
   display: flex;
   align-items: center;
   color: var(--text-color-1);
 }
 
-#navg-journal-or-lesson label{
+#journal-or-lesson label{
   margin: 0 0.5rem;
   padding: 0 0.5rem;
   background-color: var(--fon-color);
@@ -304,7 +301,7 @@
   transition: color 0.5s ease-in-out;
 }
 
-#navg-journal-or-lesson #last-navg {
+#journal-or-lesson #last-navg {
   pointer-events: none;
 }
 
