@@ -433,7 +433,7 @@
   transition: color 0.5s ease-in-out;
 }
 
-#navg-journal-or-lesson p:nth-of-type(2) {
+#navg-journal-or-lesson #last-navg {
   pointer-events: none;
 }
 
@@ -447,15 +447,15 @@
   background-color: var(--shadow);
 }
 
-#radio-journal-frame:checked ~ #navg-journal-or-lesson p:nth-of-type(1) {
+#radio-journal-frame:checked ~ #navg-journal-or-lesson #first-navg {
   color: var(--text-color-3);
 }
 
-#radio-lesson-frame:checked ~ #navg-journal-or-lesson p:nth-of-type(2) {
+#radio-lesson-frame:checked ~ #navg-journal-or-lesson #last-navg {
   color: var(--text-color-3);
 }
 
-#on-off-journal:checked ~ #navg-journal-or-lesson p:nth-of-type(2) {
+#on-off-journal:checked ~ #navg-journal-or-lesson #last-navg {
   pointer-events: auto;
 }
 
