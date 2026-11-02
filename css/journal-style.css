@@ -278,12 +278,56 @@
   gap: 1rem;
 }
 
-#select-colm {
+#select-navg {
   max-width: 35vmin;
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+#navg-journal-or-lesson {
+  position: absolute;
+  left: 0;
+  height: 2.4rem;
+  display: flex;
+  align-items: center;
+  color: var(--text-color-1);
+}
+
+#navg-journal-or-lesson label{
+  margin: 0 0.5rem;
+  padding: 0 0.5rem;
+  background-color: var(--fon-color);
+  color: var(--text-color-1);
+  cursor: pointer;
+  transition: color 0.5s ease-in-out;
+}
+
+#navg-journal-or-lesson #last-navg {
+  pointer-events: none;
+}
+
+#journal-or-lesson span {
+  position: absolute;
+  z-index: -1;
+  display: block;
+  height: 0.1rem;
+  width: 100%;
+  border-radius: 1rem;
+  background-color: var(--shadow);
+}
+
+#radio-journal-frame:checked ~ #select-navg #journal-or-lesson #first-navg {
+  color: var(--text-color-3);
+}
+
+#radio-lesson-frame:checked ~ #select-navg #journal-or-lesson #last-navg {
+  color: var(--text-color-3);
+}
+
+#on-off-journal:checked ~ #select-navg #journal-or-lesson #last-navg {
+  pointer-events: auto;
 }
 
 #button-select-subject {
@@ -404,61 +448,16 @@
 }
 
 
-#select-subject:checked ~ #select-colm #button-select-subject #content-list-subject {
+#select-subject:checked ~ #select-navg #button-select-subject #content-list-subject {
   max-height: 17rem;
 }
 
-#select-subject:checked ~ #select-colm #button-select-subject #arrow span:nth-of-type(1) {
+#select-subject:checked ~ #select-navg #button-select-subject #arrow span:nth-of-type(1) {
   transform: rotate(-45deg);
 }
-#select-subject:checked ~ #select-colm #button-select-subject #arrow span:nth-of-type(2) {
+#select-subject:checked ~ #select-navg #button-select-subject #arrow span:nth-of-type(2) {
   transform: rotate(45deg);
 }
-
-#navg-journal-or-lesson {
-  position: absolute;
-  left: 0;
-  height: 2.4rem;
-  display: flex;
-  align-items: center;
-  color: var(--text-color-1);
-}
-
-#navg-journal-or-lesson label{
-  margin: 0 0.5rem;
-  padding: 0 0.5rem;
-  background-color: var(--fon-color);
-  color: var(--text-color-1);
-  cursor: pointer;
-  transition: color 0.5s ease-in-out;
-}
-
-#navg-journal-or-lesson #last-navg {
-  pointer-events: none;
-}
-
-#navg-journal-or-lesson span {
-  position: absolute;
-  z-index: -1;
-  display: block;
-  height: 0.1rem;
-  width: 100%;
-  border-radius: 1rem;
-  background-color: var(--shadow);
-}
-
-#radio-journal-frame:checked ~ #navg-journal-or-lesson #first-navg {
-  color: var(--text-color-3);
-}
-
-#radio-lesson-frame:checked ~ #navg-journal-or-lesson #last-navg {
-  color: var(--text-color-3);
-}
-
-#on-off-journal:checked ~ #navg-journal-or-lesson #last-navg {
-  pointer-events: auto;
-}
-
 
 #journal-frame {
   width: 100%;
