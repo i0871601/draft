@@ -290,6 +290,7 @@
   display: flex;
   align-items: center;
   color: var(--text-color-1);
+  position: relative;
 }
 
 #journal-or-lesson label{
@@ -579,7 +580,7 @@
   }
 
   #button-select-subject {
-    min-width: 100%;
+    min-width: 50vmin;
   }
 }
 
