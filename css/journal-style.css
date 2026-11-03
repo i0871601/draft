@@ -439,6 +439,7 @@
 
 #list-subject .li-subject {
   border-bottom: 0.1rem solid var(--shadow);
+  cursor: auto;
 }
 
 #list-subject .li:hover {
