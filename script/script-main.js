@@ -33,6 +33,20 @@ function init() {
             }
         });
     }
+    // Делегування кліків на випадаючий список 
+    if (elements.contentSelect) {
+        elements.contentSelect.addEventListener('click', (e) => {
+            const liTarget = e.target.closest('li.li');
+            
+            if (!liTarget) return;
+
+            // Збираємо дані з дата-атрибутів цього класу
+            const subjectInfo = liTarget.dataset.subjectInfo;
+            const classInfo = liTarget.dataset.classInfo;
+
+            console.log(subjectInfo, classInfo);
+        });
+    }
 
     // Первинний запуск
     if (typeof calendar === 'function') calendar(elements);

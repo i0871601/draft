@@ -36,8 +36,17 @@ function select(elements) {
 
             if (totalClassCount > 1) {
                 classList.forEach(className => {
-                    const liHTML = `<li class="li">${className}</li>`;
+                    const liHTML = `<li class="li" data-subject-info="${subject}" data-class-info="${className}">${className}</li>`;
                     contentSelect.insertAdjacentHTML('beforeend', liHTML);
+                });
+            }
+            else {
+                classList.forEach(className => {
+                    const newlyCreatedLi = contentSelect.lastElementChild;
+                    if (newlyCreatedLi) {
+                        newlyCreatedLi.setAttribute('data-subject-info', subject);
+                        newlyCreatedLi.setAttribute('data-class-info', className);
+                    }
                 });
             }
         }
