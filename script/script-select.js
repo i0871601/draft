@@ -36,7 +36,11 @@ function select(elements) {
 
             if (totalClassCount > 1) {
                 classList.forEach(className => {
-                    const liHTML = `<li class="li" data-subject-info="${subject}" data-class-info="${className}">${className}</li>`;
+                    const liHTML = `<li class="li" 
+                    data-subject-info="${subject}" 
+                    data-class-info="${className}"
+                    data-teacher-info="${item.Teacher_LastName}"
+                    >${className}</li>`;
                     contentSelect.insertAdjacentHTML('beforeend', liHTML);
                 });
             }
@@ -46,6 +50,7 @@ function select(elements) {
                     if (newlyCreatedLi) {
                         newlyCreatedLi.setAttribute('data-subject-info', subject);
                         newlyCreatedLi.setAttribute('data-class-info', className);
+                        newlyCreatedLi.setAttribute('data-teacher-info', item.Teacher_LastName);
                     }
                 });
             }

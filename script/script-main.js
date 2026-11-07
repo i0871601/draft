@@ -43,8 +43,9 @@ function init() {
             // Збираємо дані з дата-атрибутів цього класу
             const subjectInfo = liTarget.dataset.subjectInfo;
             const classInfo = liTarget.dataset.classInfo;
+            const teacherInfo = liTarget.dataset.teacherInfo;
 
-            console.log(subjectInfo, classInfo);
+            console.log(subjectInfo, classInfo, teacherInfo);
         });
     }
 
