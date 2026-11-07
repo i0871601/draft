@@ -44,6 +44,9 @@ function init() {
             const subjectInfo = liTarget.dataset.subjectInfo;
             const classInfo = liTarget.dataset.classInfo;
             const teacherInfo = liTarget.dataset.teacherInfo;
+            const textInfo = liTarget.textContent;
+
+            elements.textSelect.textContent = `${textInfo}`;
 
             console.log(subjectInfo, classInfo, teacherInfo);
 
