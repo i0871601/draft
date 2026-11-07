@@ -359,7 +359,7 @@
 
 #arrow span {
   display: block;
-  width: 59%;
+  width: 0.63rem;
   height: 0.15rem;
   background-color: var(--shadow);
   border-radius: 0.5rem;
