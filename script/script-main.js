@@ -15,7 +15,8 @@ function init() {
         contentTimeBlok: document.getElementById('content-time'),
         contentJournalBlok: document.getElementById('content-journal'),
         contentSelect: document.getElementById('list-subject'),
-        textSelect: document.getElementById('text-select')
+        textSelect: document.getElementById('text-select'),
+        checkboxOffOn: document.getElementById('on-off-journal')
     };
 
     // Делегування кліків на сітку календаря
@@ -47,7 +48,7 @@ function init() {
             const textInfo = liTarget.textContent;
 
             elements.textSelect.textContent = `${textInfo}`;
-
+            
             console.log(subjectInfo, classInfo, teacherInfo);
 
             /*const payload = {
@@ -57,7 +58,8 @@ function init() {
                 className: classInfo
             };
             const response = await request(payload);
-            console.log("Дані журналу завантажено:", response);*/
+            console.log("Дані журналу завантажено:", response);
+            elements.checkboxOffOn.checked = true;*/
         });
     }
 
