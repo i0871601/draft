@@ -46,6 +46,15 @@ function init() {
             const teacherInfo = liTarget.dataset.teacherInfo;
 
             console.log(subjectInfo, classInfo, teacherInfo);
+
+            /*const payload = {
+                action: 'journal',
+                subject: subjectInfo,
+                teacherLastName: teacherInfo,
+                className: classInfo
+            };
+            const response = await request(payload);
+            console.log("Дані журналу завантажено:", response);*/
         });
     }
 
