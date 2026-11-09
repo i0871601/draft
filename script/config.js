@@ -1,6 +1,7 @@
 // Авторське право (c) серпень 2025 рік Сікан Іван Валерійович.
 const API_URL_AUTHORIZATION = "https://worker-auth.i087.workers.dev/";
-const API_URL = "https://worker-auth.i087.workers.dev/";
+const API_URL_JOURNAL = "https://worker-journal.i087.workers.dev/";
+const API_URL_UPDATE_RECORD = "https://worker-update.i087.workers.dev/";
 
 const messages = {
   loginError: {status: 'error', text: "Помилка: невірний логін чи пароль."},
@@ -24,12 +25,27 @@ function getUserData() {
 async function request(payload) {
     const userData = getUserData();
     if (!userData) { throw new Error("Дані користувача не знайдено в сесії. Відправка запиту неможлива."); }
+    
     const finalPayload = {
         ...payload,
         userData: userData
     };
+
+    let targetUrl;
+    
+    switch (payload.action) {
+        case 'journal':
+            targetUrl = API_URL_JOURNAL;
+            break;
+        case 'updateRecord':
+            targetUrl = API_URL_UPDATE_RECORD;
+            break;
+        default:
+            throw new Error(`Перевірте переданий payload.`);
+    }
+
     try {
-        const response = await fetch(API_URL, {
+        const response = await fetch(targetUrl, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
