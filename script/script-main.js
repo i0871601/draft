@@ -16,8 +16,11 @@ function init() {
         contentJournalBlok: document.getElementById('content-journal'),
         contentSelect: document.getElementById('list-subject'),
         textSelect: document.getElementById('text-select'),
-        checkboxOffOn: document.getElementById('on-off-journal')
+        checkboxOffOn: document.getElementById('on-off-journal'),
+        textError: document.getElementById('text-error-frame')
     };
+
+    let userData = getUserData();
 
     // Делегування кліків на сітку календаря
     if (elements.contentTimeBlok) {
@@ -58,8 +61,10 @@ function init() {
             const response = await request(payload);
             console.log("Дані журналу завантажено:", response);
 
-            if (response.students.length === 0 || (response.students.length === 1 && response.lessons.length === 0)) {
+            if (response.students.length === 0 || (userData.role === "student" && response.lessons.length === 0)) {
                 console.log("Не має учнів/уроків");
+                const text = userData.role === 'student' ? 'В журналі немає записів уроків' : 'В журналі відсутні учні';
+                elements.textError.textContent = text;
                 return;
             }
             else {
