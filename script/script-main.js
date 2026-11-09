@@ -46,12 +46,10 @@ function init() {
             const classInfo = liTarget.dataset.classInfo;
             const teacherInfo = liTarget.dataset.teacherInfo;
             const textInfo = liTarget.textContent;
-
-            elements.textSelect.textContent = `${textInfo}`;
             
             console.log(subjectInfo, classInfo, teacherInfo);
 
-            /*const payload = {
+            const payload = {
                 action: 'journal',
                 subject: subjectInfo,
                 teacherLastName: teacherInfo,
@@ -59,7 +57,15 @@ function init() {
             };
             const response = await request(payload);
             console.log("Дані журналу завантажено:", response);
-            elements.checkboxOffOn.checked = true;*/
+
+            if (response.students.length === 0 || (response.students.length === 1 && response.lessons.length === 0)) {
+                console.log("Не має учнів/уроків");
+                return;
+            }
+            else {
+                elements.textSelect.textContent = `${textInfo}`;
+                elements.checkboxOffOn.checked = true;
+            }
         });
     }
 
