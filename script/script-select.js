@@ -24,7 +24,7 @@ function select(elements) {
     classes.forEach(item => {
         const subject = item.Subject;
 
-        if (classes.length > 1) {
+        if (classes.length >= 1) {
             const liElementHTML = `<li class=${classElement}>${subject}</li>`;
             contentSelect.insertAdjacentHTML('beforeend', liElementHTML);
         }
