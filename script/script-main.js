@@ -22,6 +22,7 @@ function init() {
 
     let userData = getUserData();
 
+    //
     // Делегування кліків на сітку календаря
     if (elements.contentTimeBlok) {
         elements.contentTimeBlok.addEventListener('change', (e) => {
