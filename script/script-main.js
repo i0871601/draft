@@ -37,7 +37,6 @@ function init() {
             }
         });
     }
-    //p
     // Делегування кліків на випадаючий список 
     if (elements.contentSelect) {
         elements.contentSelect.addEventListener('click', async (e) => {
