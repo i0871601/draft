@@ -36,7 +36,7 @@ function init() {
     }
     // Делегування кліків на випадаючий список 
     if (elements.contentSelect) {
-        elements.contentSelect.addEventListener('click', (e) => {
+        elements.contentSelect.addEventListener('click', async (e) => {
             const liTarget = e.target.closest('li.li');
             
             if (!liTarget) return;
