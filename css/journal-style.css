@@ -465,9 +465,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
 }
 
 #journal-frame #text-error-frame {
+  position: absolute;
   opacity: 1;
   visibility: visible;
   overflow: visible;
