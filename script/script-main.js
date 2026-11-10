@@ -11,13 +11,16 @@ function init() {
     const elements = {
         checkboxTime: document.getElementById('time'),
         checkboxMain: document.getElementById('journal'),
-        //checkboxEl: document.getElementById('checkbox-event-day'),
         contentTimeBlok: document.getElementById('content-time'),
         contentJournalBlok: document.getElementById('content-journal'),
         contentSelect: document.getElementById('list-subject'),
         textSelect: document.getElementById('text-select'),
         checkboxOffOn: document.getElementById('on-off-journal'),
-        textError: document.getElementById('text-error-frame')
+        textError: document.getElementById('text-error-frame'),
+
+
+        contentDivLesson: document.getElementById('frame-lesson'),
+        contentLesson: document.getElementById('lesson-list')
     };
 
     let userData = getUserData();
@@ -92,8 +95,8 @@ function init() {
             }
             else {
                 elements.textError.textContent = "";
-                lesson(elements, response.lessons, subjectInfo, teacherInfo, classInfo);
-                //elements.checkboxOffOn.checked = true;
+                lesson(userData.role, elements, response.lessons, subjectInfo, teacherInfo, classInfo);
+                elements.checkboxOffOn.checked = true;
             }
         });
     }
