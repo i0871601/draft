@@ -380,6 +380,7 @@
   position: absolute;
   top: 3.5rem;
   left: 0;
+  z-index: 15;
   padding: 0 0 0 1rem;
   width: 100%;
   height: min-content;
@@ -474,6 +475,7 @@
   visibility: visible;
   overflow: visible;
   margin: 0;
+  white-space: nowrap;
   color: var(--text-color-1);
   transition: opacity 0.5s ease-in-out, visibility 0.1s 0.5s, overflow 0.1s 0.5s;
 }
