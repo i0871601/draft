@@ -63,13 +63,14 @@ function init() {
             console.log("Дані журналу завантажено:", response);
 
             if (response.students.length === 0 || (userData.role === "student" && response.lessons.length === 0)) {
-                console.log("Не має учнів/уроків");
                 const text = userData.role === 'student' ? 'В журналі немає записів уроків' : 'В журналі відсутні учні';
+                console.log(text);
                 elements.textError.textContent = text;
                 return;
             }
             else {
                 elements.textSelect.textContent = `${textInfo}`;
+                elements.textError.textContent = "";
                 elements.checkboxOffOn.checked = true;
             }
         });

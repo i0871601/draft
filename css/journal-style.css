@@ -328,6 +328,7 @@
   pointer-events: auto;
 }
 
+
 #button-select-subject {
   min-width: 11rem;
   width: min-content;
@@ -467,8 +468,18 @@
 }
 
 #journal-frame #text-error-frame {
+  opacity: 1;
+  visibility: visible;
+  overflow: visible;
   margin: 0;
   color: var(--text-color-1);
+  transition: opacity 0.5s ease-in-out, visibility 0.1s 0.5s, overflow 0.1s 0.5s;
+}
+
+#on-off-journal:checked ~ #journal-frame #text-error-frame {
+  opacity: 0;
+  visibility: hidden;
+  overflow: hidden;
 }
 
 /*#content-select::-webkit-scrollbar{
