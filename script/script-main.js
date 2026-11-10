@@ -66,6 +66,7 @@ function init() {
                 const text = userData.role === 'student' ? 'В журналі немає записів уроків' : 'В журналі відсутні учні';
                 console.log(text);
                 elements.textError.textContent = text;
+                elements.checkboxOffOn.checked = false;
                 return;
             }
             else {
