@@ -80,7 +80,7 @@ function init() {
                     timestamp: now
                 };
             }
-            
+
             elements.textSelect.textContent = `${textInfo}`;
 
             if (response.students.length === 0 || (userData.role === "student" && response.lessons.length === 0)) {
@@ -92,7 +92,8 @@ function init() {
             }
             else {
                 elements.textError.textContent = "";
-                elements.checkboxOffOn.checked = true;
+                lesson(elements, response.lessons, subjectInfo, teacherInfo, classInfo);
+                //elements.checkboxOffOn.checked = true;
             }
         });
     }
