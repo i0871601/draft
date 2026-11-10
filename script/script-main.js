@@ -40,6 +40,9 @@ function init() {
     }
     // Делегування кліків на випадаючий список 
     if (elements.contentSelect) {
+        const journalCache = {};
+        const CACHE_TTL = 2 * 60 * 60 * 1000;
+
         elements.contentSelect.addEventListener('click', async (e) => {
             const liTarget = e.target.closest('li.li');
             
@@ -59,8 +62,25 @@ function init() {
                 teacherLastName: teacherInfo,
                 className: classInfo
             };
-            const response = await request(payload);
-            console.log("Дані журналу завантажено:", response);
+
+            const cacheKey = JSON.stringify(payload);
+            const now = Date.now();
+
+            let response;
+
+            if (journalCache[cacheKey] && (now - journalCache[cacheKey].timestamp < CACHE_TTL)) {
+                console.log("Дані взято з кешу");
+                response = journalCache[cacheKey].data;
+            } else {
+                response = await request(payload);
+                console.log("Дані журналу завантажено з сервера:", response);
+                
+                journalCache[cacheKey] = {
+                    data: response,
+                    timestamp: now
+                };
+            }
+            
             elements.textSelect.textContent = `${textInfo}`;
 
             if (response.students.length === 0 || (userData.role === "student" && response.lessons.length === 0)) {
