@@ -22,7 +22,7 @@ form.addEventListener('submit', async (event) => {
 
     if (response.ok && data.success) {
       // Зберігаємо отримані дані сесії (наприклад, час та хеш або токен) у sessionStorage
-      sessionStorage.setItem('auth_session', JSON.stringify(data));
+      sessionStorage.setItem('session', JSON.stringify(data));
       
       // Перенаправлення після успішного входу (за потреби розкоментуй або зміни шлях)
       // window.location.href = 'home.html';
