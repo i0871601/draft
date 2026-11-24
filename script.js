@@ -2,17 +2,26 @@ const WORKER_URL = 'https://base-sing-in.i087.workers.dev/';
 
 const formEl = document.getElementById('auth-form');
 const inputEl = document.getElementById('access-code');
+
+const checkboxEl = document.getElementById('on-loading');
 const buttonEl = document.getElementById('button');
 const stanButtonOn = document.getElementById('on');
 const stanButtonLoading = document.getElementById('loading');
 
+const errorToggleEl = document.getElementById('error-toggle');
+
 
 // Перевіряємо, чи символ є буквою (латиниця)
-  const isLetter = (char) => /^[a-zA-Z]$/.test(char);
-  let session = null;
+const isLetter = (char) => /^[a-zA-Z]$/.test(char);
+let session = null;
+let stanCheckbox = false;
+
+const MIN_LOADING_MS = 1500; // 1,5с
 
 //Перевірка ведення
 inputEl.addEventListener('input', () => {
+  if (errorToggleEl.checked) errorToggleEl.checked = false;
+
   const value = inputEl.value;
 
   if (!value) {
@@ -21,21 +30,31 @@ inputEl.addEventListener('input', () => {
   }
 
   const firstChar = value[0];
-  if (!isLetter(firstChar)) {
-    inputEl.type = 'password';
-  } else {
-    inputEl.type = 'text';
-  }
+  inputEl.type = isLetter(firstChar) ? 'text' : 'password';
 });
 
 //відправка і отримання доступу
 formEl.addEventListener('submit', async (event) => {
   event.preventDefault();
 
+
   const code = inputEl.value.trim();
-  if (!code) return;
+  if (!code) {
+    errorToggleEl.checked = true;
+    return;
+  }
+
+  stanCheckbox = true;
+  checkboxEl.checked = true;
+  checkboxEl.disabled = true;
+  inputEl.readOnly = true;
+
+  const startedAt = Date.now();
+
 
   try {
+
+    //а далі треба сказати якщо що виключим стан та чекбокс фолс чере 2 секунди(думаю хватить на максимум чи краще 3?), мінімум через 1,5 секунду, якщо відповідь прийде раніше тоді берем мінімум, 
     const response = await fetch(WORKER_URL, {
       method: 'POST',
       headers: {
@@ -45,6 +64,11 @@ formEl.addEventListener('submit', async (event) => {
     });
 
     const data = await response.json();
+
+    const elapsed = Date.now() - startedAt;
+    if (elapsed < MIN_LOADING_MS) {
+      await new Promise((resolve) => setTimeout(resolve, MIN_LOADING_MS - elapsed));
+    }
 
     if (response.ok && data.success) {
       if (data.token) {
@@ -61,12 +85,26 @@ formEl.addEventListener('submit', async (event) => {
       inputEl.value = '';
       inputEl.type = 'text';
     } else {
-      console.console.log(data.message || 'Невірний код доступу');
+      console.log(data.message || 'Невірний код доступу');
       inputEl.value = '';
       inputEl.type = 'text';
     }
   } catch (error) {
+    const elapsed = Date.now() - startedAt;
+    if (elapsed < MIN_LOADING_MS) {
+      await new Promise((resolve) => setTimeout(resolve, MIN_LOADING_MS - elapsed));
+    }
     console.log('Помилка запиту:', error);
     console.log('Помилка з’єднання з сервером');
+  } finally {
+    stanCheckbox = false;
+    checkboxEl.checked = false;
+    checkboxEl.disabled = false;
+    inputEl.readOnly = false;
   }
+});
+
+checkboxEl.addEventListener('change', () => {
+  if (stanCheckbox) return;
+  formEl.requestSubmit();
 });

@@ -8,11 +8,17 @@
 <body>
 
   <form id="auth-form">
+    <input type="checkbox" id="error-toggle" class="input">
+    
     <input type="text" id="access-code" name="access-code" placeholder="Введіть код доступу" autocomplete="off" required>
-    <button type="submit" id="button">
+    
+    <input type="checkbox" id="on-loading" class="input">
+    <label for="on-loading" id="button">
       <div id="on" class="button"></div>
       <div id="loading" class="button"></div>
-    </button>
+    </label>
+
+    <p id="error-msg" class="error-text">Невірний формат</p>
   </form>
 
   <script src="./script.js"></script>
