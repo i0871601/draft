@@ -8,8 +8,11 @@
 <body>
 
   <form id="auth-form">
-    <input type="text" id="access-code" placeholder="Введіть код доступу" autocomplete="off" required>
-    <button type="submit">Відправити</button>
+    <input type="text" id="access-code" name="access-code" placeholder="Введіть код доступу" autocomplete="off" required>
+    <button type="submit" id="button">
+      <div id="on" class="button"></div>
+      <div id="loading" class="button"></div>
+    </button>
   </form>
 
   <script src="./script.js"></script>
