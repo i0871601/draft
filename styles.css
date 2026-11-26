@@ -5,6 +5,7 @@
   --color-shadow: #232323;
   --fon-color2: #d8c3a5;
   --fon-color3: #fdf6ec;
+  --color-text-shadow: #878787;
 }
 
 * {
@@ -41,6 +42,7 @@ body {
 #access-code {
   flex: 1;
   min-width: 0;
+  height: 3rem;
 
   appearance: none;
   -webkit-appearance: none;
@@ -50,6 +52,11 @@ body {
   outline: none;
   box-shadow: none;
   border-radius: 0;
+
+  color: var(--fon-color2);
+  font-size: 1.1rem;
+  border-bottom: 0.05rem solid var(--color-text-shadow);
+  margin: 0 1rem 0 0;
 }
 
 #button {
