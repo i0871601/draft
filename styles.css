@@ -85,6 +85,9 @@ body {
   justify-content: center;
   position: absolute;
 }
+#on {
+  opacity: 0;
+}
 
 #on span {
   position: relative;
@@ -113,6 +116,15 @@ body {
   bottom: -102%;
 }
 
+#loading span {
+  width: 70%;
+  aspect-ratio: 1 / 1;
+  border: 0.3rem solid var(--fon-color);
+  border-radius: 3rem;
+  border-top-color: transparent;
+  animation: sides-cycle 1.5s step-end infinite;
+}
+
 #error-msg {
   flex-basis: 100%;
   width: 100%;
@@ -138,4 +150,70 @@ body {
 
 #error-toggle:checked ~ #error-msg {
   opacity: 1;
+}
+
+@keyframes sides-cycle {
+  /* 0%: всі 4 сторони видимі */
+  0% {
+    border-top-color: var(--fon-color);
+    border-right-color: var(--fon-color);
+    border-bottom-color: var(--fon-color);
+    border-left-color: var(--fon-color);
+  }
+  /* 12.5%: зникає верх */
+  12.5% {
+    border-top-color: transparent;
+    border-right-color: var(--fon-color);
+    border-bottom-color: var(--fon-color);
+    border-left-color: var(--fon-color);
+  }
+  /* 25%: зникає право */
+  25% {
+    border-top-color: transparent;
+    border-right-color: transparent;
+    border-bottom-color: var(--fon-color);
+    border-left-color: var(--fon-color);
+  }
+  /* 37.5%: зникає низ */
+  37.5% {
+    border-top-color: transparent;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    border-left-color: var(--fon-color);
+  }
+  /* 50%: зникає ліва, і одночасно з'являється верх */
+  50% {
+    border-top-color: var(--fon-color);
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+  }
+  /* 62.5%: з'являється право */
+  62.5% {
+    border-top-color: var(--fon-color);
+    border-right-color: var(--fon-color);
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+  }
+  /* 75%: з'являється низ */
+  75% {
+    border-top-color: var(--fon-color);
+    border-right-color: var(--fon-color);
+    border-bottom-color: var(--fon-color);
+    border-left-color: transparent;
+  }
+  /* 87.5%: з'являється ліва, і одночасно зникає верх (перехід до наступного кола) */
+  87.5% {
+    border-top-color: transparent;
+    border-right-color: var(--fon-color);
+    border-bottom-color: var(--fon-color);
+    border-left-color: var(--fon-color);
+  }
+  /* 100%: знову з'являється верх — цикл йде далі */
+  100% {
+    border-top-color: var(--fon-color);
+    border-right-color: var(--fon-color);
+    border-bottom-color: var(--fon-color);
+    border-left-color: var(--fon-color);
+  }
 }
