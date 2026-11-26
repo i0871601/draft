@@ -152,7 +152,6 @@ body {
 }
 
 @keyframes sides-cycle {
-  /* 0%: всі 4 сторони видимі */
   0% {
     border-top-color: var(--fon-color);
     border-right-color: var(--fon-color);
@@ -180,35 +179,35 @@ body {
     border-bottom-color: transparent;
     border-left-color: var(--fon-color);
   }
-  /* 50%: зникає ліва, і одночасно з'являється верх */
+  /* 50%: зникає ліво (всі сторони зникли) */
   50% {
+    border-top-color: transparent;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+  }
+  /* 62.5%: з’являється верх */
+  62.5% {
     border-top-color: var(--fon-color);
     border-right-color: transparent;
     border-bottom-color: transparent;
     border-left-color: transparent;
   }
-  /* 62.5%: з'являється право */
-  62.5% {
+  /* 75%: з’являється право */
+  75% {
     border-top-color: var(--fon-color);
     border-right-color: var(--fon-color);
     border-bottom-color: transparent;
     border-left-color: transparent;
   }
-  /* 75%: з'являється низ */
-  75% {
+  /* 87.5%: з’являється низ */
+  87.5% {
     border-top-color: var(--fon-color);
     border-right-color: var(--fon-color);
     border-bottom-color: var(--fon-color);
     border-left-color: transparent;
   }
-  /* 87.5%: з'являється ліва, і одночасно зникає верх (перехід до наступного кола) */
-  87.5% {
-    border-top-color: transparent;
-    border-right-color: var(--fon-color);
-    border-bottom-color: var(--fon-color);
-    border-left-color: var(--fon-color);
-  }
-  /* 100%: знову з'являється верх — цикл йде далі */
+  /* 100%: з’являється ліво (знову повне кільце перед наступним повтором) */
   100% {
     border-top-color: var(--fon-color);
     border-right-color: var(--fon-color);
