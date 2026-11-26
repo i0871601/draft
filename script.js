@@ -46,14 +46,12 @@ formEl.addEventListener('submit', async (event) => {
     checkboxEl.disabled = false;
     inputEl.readOnly = false;
 
-    errorText.textContent = 'пустий рядок';
     errorToggleEl.checked = true;
 
     setTimeout(() => {
       errorToggleEl.checked = false;
-      errorText.textContent = 'невірний код доступу';
     }, 1500);
-    
+
     return;
   }
 
@@ -105,13 +103,6 @@ formEl.addEventListener('submit', async (event) => {
       checkboxEl.checked = false;
       checkboxEl.disabled = false;
       inputEl.readOnly = false;
-
-      errorToggleEl.checked = true;
-
-      setTimeout(() => {
-        errorToggleEl.checked = false;
-      }, 1500);
-
     }
   } catch (error) {
     const elapsed = Date.now() - startedAt;
