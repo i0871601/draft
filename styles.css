@@ -126,7 +126,7 @@ body {
 #loading span {
   width: 70%;
   aspect-ratio: 1 / 1;
-  border: 0.3rem solid var(--fon-color);
+  border: 0.3rem solid rgba(46, 46, 46, 0.2);
   border-radius: 3rem;
   position: relative;
   display: flex;
@@ -140,8 +140,7 @@ body {
   width: 100%;
   height: 100%;
   border-radius: 3rem;
-  border: 0.3rem solid transparent;
-  border-top-color: var(--fon-color);
+  border-top: 0.3rem solid var(--fon-color);
   transform: rotate(0deg);
 }
 
@@ -179,9 +178,6 @@ body {
 #on-loading:checked ~ #button #loading {
   opacity: 1;
   transition-delay: 0.5s;
-}
-#on-loading:checked ~ #button #loading span{
-  border-color: rgba(46, 46, 46, 0.2);
 }
 #on-loading:checked ~ #button #loading span::before {
   animation: rotate-arc 1.5s linear infinite;
