@@ -85,8 +85,10 @@ body {
   justify-content: center;
   position: absolute;
 }
-#on {
-  opacity: 0;
+
+#loading {
+  opacity: 1;
+  transition: opacity 0.5s 0.5s;
 }
 
 #on span {
@@ -116,13 +118,20 @@ body {
   bottom: -102%;
 }
 
+#loading {
+  opacity: 0;
+  transition: opacity 0.5s 0.5s;
+}
+
 #loading span {
   width: 70%;
   aspect-ratio: 1 / 1;
   border: 0.3rem solid var(--fon-color);
   border-radius: 3rem;
   position: relative;
-  animation: fade-base-border 1.6s ease-in-out infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 #loading span::before {
   content: '';
@@ -134,7 +143,6 @@ body {
   border: 0.3rem solid transparent;
   border-top-color: var(--fon-color);
   transform: rotate(0deg);
-  animation: rotate-arc 0.9s linear infinite;
 }
 
 #error-msg {
@@ -164,14 +172,18 @@ body {
   opacity: 1;
 }
 
-@keyframes fade-base-border {
-  0%, 100% {
-    border-color: var(--fon-color);
-  }
-  50% {
-    border-color: transparent; /* або напівпрозорий колір, якщо хочеш легкий контур */
-  }
+#on-loading:checked ~ #button #on {
+  opacity: 0;
 }
+
+#on-loading:checked ~ #button #loading {
+  opacity: 1;
+  border-color: rgba(46, 46, 46, 0.2);
+}
+#on-loading:checked ~ #button #loading span::before {
+  animation: rotate-arc 1.5s linear infinite;
+}
+
 
 @keyframes rotate-arc {
   from {
