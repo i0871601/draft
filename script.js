@@ -40,6 +40,10 @@ formEl.addEventListener('submit', async (event) => {
 
   const code = inputEl.value.trim();
   if (!code) {
+    stanCheckbox = false;
+    checkboxEl.checked = false;
+    checkboxEl.disabled = false;
+    inputEl.readOnly = false;
     errorToggleEl.checked = true;
     return;
   }
@@ -88,6 +92,10 @@ formEl.addEventListener('submit', async (event) => {
       console.log(data.message || 'Невірний код доступу');
       inputEl.value = '';
       inputEl.type = 'text';
+      stanCheckbox = false;
+      checkboxEl.checked = false;
+      checkboxEl.disabled = false;
+      inputEl.readOnly = false;
     }
   } catch (error) {
     const elapsed = Date.now() - startedAt;
