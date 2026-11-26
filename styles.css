@@ -146,7 +146,6 @@ body {
 
   animation: rotate-arc 1.5s linear infinite;
   animation-play-state: paused;
-  animation-delay: 0s, 0.7s;
 }
 
 #error-msg {
@@ -186,7 +185,6 @@ body {
 }
 #on-loading:checked ~ #button #loading span::before {
   animation-play-state: running;
-  animation-delay: 0s;
 }
 
 
