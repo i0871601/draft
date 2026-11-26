@@ -175,9 +175,10 @@ body {
 #on-loading:checked ~ #button #on {
   opacity: 0;
 }
-
-#on-loading:checked ~ #button #loading span{
+#on-loading:checked ~ #button #loading {
   opacity: 1;
+}
+#on-loading:checked ~ #button #loading span{
   border-color: rgba(46, 46, 46, 0.2);
 }
 #on-loading:checked ~ #button #loading span::before {
