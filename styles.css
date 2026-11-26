@@ -88,12 +88,20 @@ body {
 #on span:before, #on span::after { 
   content: '';
   display: block;
+  position: absolute;
+  width: 55%;
+  height: 100%;
+  border-radius: 0.3rem;
+  background-color: var(--fon-color);
+  right: 0;
 }
 #on span:before { 
-  
+  transform: rotate(45deg);
+  top: -98%;
 }
 #on span::after { 
-  
+  transform: rotate(-45deg);
+  top: 98%;
 }
 
 
