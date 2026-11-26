@@ -66,6 +66,7 @@ body {
   background-color: var(--fon-color2);
   position: relative;
   overflow: hidden;
+  cursor: pointer;
 }
 
 .button {
@@ -85,7 +86,8 @@ body {
   background-color: var(--fon-color);
 }
 #on span:before, #on span::after { 
-
+  content: '';
+  display: block;
 }
 #on span:before { 
   
