@@ -9,6 +9,7 @@ const stanButtonOn = document.getElementById('on');
 const stanButtonLoading = document.getElementById('loading');
 
 const errorToggleEl = document.getElementById('error-toggle');
+const errorText = document.getElementById('error-msg');
 
 
 // Перевіряємо, чи символ є буквою (латиниця)
@@ -44,7 +45,15 @@ formEl.addEventListener('submit', async (event) => {
     checkboxEl.checked = false;
     checkboxEl.disabled = false;
     inputEl.readOnly = false;
+
+    errorText.textContent = 'пустий рядок';
     errorToggleEl.checked = true;
+
+    setTimeout(() => {
+      errorToggleEl.checked = false;
+      errorText.textContent = 'невірний код доступу';
+    }, 1500);
+    
     return;
   }
 
@@ -96,6 +105,13 @@ formEl.addEventListener('submit', async (event) => {
       checkboxEl.checked = false;
       checkboxEl.disabled = false;
       inputEl.readOnly = false;
+
+      errorToggleEl.checked = true;
+
+      setTimeout(() => {
+        errorToggleEl.checked = false;
+      }, 1500);
+
     }
   } catch (error) {
     const elapsed = Date.now() - startedAt;
