@@ -2,7 +2,7 @@
 :root{
   --fon-color: #2e2e2e;
   --color-error: #c94a42;
-  --color-shadow: #232323;
+  --color-shadow: #1b1b1b;
   --fon-color2: #d8c3a5;
   --fon-color3: #fdf6ec;
   --color-text-shadow: #878787;
@@ -72,6 +72,9 @@ body {
   position: relative;
   overflow: hidden;
   cursor: pointer;
+  box-shadow: 0.1rem 0 0.3rem var(--color-shadow);
+  transform: scale(1);
+  transition: transform 0.5s ease-in-out;
 }
 
 .button {
@@ -81,10 +84,6 @@ body {
   align-items: center;
   justify-content: center;
   position: absolute;
-}
-#on {
-  transform: scale(1);
-  transition: transform 0.5s ease-in-out;
 }
 
 #on span {
@@ -124,7 +123,7 @@ body {
 
 
 /*при наведені*/
-#button:hover #on {
+#button:hover {
   transform: scale(1.03);
 }
 
