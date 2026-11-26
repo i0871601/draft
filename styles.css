@@ -124,7 +124,7 @@ body {
 
 /*при наведені*/
 #button:hover {
-  transform: scale(1.03);
+  transform: scale(1.01);
 }
 
 /*при кліку*/
