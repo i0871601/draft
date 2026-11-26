@@ -64,7 +64,36 @@ body {
   width: 3rem;
   aspect-ratio: 1/1;
   background-color: var(--fon-color2);
+  position: relative;
+  overflow: hidden;
 }
+
+.button {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+}
+
+#on span {
+  display: block;
+  width: 50%;
+  height: 0.3rem;
+  border-radius: 0.3rem;
+  background-color: var(--fon-color);
+}
+#on span:before, #on span::after { 
+
+}
+#on span:before { 
+  
+}
+#on span::after { 
+  
+}
+
 
 #error-msg {
   flex-basis: 100%;
