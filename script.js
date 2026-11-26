@@ -17,7 +17,7 @@ const isLetter = (char) => /^[a-zA-Z]$/.test(char);
 let session = null;
 let stanCheckbox = false;
 
-const MIN_LOADING_MS = 3000; // мінімум тривалість
+const MIN_LOADING_MS = 5000; // мінімум тривалість
 
 //Перевірка ведення
 inputEl.addEventListener('input', () => {
