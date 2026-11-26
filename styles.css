@@ -184,7 +184,7 @@ body {
   border-color: rgba(46, 46, 46, 0.2);
 }
 #on-loading:checked ~ #button #loading span::before {
-  animation: rotate-arc 1.5s linear infinite;
+  animation: rotate-arc 1s linear infinite;
 }
 
 
