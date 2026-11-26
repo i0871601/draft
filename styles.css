@@ -146,7 +146,7 @@ body {
 
   animation: rotate-arc 1.5s linear infinite;
   animation-play-state: paused;
-  animation-delay: 0s, 0.5s;
+  animation-delay: 0s, 0.7s;
 }
 
 #error-msg {
