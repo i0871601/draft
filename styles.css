@@ -121,7 +121,20 @@ body {
   aspect-ratio: 1 / 1;
   border: 0.3rem solid var(--fon-color);
   border-radius: 3rem;
-  animation: sides-cycle 1.5s step-end infinite;
+  position: relative;
+  animation: fade-base-border 1.6s ease-in-out infinite;
+}
+#loading span::before {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 3rem;
+  border: 0.3rem solid transparent;
+  border-top-color: var(--fon-color);
+  transform: rotate(0deg);
+  animation: rotate-arc 0.9s linear infinite;
 }
 
 #error-msg {
@@ -151,67 +164,20 @@ body {
   opacity: 1;
 }
 
-@keyframes sides-cycle {
-  0% {
-    border-top-color: var(--fon-color);
-    border-right-color: var(--fon-color);
-    border-bottom-color: var(--fon-color);
-    border-left-color: var(--fon-color);
+@keyframes fade-base-border {
+  0%, 100% {
+    border-color: var(--fon-color);
   }
-  /* 12.5%: зникає верх */
-  12.5% {
-    border-top-color: transparent;
-    border-right-color: var(--fon-color);
-    border-bottom-color: var(--fon-color);
-    border-left-color: var(--fon-color);
-  }
-  /* 25%: зникає право */
-  25% {
-    border-top-color: transparent;
-    border-right-color: transparent;
-    border-bottom-color: var(--fon-color);
-    border-left-color: var(--fon-color);
-  }
-  /* 37.5%: зникає низ */
-  37.5% {
-    border-top-color: transparent;
-    border-right-color: transparent;
-    border-bottom-color: transparent;
-    border-left-color: var(--fon-color);
-  }
-  /* 50%: зникає ліво (всі сторони зникли) */
   50% {
-    border-top-color: transparent;
-    border-right-color: transparent;
-    border-bottom-color: transparent;
-    border-left-color: transparent;
+    border-color: transparent; /* або напівпрозорий колір, якщо хочеш легкий контур */
   }
-  /* 62.5%: з’являється верх */
-  62.5% {
-    border-top-color: var(--fon-color);
-    border-right-color: transparent;
-    border-bottom-color: transparent;
-    border-left-color: transparent;
+}
+
+@keyframes rotate-arc {
+  from {
+    transform: rotate(0deg);
   }
-  /* 75%: з’являється право */
-  75% {
-    border-top-color: var(--fon-color);
-    border-right-color: var(--fon-color);
-    border-bottom-color: transparent;
-    border-left-color: transparent;
-  }
-  /* 87.5%: з’являється низ */
-  87.5% {
-    border-top-color: var(--fon-color);
-    border-right-color: var(--fon-color);
-    border-bottom-color: var(--fon-color);
-    border-left-color: transparent;
-  }
-  /* 100%: з’являється ліво (знову повне кільце перед наступним повтором) */
-  100% {
-    border-top-color: var(--fon-color);
-    border-right-color: var(--fon-color);
-    border-bottom-color: var(--fon-color);
-    border-left-color: var(--fon-color);
+  to {
+    transform: rotate(360deg);
   }
 }
