@@ -176,7 +176,7 @@ body {
   opacity: 0;
 }
 
-#on-loading:checked ~ #button #loading {
+#on-loading:checked ~ #button #loading span{
   opacity: 1;
   border-color: rgba(46, 46, 46, 0.2);
 }
