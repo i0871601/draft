@@ -13,6 +13,9 @@ const errorText = document.getElementById('error-msg');
 
 const checkboxAccess = document.getElementById('access-on-off');
 
+const divMain = document.getElementById('contents');
+const divMaterial = document.getElementById('materials');
+
 
 // Перевіряємо, чи символ є буквою (латиниця)
 const isLetter = (char) => /^[a-zA-Z]$/.test(char);
@@ -89,6 +92,17 @@ formEl.addEventListener('submit', async (event) => {
           token: data.token,
           expiresAt: data.expiresAt
         };
+
+        divMain.insertAdjacentHTML( 
+          'afterbegin',
+          '<input type="radio" name="menu" id="input-group" class="input">'
+        );
+        
+        divMaterial.insertAdjacentHTML(
+          'beforebegin',
+          '<div id="groups" class="content"></div>'
+        );
+
       }
       else {
         session = null;
