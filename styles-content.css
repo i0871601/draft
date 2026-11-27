@@ -10,17 +10,30 @@
 .content {
     height: 100%;
     display: flex;
+    padding: 0 1rem;
 }
 
 #groups {
+    min-width: 15rem;
+    max-width: 21rem;
     width: 35%;
     border-right: 0.15rem solid var(--fon-color2);
+    transition: min-width 0.5s ease-in-out, 
+        max-width 0.5s ease-in-out, 
+        width 0.5s ease-in-out;
 }
 
 #materials {
     width: 100%;
+
 }
 
 #revision {
+    width: 0;
+}
+
+#input-revision:checked ~ #groups {
+    min-width: 0;
+    max-width: 0;
     width: 0;
 }
