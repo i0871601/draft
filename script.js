@@ -39,6 +39,27 @@ inputEl.addEventListener('input', () => {
   inputEl.type = isLetter(firstChar) ? 'text' : 'password';
 });
 
+function adminAdd(divMain, divMaterial) {
+  divMain.insertAdjacentHTML( 
+    'afterbegin',
+    '<input type="radio" name="menu" id="input-group" class="input">'
+  );
+
+  divMaterial.insertAdjacentHTML(
+    'beforebegin',
+    `<input type="checkbox" id="input-add-material" class="input">
+    <div id="groups" class="content"></div>`
+  );
+  
+  const titleEl = divMaterial.querySelector('.title');
+  titleEl.insertAdjacentHTML(
+    'beforeend',
+    `<label for="input-add-material">
+        <span></span>
+    </label>`
+  );
+};
+
 //відправка і отримання доступу
 formEl.addEventListener('submit', async (event) => {
   event.preventDefault();
@@ -92,27 +113,7 @@ formEl.addEventListener('submit', async (event) => {
           token: data.token,
           expiresAt: data.expiresAt
         };
-
-        divMain.insertAdjacentHTML( 
-          'afterbegin',
-          '<input type="radio" name="menu" id="input-group" class="input">'
-        );
-
-        divMaterial.insertAdjacentHTML(
-          'beforebegin',
-          `<input type="checkbox" id="input-add-material" class="input">
-          <div id="groups" class="content"></div>`
-        );
-        
-
-        const titleEl = divMaterial.querySelector('.title');
-        titleEl.insertAdjacentHTML(
-          'beforeend',
-          `<label for="input-add-material">
-              <span></span>
-           </label>`
-        );
-
+        adminAdd(divMain, divMaterial)
       }
       else {
         session = null;
