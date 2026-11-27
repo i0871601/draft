@@ -32,7 +32,7 @@ body {
   position: absolute;
   width: 100%;
   height: 100%;
-  background-color: var(--fon-color);
+  background-color: var(--fon-color3);
   display: flex;
   justify-content: flex-start;
   align-items: center;
