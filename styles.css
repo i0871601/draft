@@ -17,7 +17,6 @@ body {
   margin: 0;
   padding: 0;
   background-color: var(--fon-color);
-  color: var(--color-accent);
   display: flex;
   justify-content: flex-start;
   align-items: center;
