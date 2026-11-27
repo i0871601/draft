@@ -14,8 +14,8 @@
 }
 
 #groups {
-    min-width: 21rem;
-    max-width: 27rem;
+    min-width: 17rem;
+    max-width: 25rem;
     width: 35%;
     border-right: 0.15rem solid var(--fon-color2);
     transition: min-width 0.7s ease-in-out, 
@@ -26,7 +26,7 @@
 }
 
 #materials {
-    min-width: 21rem;
+    min-width: 17rem;
     width: calc(100% - 35%);
     border-right: 0.15rem solid transparent;
     transition: min-width 0.7s ease-in-out,  
@@ -50,7 +50,7 @@
     border-color: transparent;
 }
 #input-revision:checked ~ #materials {
-    min-width: 21rem;
+    min-width: 17rem;
     width: 35%;
     border-color: var(--fon-color2);
 }
