@@ -2,4 +2,25 @@
     width: 100%;
     height: 100%;
     display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 1rem;
+    position: relative;
+}
+.content {
+    height: 100%;
+    display: flex;
+}
+
+#groups {
+    width: 35%;
+    border-right: 0.15rem solid var(--fon-color2);
+}
+
+#materials {
+    width: 100%;
+}
+
+#revision {
+    width: 0;
 }
