@@ -11,6 +11,8 @@ const stanButtonLoading = document.getElementById('loading');
 const errorToggleEl = document.getElementById('error-toggle');
 const errorText = document.getElementById('error-msg');
 
+const checkboxAccess = document.getElementById('access-on-off');
+
 
 // Перевіряємо, чи символ є буквою (латиниця)
 const isLetter = (char) => /^[a-zA-Z]$/.test(char);
@@ -95,6 +97,7 @@ formEl.addEventListener('submit', async (event) => {
 
       inputEl.value = '';
       inputEl.type = 'text';
+      checkboxAccess.checked = true;
     } else {
       console.log(data.message || 'Невірний код доступу');
       inputEl.value = '';
