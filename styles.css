@@ -2,7 +2,7 @@
 :root{
   --fon-color: #2e2e2e;
   --color-error: #c94a42;
-  --color-shadow: #1b1b1b;
+  --color-shadow: rgba(27, 27, 27, 0.5);
   --fon-color2: #d8c3a5;
   --fon-color3: #fdf6ec;
   --color-text-shadow: #878787;
@@ -159,7 +159,7 @@ body {
 
 /*при наведені*/
 #button:hover {
-  transform: scale(1.01);
+  transform: scale(1.03);
 }
 
 /*при кліку*/
