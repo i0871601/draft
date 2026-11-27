@@ -20,7 +20,9 @@
     border-right: 0.15rem solid var(--fon-color2);
     transition: min-width 0.5s ease-in-out, 
         max-width 0.5s ease-in-out, 
-        width 0.5s ease-in-out;
+        width 0.5s ease-in-out, 
+        padding 0.5s ease-in-out, 
+        border 0.5s ease-in-out;
 }
 
 #materials {
@@ -30,10 +32,17 @@
 
 #revision {
     width: 0;
+    padding: 0;
 }
 
 #input-revision:checked ~ #groups {
     min-width: 0;
     max-width: 0;
     width: 0;
+    padding: 0;
+    border-color: transparent;
+}
+
+#input-revision:checked ~ #revision {
+
 }
