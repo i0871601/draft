@@ -9,7 +9,7 @@
 }
 
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
@@ -22,10 +22,11 @@ body {
   align-items: center;
   position: relative;
   user-select: none;
+  font-family: 'SourceSans3';
 }
 
 .input {
-    display: none;
+  display: none;
 }
 
 #access {
@@ -215,4 +216,11 @@ body {
   to {
     transform: rotate(360deg);
   }
+}
+
+@font-face {
+  font-family: 'SourceSans3';
+  src: url('SourceSans3-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
 }
