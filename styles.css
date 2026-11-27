@@ -36,6 +36,10 @@ body {
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  opacity: 1;
+  transition: opacity 0.7s ease-in-out,
+    visibility 0s 0s,
+    pointer-events 0s 0s;
 }
 
 #auth-form {
@@ -172,6 +176,13 @@ body {
 }
 
 /*при кліку*/
+#access-on-off:checked  ~ #access {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition-delay: 0s, 0.8s, 0.8s;
+}
+
 #error-toggle:checked ~ #access-code {
   border-bottom: 0.05rem solid var(--color-error);
   color: var(--color-error);
