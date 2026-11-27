@@ -6,6 +6,7 @@
     align-items: center;
     padding: 1rem;
     position: relative;
+    color: var(--color-text-shadow);
 }
 .content {
     height: 100%;
