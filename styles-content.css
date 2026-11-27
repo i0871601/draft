@@ -27,7 +27,7 @@
 
 #materials {
     min-width: 21rem;
-    width: 100%;
+    width: calc(100% - 35%);
     border-right: 0.15rem solid transparent;
     transition: min-width 0.7s ease-in-out,  
         width 0.7s ease-in-out, 
@@ -57,6 +57,6 @@
 
 
 #input-revision:checked ~ #revision {
-    width: 100%;
+    width: calc(100% - 35%);
     padding: 0 1rem;
 }
