@@ -8,23 +8,31 @@
 </head>
 <body>
 
-  <form id="auth-form">
-    <input type="checkbox" id="error-toggle" class="input">
+  <div id="access">
+    <form id="auth-form">
+      <input type="checkbox" id="error-toggle" class="input">
+      
+      <input type="text" id="access-code" name="access-code" placeholder="введіть код доступу" autocomplete="off" inputmode="latin" lang="en" autocapitalize="off" autocorrect="off" spellcheck="false" maxlength="10" autofocus>
+      
+      <input type="checkbox" id="on-loading" class="input">
+      <label for="on-loading" id="button">
+        <div id="on" class="button">
+          <span></span>
+        </div>
+        <div id="loading" class="button">
+          <span></span>
+        </div>
+      </label>
+      
+      <p id="error-msg" class="error-text">невірний код доступу</p>
+    </form>
+  </div>
 
-    <input type="text" id="access-code" name="access-code" placeholder="введіть код доступу" autocomplete="off" inputmode="latin" lang="en" autocapitalize="off" autocorrect="off" spellcheck="false" maxlength="10" autofocus>
+
+  <div id="contents">
     
-    <input type="checkbox" id="on-loading" class="input">
-    <label for="on-loading" id="button">
-      <div id="on" class="button">
-        <span></span>
-      </div>
-      <div id="loading" class="button">
-        <span></span>
-      </div>
-    </label>
+  </div>
 
-    <p id="error-msg" class="error-text">невірний код доступу</p>
-  </form>
 
   <script src="./script.js"></script>
 </body>
