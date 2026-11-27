@@ -26,7 +26,10 @@
 }
 
 #materials {
+    min-width: calc(100% - 15rem);
+    max-width: calc(100% - 21rem);
     width: 100%;
+    border-right: 0.15rem solid transparent;
     transition: min-width 0.5s ease-in-out, 
         max-width 0.5s ease-in-out, 
         width 0.5s ease-in-out, 
@@ -37,7 +40,8 @@
 #revision {
     width: 0;
     padding: 0;
-    transition: width 0.5s ease-in-out, padding 0.5s ease-in-out;
+    transition: width 0.5s ease-in-out, 
+        padding 0.5s ease-in-out;
 }
 
 #input-revision:checked ~ #groups {
@@ -47,10 +51,11 @@
     padding: 0;
     border-color: transparent;
 }
-#input-revision:checked ~ #groups {
+#input-revision:checked ~ #materials {
     min-width: 15rem;
     max-width: 21rem;
     width: 35%;
+    border-color: var(--fon-color2);
 }
 
 
