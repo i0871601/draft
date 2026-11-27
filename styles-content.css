@@ -36,6 +36,34 @@
         border 0.7s ease-in-out;
 }
 
+.title label {
+    width: 2.5rem;
+    aspect-ratio: 1 / 1;
+    border: 0.2rem dashed var(--fon-color2);
+    border-radius: 0.5rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+.title label span {
+    display: block;
+    width: 1rem;
+    height: 0.2rem;
+    background-color: var(--fon-color2);
+    border-radius: 0.2rem;
+}
+.title label span::before {
+    content: '';
+    position: absolute;
+    display: block;
+    height: 1rem;
+    width: 0.2rem;
+    background-color: var(--fon-color2);
+    border-radius: 0.2rem;
+}
+
 #revision {
     width: 0;
     padding: 0;
