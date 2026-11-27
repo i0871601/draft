@@ -97,10 +97,18 @@ formEl.addEventListener('submit', async (event) => {
           'afterbegin',
           '<input type="radio" name="menu" id="input-group" class="input">'
         );
-        
+
         divMaterial.insertAdjacentHTML(
           'beforebegin',
+          '<input type="checkbox" id="input-add-material" class="input">',
           '<div id="groups" class="content"></div>'
+        );
+        
+
+        const titleEl = divMaterial.querySelectorAll('.title');
+        titleEl.insertAdjacentHTML(
+          'beforeend',
+          '<label for="input-add-material"><span></span></label>'
         );
 
       }
