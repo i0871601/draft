@@ -100,15 +100,17 @@ formEl.addEventListener('submit', async (event) => {
 
         divMaterial.insertAdjacentHTML(
           'beforebegin',
-          '<input type="checkbox" id="input-add-material" class="input">',
-          '<div id="groups" class="content"></div>'
+          `<input type="checkbox" id="input-add-material" class="input">
+          <div id="groups" class="content"></div>`
         );
         
 
-        const titleEl = divMaterial.querySelectorAll('.title');
+        const titleEl = divMaterial.querySelector('.title');
         titleEl.insertAdjacentHTML(
           'beforeend',
-          '<label for="input-add-material"><span></span></label>'
+          `<label for="input-add-material">
+              <span></span>
+           </label>`
         );
 
       }
